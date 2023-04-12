@@ -1,0 +1,54 @@
+:root {
+    --primary: hsla(214, 100%, 54%, 1);
+    --secondary: hsla(153, 100%, 50%, 1);
+    --background: hsla(214, 100%, 99%, 1);
+
+    /* State Variables*/
+    --state-success: #d4fdd6;
+    --state-success-color: #19a361;
+
+    --state-info: #d7effd;
+    --state-info-color: #39a6e3;
+
+    --state-danger: #f5e5eb;
+    --state-danger-color: #ec5784;
+
+    --state-warning: #fef1d6;
+    --state-warning-color: #ff9900;
+
+    --material-border-color: rgba(218, 220, 224, 1);
+
+
+    /* Colors */
+    --white: hsla(0, 0%, 100%, 1);
+    --black: rgb(0, 0, 0);
+    --green: hsla(151, 73%, 37%, 1);
+    --red: hsla(342, 90%, 51%, 1);
+    --yellow: hsla(40, 100%, 53%, 1);
+    --grey: hsla(218, 20%, 51%, 1);
+
+    --info-blue: hsla(202, 75%, 56%, 1);
+    --light-green: hsla(151, 73%, 37%, 0.2);
+    --light-red: hsla(342, 90%, 51%, 0.2);
+    --light-yellow: hsla(40, 100%, 53%, 0.2);
+    --light-blue: hsla(214, 100%, 54%, 0.12);
+    --light-info_blue: hsla(40, 100%, 53%, 0.2);
+    --light-grey: hsla(220, 17%, 93%, 1);
+
+
+    /* Common Variables */
+    --sidebar-width: 65px;
+    --section-offset: var(--SIDEBAR_WIDTH);
+    --header-height: 60px;
+    --border-color: rgba(75, 70, 92, 0.13);
+    --primary-dark-color: #174ea6;
+
+    /* Sidebar Variables */
+    --sidebar-active-color: #e8f0fe;
+    --sidebar-active-hover-color: #d2e3fc;
+    --sidebar-inactive-color: #fff;
+    --sidebar-inactive-color-hover: #f1f3f4;
+
+    --sidebar-primary-color: #1a73e8;
+    --sidebar-secondary-color: #3c4043;
+}

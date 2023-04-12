@@ -1,0 +1,187 @@
+/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
+// scss partial styles
+
+/* --- common --- */
+@import "assets/SCSS/common/mixins";
+@import "assets/SCSS/common/flex";
+@import "assets/SCSS/common/variables";
+@import "assets/SCSS/common/color_theme";
+@import "assets/SCSS/common/typography";
+@import "assets/SCSS/common/helpers";
+@import "assets/SCSS/common/general";
+@import "assets/SCSS/common/custom-material";
+
+/* --- UI --- */
+@import "assets/SCSS/Ui/button";
+
+/* You can add global styles to this file, and also import other style files */
+
+// Angular Material Theme
+@import "@angular/material/theming";
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+// Plus imports for other components in your app.
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$mat-myapp-primary: (
+    50: #e3efff,
+    100: #b9d7ff,
+    200: #8abdff,
+    300: #5ba2ff,
+    400: #378eff,
+    500: #147aff,
+    600: #1272ff,
+    700: #0e67ff,
+    800: #0b5dff,
+    900: #064aff,
+    A100: #ffffff,
+    A200: #f3f6ff,
+    A400: #c0ceff,
+    A700: #a7baff,
+    contrast: (50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #000000,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000,
+    ),
+);
+$md-red: (
+    50: #fee3eb,
+    100: #fbb8cc,
+    200: #f989aa,
+    300: #f75988,
+    400: #f5366f,
+    500: #f31255,
+    600: #f1104e,
+    700: #ef0d44,
+    800: #ed0a3b,
+    900: #ea052a,
+    A100: #ffffff,
+    A200: #ffdfe3,
+    A400: #ffacb6,
+    A700: #ff929f,
+    contrast: (50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000,
+    ),
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-green: (
+    50: #e3f4ec,
+    100: #bae3d0,
+    200: #8cd1b0,
+    300: #5ebf90,
+    400: #3cb179,
+    500: #19a361,
+    600: #169b59,
+    700: #12914f,
+    800: #0e8845,
+    900: #087733,
+    A100: #a7ffc4,
+    A200: #74ffa2,
+    A400: #41ff80,
+    A700: #27ff6f,
+    contrast: (50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #000000,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000,
+    ),
+);
+
+
+$mat-myapp-disabled: (
+    50 : #fcf9fb,
+    100 : #f9f1f5,
+    200 : #f5e8ee,
+    300 : #f0dfe7,
+    400 : #edd8e1,
+    500 : #ead1dc,
+    600 : #e7ccd8,
+    700 : #e4c6d3,
+    800 : #e1c0ce,
+    900 : #dbb5c5,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$HOSTEL-Management-Portal-primary: mat-palette($mat-myapp-primary);
+$HOSTEL-Management-Portal-accent: mat.define-palette($md-green, 700, 300, 900);
+$HOSTEL-Management-Portal-red: mat.define-palette($md-red);
+$custom-typography: mat.define-typography-config($font-family: "Inter",
+    );
+@include mat.core($custom-typography);
+// The warn palette is optional (defaults to red).
+$HOSTEL-Management-Portal-warn: mat.define-palette(mat.$red-palette);
+
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$HOSTEL-Management-Portal-theme: mat.define-light-theme((color: (primary: $HOSTEL-Management-Portal-primary,
+                accent: $HOSTEL-Management-Portal-accent,
+                warn: $HOSTEL-Management-Portal-red,
+            ),
+        ));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($HOSTEL-Management-Portal-theme);

@@ -1,0 +1,113 @@
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: hsla(223, 36%, 81%, 1) !important;
+}
+
+.mat-form-field-appearance-standard .mat-form-field-wrapper {
+    padding-bottom: 1.34375em !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+    padding-bottom: 0.625em !important;
+}
+
+mat-form-field.mat-form-field.mat-form-field-appearance-outline>div.mat-form-field-wrapper>div.mat-form-field-flex>div.mat-form-field-infix {
+    padding: 8px 0px;
+}
+
+mat-form-field.mat-form-field.mat-form-field-appearance-outline>div.mat-form-field-wrapper>div.mat-form-field-flex>div.mat-form-field-infix>span.mat-form-field-label-wrapper {
+    top: -1.2em;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.32373em) scale(0.75) !important;
+    width: 133.3333533333%;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+    color: red !important;
+    opacity: 0.8 !important;
+}
+
+//// ========[Mat Dialog Style]=============
+.mat-dialog-container {
+    box-shadow: none !important;
+}
+
+// ========[Mat Menu Style]=============
+mat-menu button {
+    padding: 8px 12px;
+}
+
+.mat-menu-content:not(:empty) {
+    padding: 4px 2px;
+}
+
+.mat-menu-panel {
+    box-shadow: none !important;
+    min-height: inherit;
+}
+
+// ========[Mat Button Toggle]=============
+.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height: 36px;
+}
+
+.mat-button-toggle-group {
+    height: fit-content;
+}
+
+.mat-form-field {
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 1.125;
+    font-family: "Rubik", sans-serif;
+    letter-spacing: normal;
+}
+
+// ========[Mat step header]=============
+.mat-step-header {
+    height: inherit !important;
+    padding: 12px 12px !important;
+
+    &[ng-reflect-selected="true"] {
+        background-color: rgba(0, 0, 0, 0.04);
+        border-radius: 8px;
+        border: var(--primaryBlue-12) solid 1px;
+    }
+}
+
+.mat-menu-item {
+    display: flex !important;
+    align-items: center;
+}
+
+//Dropdown
+.mat-select-panel {
+    background: #ffffff;
+    border: 1px solid #e9edf5;
+    border-radius: 8px;
+}
+
+.mat-select-panel:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+    background: hsla(214, 100%, 54%, 0.12);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.mat-menu-panel {
+    box-shadow: none;
+    min-height: 0 !important;
+    border: 1px solid var(--border-color);
+
+    .mat-menu-content {
+        &:not(:empty) {
+            padding: 0px;
+        }
+    }
+}

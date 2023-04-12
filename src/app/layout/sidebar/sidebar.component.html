@@ -1,0 +1,47 @@
+<div class="sidebar" data-closed="true">
+  <ul class="list" role="list">
+    <li
+      class="list-item-container mb-1"
+      role="listitem"
+      *ngFor="let item of sidebarList; let i = index"
+    >
+      <div
+        class="list-item"
+        [title]="item.title"
+        [attr.data-index]="i"
+        (click)="ListItemClickHandler($event)"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 48 48"
+          [innerHTML]="
+            sanitizer.bypassSecurityTrustHtml
+              | function_caller : this.sidebarIcons[item.icon]
+          "
+        ></svg>
+
+        <span class="list-item-title"> {{ item.title }} </span>
+      </div>
+      <div
+        class="sub-item-container"
+        [attr.data-expanded]="false"
+        [attr.data-maxheight]="0"
+      >
+        <ng-container>
+          <a
+            class="d-flex sub-item"
+            *ngFor="let subItem of item?.SubMenus; let j = index"
+            [routerLink]="subItem.path"
+            [title]="subItem.title"
+            (click)="SidebarSubItemClickHandler(i, j, subItem.title)"
+          >
+            <span class="submenu-list-item-title text-color-medium">
+              {{ subItem.title }}
+            </span>
+          </a>
+        </ng-container>
+      </div>
+    </li>
+  </ul>
+</div>

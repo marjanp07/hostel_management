@@ -1,0 +1,67 @@
+.custom-cardBox {
+	border: none;
+	background-color: transparent;
+}
+
+.auth-page-container {
+	.lottie-container {
+		flex: 0.6;
+
+		.login-lottie {
+			height: 90vh;
+			width: auto;
+		}
+	}
+
+	.login-wrapper {
+		flex: 0.4;
+
+		.custom-cardBox {
+			width: 80%;
+			padding: 30px;
+
+			.img-container {
+				margin: auto;
+
+				img {
+					max-height: 70px;
+					max-width: 100%;
+					object-fit: contain;
+
+					margin-left: 50%;
+					transform: translateX(-50%);
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.lottie-container {
+		flex: 1;
+	}
+
+	.login-wrapper {
+		flex: 1 !important;
+
+		.custom-cardBox {
+			width: 70%;
+			padding: 30px;
+		}
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.lottie-container {
+		display: none !important;
+	}
+
+	.login-wrapper {
+		flex: 1 !important;
+
+		.custom-cardBox {
+			width: 70%;
+			padding: 30px;
+		}
+	}
+}

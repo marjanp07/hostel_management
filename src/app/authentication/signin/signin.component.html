@@ -1,0 +1,60 @@
+<div class="custom-display-flex-center auth-page-container min-vh-100">
+  <aside class="lottie-container">
+    <lottie-player
+      class="lottie-player login-lottie"
+      src="../../../assets/lottie-files/loginPage.json"
+      background="transparent"
+      speed="1"
+      autoplay
+      loop
+    ></lottie-player>
+  </aside>
+  <div class="login-wrapper m-auto">
+    <div class="custom-cardBox m-auto">
+      <figure class="img-container" *ngIf="Emblem">
+        <img [src]="baseUrl + Emblem" alt="Institution Logo" />
+      </figure>
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+        class="custom-flex-wrap mt-2"
+      >
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Institution</mat-label>
+          <mat-select required formControlName="InstitutionID">
+            <mat-option
+              *ngFor="let item of Institutions"
+              [value]="item.InstitutionID"
+            >
+              {{ item.InstitutionName }}
+            </mat-option>
+          </mat-select>
+          <mat-icon matPrefix>school</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>UserID</mat-label>
+          <input required matInput formControlName="UserID" />
+          <mat-icon matPrefix>face</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            required
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            formControlName="Password"
+          />
+          <mat-icon class="cursor-pointer" matSuffix (click)="hide = !hide">{{
+            hide ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </mat-form-field>
+
+        <button mat-flat-button color="primary" type="submit" class="w-100">
+          LOGIN
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<nav class="header d-flex justify-content-between align-items-center">
+  <div class="d-flex align-items-center">
+    <button
+      class="menu-btn auto-button cursor-pointer"
+      (click)="toggleSidebar()"
+      id="menu-btn"
+      type="button"
+      [attr.aria-expanded]="ConfigServe.SidebarState.menuBtnClosed"
+      aria-label="menu-toggle"
+    >
+      <mat-icon class="mt-2">
+        {{ ConfigServe.SidebarState.menuBtnClosed ? "close" : "menu" }}
+      </mat-icon>
+    </button>
+    <span class="text-base font-bold mx-2">Hostel Management</span>
+  </div>
+
+  <div class="d-flex header-action-container">
+    <span class="divider mx-1"> </span>
+    <div
+      class="d-flex align-items-center cursor-pointer mx-1"
+      [matMenuTriggerFor]="menu"
+    >
+      <a role="button" class="pt-0" tabindex="0">
+        <img
+          src="../../../assets/svg/avatar/defaultUser.svg"
+          class="rounded-circle shadow-none"
+          width="32"
+          height="32"
+          alt="User"
+          (error)="userDefaultImage($event)"
+        />
+      </a>
+
+      <mat-menu #menu="matMenu" class="my-2">
+        <div class="d-flex border-bottom-1 align-items-center header-menu-item">
+          <img
+            src="../../../assets/svg/avatar/defaultUser.svg"
+            class="rounded-circle shadow-none"
+            width="32"
+            height="32"
+            alt="User"
+            (error)="userDefaultImage($event)"
+          />
+
+          <div class="d-flex flex-column mx-3">
+            <span class="text-base font-semibold text-subtitle-1">
+              John Doe
+            </span>
+
+            <span class="text-sm font-normal text-color-medium"> Admin </span>
+          </div>
+        </div>
+
+        <div
+          class="d-flex align-items-center justify-content-start border-top-1 header-menu-item"
+        >
+          <!-- logout -->
+          <mat-icon class="mr-3"> logout </mat-icon>
+          <span class="header-menu-title font-normal text-color-base text-base"
+            >Log Out</span
+          >
+        </div>
+      </mat-menu>
+    </div>
+  </div>
+</nav>
