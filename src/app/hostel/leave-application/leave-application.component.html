@@ -1,1 +1,28 @@
-<p>leave-application works!</p>
+<form class="row g-3" [formGroup]="registrationForm" (ngSubmit)="onsub()">
+    <div>
+        <label for="validationDefault02" class="form-label">Name</label>
+          <input type="text" class="form-control" formControlName="Name"  required>
+    
+          <label for="validationDefault02" class="form-label">Application date</label>
+          <input type="date" class="form-control" formControlName="Application_date"  required>
+
+
+          <label for="validationDefault02" class="form-label">Leave form</label>
+          <input type="date" class="form-control" formControlName="Leave_from"  required>
+
+          <label for="validationDefault02" class="form-label">Leave till</label>
+          <input type="date" class="form-control" formControlName="Leave_till"  required>
+
+          <label for="validationDefault02" class="form-label">Reason</label>
+          <input type="text" class="form-control" formControlName="Reason"  required>
+
+          <label for="validationDefault02" class="form-label">Visiting person</label>
+          <input type="text" class="form-control" formControlName="Visiting_person"  required>
+
+          <label for="validationDefault02" class="form-label">Guardian details</label>
+          <input type="text" class="form-control" formControlName="Guardian_details"  required>
+
+          <button class="btn btn-primary" type="submit" >Submit form</button>
+
+    </div>
+</form>          
