@@ -1,1 +1,13 @@
-<p>student-attendance works!</p>
+<form class="row g-3" [formGroup]="registrationForm" (ngSubmit)="onsub()">
+    <div>
+        <label for="validationDefault02" class="form-label">Name</label>
+          <input type="text" class="form-control" formControlName="Name"  required>
+
+          <label for="validationDefault02" class="form-label">Room no</label>
+          <input type="number" class="form-control" formControlName="Room_no"  required>
+
+          <label for="validationDefault02" class="form-label">Attendance status</label>
+          <input type="text" class="form-control" formControlName="Attendance_status"  required>
+
+    </div>
+</form>
