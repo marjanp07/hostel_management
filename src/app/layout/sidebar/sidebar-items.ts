@@ -75,7 +75,6 @@ export const StudentRoute: RouteInfo[] = [
         SubMenus: [],
       },
       {
-        // path: 'https://ariu.edu.qa/',
         path: 'hostel/hi',
         title: 'Room vacate',
         iconType: 'material-icons-two-tone',
