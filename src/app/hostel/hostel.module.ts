@@ -4,6 +4,9 @@ import { RoomVacateComponent } from './room-vacate/room-vacate.component';
 import { AdmissionEntryComponent } from './admission-entry/admission-entry.component';
 import { AddRoomComponent } from './add-room/add-room.component';
 import { AssetsComponent } from './assets/assets.component';
+import { LeaveApplicationComponent } from './leave-application/leave-application.component';
+import { StudentAttendanceComponent } from './student-attendance/student-attendance.component';
+import { OutpassComponent } from './outpass/outpass.component';
 
 
 
@@ -12,7 +15,10 @@ import { AssetsComponent } from './assets/assets.component';
     RoomVacateComponent,
     AdmissionEntryComponent,
     AddRoomComponent,
-    AssetsComponent
+    AssetsComponent,
+    LeaveApplicationComponent,
+    StudentAttendanceComponent,
+    OutpassComponent
   ],
   imports: [
     CommonModule
