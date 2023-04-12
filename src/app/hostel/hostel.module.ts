@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RoomVacateComponent } from './room-vacate/room-vacate.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    RoomVacateComponent
+  ],
   imports: [
     CommonModule
   ]
