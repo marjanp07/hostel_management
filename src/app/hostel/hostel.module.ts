@@ -7,7 +7,9 @@ import { AssetsComponent } from './assets/assets.component';
 import { LeaveApplicationComponent } from './leave-application/leave-application.component';
 import { StudentAttendanceComponent } from './student-attendance/student-attendance.component';
 import { OutpassComponent } from './outpass/outpass.component';
+import { HostelRoutingModule } from './hostel-routing.module';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +23,10 @@ import { OutpassComponent } from './outpass/outpass.component';
     OutpassComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HostelRoutingModule,
+   FormsModule,
+   ReactiveFormsModule 
   ]
 })
 export class HostelModule { }

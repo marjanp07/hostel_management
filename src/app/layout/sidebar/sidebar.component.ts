@@ -45,8 +45,8 @@ export class SidebarComponent implements AfterViewInit {
         let subMenu = new SubMenuItems(
           '0',
           subItem.title,
+          subItem.icon,
           subItem.path,
-          subItem.icon
         );
         mainMenu.SubMenus.push(subMenu);
       });

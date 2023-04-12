@@ -13,6 +13,8 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ErrorInterceptor } from './shared/authHelpers/error.interceptor';
 import { JwtInterceptor } from './shared/authHelpers/jwt.interceptor';
 import { FunctionCallerPipe } from './shared/pipes/function-caller.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 export function getBaseUrl() {
   return document.getElementsByTagName('base')[0].href;
@@ -32,6 +34,8 @@ export function getBaseUrl() {
     BrowserAnimationsModule,
     MatIconModule,
     MatMenuModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: 'BASE_URL', useFactory: getBaseUrl },
