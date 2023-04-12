@@ -1,14 +1,28 @@
-<!-- <form class="row g-3" [formGroup]="registrationForm" (ngSubmit)="onsub()"> -->
+
 <form>
-    <div>
-        <label for="validationDefault02" class="form-label">Name</label>
-          <input type="text" class="form-control" formControlName="Name"  required>
+    
+    <div class="s">
 
-          <label for="validationDefault02" class="form-label">Room no</label>
-          <input type="number" class="form-control" formControlName="Room_no"  required>
+        <div class="mb-10"> 
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="Name" aria-describedby="emailHelp">
+          </div>
 
-          <label for="validationDefault02" class="form-label">Attendance status</label>
-          <input type="text" class="form-control" formControlName="Attendance_status"  required>
+          <div class="mb-10"> 
+            <label class="form-label">Room no</label>
+            <input type="text" class="form-control" formControlName="Room_no" aria-describedby="emailHelp">
+          </div>
+
+          <div class="mb-10"> 
+            <label class="form-label">Attendance status</label>
+            <input type="text" class="form-control" formControlName="Attendance_status" aria-describedby="emailHelp">
+          </div>
+
+          <br>
+<button type="submit" class="btn btn-primary" >Update</button>
+
 
     </div>
 </form>
+
+
