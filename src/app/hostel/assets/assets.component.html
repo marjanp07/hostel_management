@@ -1,0 +1,22 @@
+<form class="row g-3" [formGroup]="registrationForm" (ngSubmit)="onsub()">
+    <div>
+        <label for="validationDefault02" class="form-label">Asset No</label>
+          <input type="number" class="form-control" formControlName="Asset_no"  required>
+    
+          <label for="validationDefault02" class="form-label">Asset name</label>
+          <input type="text" class="form-control" formControlName="Asset_name"  required>
+    
+          <label for="validationDefault04" class="form-label">Asset type</label>
+            <select class="form-select" formControlName="Asset type" required>
+              <option  value="Furniture">Furniture</option>
+              <option value="Female">Female</option>
+              <option value="Others">Otherss</option>
+            </select>
+    
+    <!-- changes-->
+    
+        </div>
+    </form>   
+    
+    
+
