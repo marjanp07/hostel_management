@@ -3,13 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { RoomVacateComponent } from './room-vacate/room-vacate.component';
 import { StudentAttendanceComponent } from './student-attendance/student-attendance.component';
 import { AdmissionEntryComponent } from './admission-entry/admission-entry.component';
+import { LeaveApplicationComponent } from './leave-application/leave-application.component';
 
 
 const routes: Routes = [
 
   { path:'hi', component: RoomVacateComponent},
   { path:'attendance',component:StudentAttendanceComponent},
-  { path:'admissionEntry',component:AdmissionEntryComponent}
+  { path:'admissionEntry',component:AdmissionEntryComponent},
+  { path:'leave',component:LeaveApplicationComponent},
 
 
 ];
