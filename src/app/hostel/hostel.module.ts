@@ -10,8 +10,13 @@ import { OutpassComponent } from './outpass/outpass.component';
 import { HostelRoutingModule } from './hostel-routing.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { HostelFeeComponent } from './hostel-fee/hostel-fee.component';
 import { FeeReductionComponent } from './fee-reduction/fee-reduction.component';
+=======
+import { MessFeeComponent } from './mess-fee/mess-fee.component';
+import { TotallBillGenerateComponent } from './totall-bill-generate/totall-bill-generate.component';
+>>>>>>> bfcba7a3e48778c12c8ed140e881efa15115bf56
 
 
 @NgModule({
@@ -23,8 +28,13 @@ import { FeeReductionComponent } from './fee-reduction/fee-reduction.component';
     LeaveApplicationComponent,
     StudentAttendanceComponent,
     OutpassComponent,
+<<<<<<< HEAD
     HostelFeeComponent,
     FeeReductionComponent
+=======
+    MessFeeComponent,
+    TotallBillGenerateComponent
+>>>>>>> bfcba7a3e48778c12c8ed140e881efa15115bf56
   ],
   imports: [
     CommonModule,
