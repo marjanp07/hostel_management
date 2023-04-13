@@ -169,7 +169,7 @@ export const StudentRoute: RouteInfo[] = [
             SubMenus: [],
           },
           {
-            path: 'https://ariu.edu.qa/',
+            path: 'hostel/hostel_fee',
             title: 'Hostel fee',
             iconType: 'material-icons-two-tone',
             icon: 'application',
@@ -181,7 +181,7 @@ export const StudentRoute: RouteInfo[] = [
             SubMenus: [],
           },
           {
-            path: 'https://ariu.edu.qa/',
+            path: 'hostel/fee_reduction',
             title: 'Fee reduction',
             iconType: 'material-icons-two-tone',
             icon: 'about',
