@@ -6,6 +6,7 @@ import { AdmissionEntryComponent } from './admission-entry/admission-entry.compo
 import { LeaveApplicationComponent } from './leave-application/leave-application.component';
 import { AddRoomComponent } from './add-room/add-room.component';
 import { AssetsComponent } from './assets/assets.component';
+import { OutpassComponent } from './outpass/outpass.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path:'leave',component:LeaveApplicationComponent},
   { path:'add_room',component:AddRoomComponent},
   { path:'assets',component:AssetsComponent},
+  { path:'outpass',component:OutpassComponent},
 
 
 ];
