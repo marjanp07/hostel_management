@@ -64,7 +64,7 @@ export const StudentRoute: RouteInfo[] = [
         SubMenus: [],
       },
       {
-        path: 'hostel/hi',
+        path: 'hostel/roomvacate',
         title: 'Room vacate',
         iconType: 'material-icons-two-tone',
         icon: 'application',
@@ -157,7 +157,7 @@ export const StudentRoute: RouteInfo[] = [
         badgeClass: '',
         SubMenus: [
           {
-            path: 'https://ariu.edu.qa/about-ariu/admission-requirements/',
+            path: 'hostel/messfee',
             title: 'Mess fee',
             iconType: 'material-icons-two-tone',
             icon: 'admission',
@@ -209,7 +209,7 @@ export const StudentRoute: RouteInfo[] = [
           badgeClass: '',
           SubMenus: [
             {
-              path: 'https://ariu.edu.qa/about-ariu/admission-requirements/',
+              path: 'hostel/total_bill',
               title: 'Genarate total bill',
               iconType: 'material-icons-two-tone',
               icon: 'admission',

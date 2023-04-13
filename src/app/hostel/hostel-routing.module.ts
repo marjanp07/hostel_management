@@ -7,17 +7,21 @@ import { LeaveApplicationComponent } from './leave-application/leave-application
 import { AddRoomComponent } from './add-room/add-room.component';
 import { AssetsComponent } from './assets/assets.component';
 import { OutpassComponent } from './outpass/outpass.component';
+import { MessFeeComponent } from './mess-fee/mess-fee.component';
+import { TotallBillGenerateComponent } from './totall-bill-generate/totall-bill-generate.component';
 
 
 const routes: Routes = [
 
-  { path:'hi', component: RoomVacateComponent},
+  { path:'roomvacate', component: RoomVacateComponent},
   { path:'attendance',component:StudentAttendanceComponent},
   { path:'admissionEntry',component:AdmissionEntryComponent},
   { path:'leave',component:LeaveApplicationComponent},
   { path:'add_room',component:AddRoomComponent},
   { path:'assets',component:AssetsComponent},
   { path:'outpass',component:OutpassComponent},
+  { path:'messfee',component:MessFeeComponent},
+  { path:'total_bill',component:TotallBillGenerateComponent},
 
 
 ];
