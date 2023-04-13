@@ -116,7 +116,7 @@ export const StudentRoute: RouteInfo[] = [
           SubMenus: [],
         },
         {
-          path: 'https://ariu.edu.qa/',
+          path: 'hostel/outpass',
           title: 'Outpass',
           iconType: 'material-icons-two-tone',
           icon: 'application',
