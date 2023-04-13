@@ -11,6 +11,8 @@ import { HostelFeeComponent } from './hostel-fee/hostel-fee.component';
 import { FeeReductionComponent } from './fee-reduction/fee-reduction.component';
 import { MessFeeComponent } from './mess-fee/mess-fee.component';
 import { TotallBillGenerateComponent } from './totall-bill-generate/totall-bill-generate.component';
+import { AllotRoomComponent } from './admission-entry/allot-room/allot-room.component';
+import { RoomAllotComponent } from './room-allot/room-allot.component';
 
 
 const routes: Routes = [
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path:'fee_reduction',component:FeeReductionComponent},
   { path:'messfee',component:MessFeeComponent},
   { path:'total_bill',component:TotallBillGenerateComponent},
+  { path:'allot_room',component:AllotRoomComponent},
+  { path:'room_allot',component:RoomAllotComponent},
 
 
 ];

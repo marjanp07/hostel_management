@@ -27,6 +27,7 @@ ngOnInit(): void {
   // this.apiService.readdata1().subscribe((datas: Shop[])=>{
   //   this.datas1 = datas;
   //   console.log(this.datas1)
+
   // })
 }
 
