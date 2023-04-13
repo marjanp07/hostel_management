@@ -1,26 +1,40 @@
-<h2 class="b"><u>ADD ROOMS</u></h2>
-<div class="a">
 
-    <label for="validationDefault02" class="form-label">Room</label>
-        <input type="text" class="form-control" formControlName="Room_name"  required>
 
-        <label for="validationDefault02" class="form-label">Block</label>
-        <input type="text" class="form-control" formControlName="Block_name"  required>
+<form>
+        <div class="s">
+    
+    <div class="mb-10">
+      <label class="form-label">Room Name </label>
+      <input type="text" class="form-control" formControlName="Room_name" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-10">
+      <label class="form-label">Block Name</label>
+      <input type="text" class="form-control" formControlName="Block_name">
+    </div>
+    
+    <div class="mb-10">
+        <label class="form-label">Floor </label>
+        <input type="text" class="form-control" formControlName="Floor">
+      </div>
+    
+    
+    <div class="mb-10"> 
+        <label class="form-label">Total space</label>
+        <input type="number" class="form-control" formControlName="Total_space" aria-describedby="emailHelp">
+      </div>
 
-        <label for="validationDefault02" class="form-label">Floor</label>
-        <input type="text" class="form-control" formControlName="Floor"  required>
+      <div class="mb-10"> 
+        <label class="form-label">Available space</label>
+        <input type="number" class="form-control" formControlName="Available_space" aria-describedby="emailHelp">
+      </div>
 
-        <label for="validationDefault02" class="form-label">Total space</label>
-        <input type="number" class="form-control" formControlName="Total_space"  required>
-
-        <label for="validationDefault02" class="form-label">Available space</label>
-        <input type="number" class="form-control" formControlName="Available_space"  required>
-
-        <label for="validationDefault02" class="form-label">photo</label>
-        <input type="file" class="form-control" formControlName="photo"  required><br>
-</div>
-<div class="b">
-        <button class="btn btn-primary" type="submit">Add room</button>
-</div>
-
+      <div class="mb-10"> 
+        <label class="form-label">photo</label>
+        <input type="file" class="form-control" formControlName="photo" aria-describedby="emailHelp">
+      </div>
+    
+    <br>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+    </div>
+    </form>
 
