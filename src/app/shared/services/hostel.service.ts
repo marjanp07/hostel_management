@@ -17,13 +17,19 @@ export class HostelService {
 
 
   createPolicy1(product: Room):Observable<Room>{
-      
-  console.log(product);
+    
+      console.log(product);
+  
   
       
-    return this.httpClient.post<Room>(this.baseApiUrl+'/api/Class1',product);
+    return this.httpClient.post<Room>(this.baseApiUrl+'/api/AddRoom',product);
     
 }
+
+readdata(){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/AddRoom');
+  }
+
 
 /// gwtroom 
 }

@@ -10,6 +10,7 @@ import { Room } from '../room.model';
   styleUrls: ['./add-room.component.scss']
 })
 export class AddRoomComponent implements OnInit {
+  datas1: Room[]=[];
   constructor(private fb:FormBuilder ,private apiService:HostelService, private router:Router) { }
 
   registrationForm=this.fb.group({
@@ -28,6 +29,15 @@ export class AddRoomComponent implements OnInit {
 
 
 ngOnInit(): void {
+
+  this.apiService.readdata().subscribe((datas: Room[])=>{
+    this.datas1 = datas;
+   
+
+  
+
+  })
+
 }
 
 
@@ -38,7 +48,7 @@ onsub()
   this.apiService.createPolicy1(data1).subscribe((product: any)=>{
   
    
- this.router.navigate(['/demo'])
+ this.router.navigate(['/allot_room'])
 });
 
 }

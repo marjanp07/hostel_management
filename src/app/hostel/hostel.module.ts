@@ -15,7 +15,7 @@ import { FeeReductionComponent } from './fee-reduction/fee-reduction.component';
 import { MessFeeComponent } from './mess-fee/mess-fee.component';
 import { TotallBillGenerateComponent } from './totall-bill-generate/totall-bill-generate.component';
 import { AllotRoomComponent } from './admission-entry/allot-room/allot-room.component';
-import { RoomAllotComponent } from './room-allot/room-allot.component';
+// import { RoomAllotComponent } from './room-allot/room-allot.component';
 
 
 @NgModule({
@@ -32,7 +32,7 @@ import { RoomAllotComponent } from './room-allot/room-allot.component';
     MessFeeComponent,
     TotallBillGenerateComponent,
     AllotRoomComponent,
-    RoomAllotComponent
+    // RoomAllotComponent
   ],
   imports: [
     CommonModule,
