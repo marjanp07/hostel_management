@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RoomVacateComponent } from './room-vacate/room-vacate.component';
 import { AdmissionEntryComponent } from './admission-entry/admission-entry.component';
-import { AddRoomComponent } from './add-room/add-room.component';
+import { AddRoomComponent } from './room/add-room/add-room.component';
 import { AssetsComponent } from './assets/assets.component';
 import { LeaveApplicationComponent } from './leave-application/leave-application.component';
 import { StudentAttendanceComponent } from './student-attendance/student-attendance.component';
@@ -15,7 +15,16 @@ import { FeeReductionComponent } from './fee-reduction/fee-reduction.component';
 import { MessFeeComponent } from './mess-fee/mess-fee.component';
 import { TotallBillGenerateComponent } from './totall-bill-generate/totall-bill-generate.component';
 import { AllotRoomComponent } from './admission-entry/allot-room/allot-room.component';
+import { RoomComponent } from './room/room.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 @NgModule({
@@ -32,13 +41,21 @@ import { AllotRoomComponent } from './admission-entry/allot-room/allot-room.comp
     MessFeeComponent,
     TotallBillGenerateComponent,
     AllotRoomComponent,
+    RoomComponent,
     // RoomAllotComponent
   ],
   imports: [
     CommonModule,
     HostelRoutingModule,
    FormsModule,
-   ReactiveFormsModule 
+   ReactiveFormsModule,
+   MatFormFieldModule,
+   MatMenuModule,
+   MatTableModule,
+   MatButtonModule,
+   MatIconModule,
+   MatDialogModule,
+   MatInputModule
   ]
 })
 export class HostelModule { }

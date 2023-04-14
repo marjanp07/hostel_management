@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 export function getBaseUrl() {
+  // return "https://localhost:44395/";
   return document.getElementsByTagName('base')[0].href;
 }
 

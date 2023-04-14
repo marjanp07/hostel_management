@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Room } from 'src/app/shared/interfaces/hostel.interface';
 import { HostelService } from 'src/app/shared/services/hostel.service';
-import { Room } from '../room.model';
+// import { Room } from '../../room.model';
 
 @Component({
   selector: 'app-add-room',
@@ -30,13 +31,13 @@ export class AddRoomComponent implements OnInit {
 
 ngOnInit(): void {
 
-  this.apiService.readdata().subscribe((datas: Room[])=>{
-    this.datas1 = datas;
+  // this.apiService.readdata().subscribe((datas: Room[])=>{
+  //   this.datas1 = datas;
    
 
   
 
-  })
+  // })
 
 }
 

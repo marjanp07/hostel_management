@@ -12,8 +12,23 @@ export const StudentRoute: RouteInfo[] = [
     taget: true,
     badgeClass: '',
     SubMenus: [
+
       {
-        path: 'hostel/add_room',
+        path: 'hostel/room',
+        title: ' room',
+        iconType: 'material-icons-two-tone',
+        icon: 'admission',
+        class: '',
+        groupTitle: false,
+        badge: '',
+        taget: true,
+        badgeClass: '',
+        SubMenus: [],
+      },
+      {
+
+
+        path: 'hostel/room/add_room',
         title: 'Add room/Block',
         iconType: 'material-icons-two-tone',
         icon: 'admission',

@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Room } from 'src/app/hostel/room.model';
+import { Room } from '../interfaces/hostel.interface';
+// import { Room } from 'src/app/hostel/room.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class HostelService {
 
 
   createPolicy1(product: Room):Observable<Room>{
-    
+
       console.log(product);
   
   
@@ -27,7 +28,9 @@ export class HostelService {
 }
 
 readdata(){
-  return this.httpClient.get<any>(this.baseApiUrl+'/api/AddRoom');
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<Room[]>(this.baseApiUrl+'api/AddRoom')!.toPromise();
   }
 
 
