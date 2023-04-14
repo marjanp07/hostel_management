@@ -43,3 +43,15 @@ export interface Room{
   photo:string
 
 }
+
+//room vacate
+export interface vacate{
+
+  hosteler_name:string
+  reg_no:number
+  vacating_date:string
+  vacating_reason:string
+
+
+
+}

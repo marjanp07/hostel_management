@@ -11,17 +11,17 @@ import { HostelService } from 'src/app/shared/services/hostel.service';
   styleUrls: ['./add-room.component.scss']
 })
 export class AddRoomComponent implements OnInit {
-  datas1: Room[]=[];
-  constructor(private fb:FormBuilder ,private apiService:HostelService, private router:Router) { }
+//   datas1: Room[]=[];
+//   constructor(private fb:FormBuilder ,private apiService:HostelService, private router:Router) { }
 
-  registrationForm=this.fb.group({
-    Room_name:['',[Validators.required]],
-    Block_name:['',[Validators.required]],
-    Floor:[0,[Validators.required]],
-    Total_space:[0,[Validators.required]],
-    Available_space:[0,[Validators.required]],
-    photo:['',[Validators.required]],
-})
+//   registrationForm=this.fb.group({
+//     Room_name:['',[Validators.required]],
+//     Block_name:['',[Validators.required]],
+//     Floor:[0,[Validators.required]],
+//     Total_space:[0,[Validators.required]],
+//     Available_space:[0,[Validators.required]],
+//     photo:['',[Validators.required]],
+// })
 
 // get f()
 // {
@@ -42,15 +42,15 @@ ngOnInit(): void {
 }
 
 
-onsub()
-{
-  let data1 = this.registrationForm.value as Room;
+// onsub()
+// {
+//   let data1 = this.registrationForm.value as Room;
 
-  this.apiService.createPolicy1(data1).subscribe((product: any)=>{
+//   this.apiService.createPolicy1(data1).subscribe((product: any)=>{
   
    
- this.router.navigate(['/allot_room'])
-});
+//  this.router.navigate(['/allot_room'])
+// });
 
-}
+// }
 }

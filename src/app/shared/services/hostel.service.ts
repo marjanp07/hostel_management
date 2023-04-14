@@ -1,29 +1,29 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Room } from '../interfaces/hostel.interface';
+import { Room, vacate } from '../interfaces/hostel.interface';
+import { environment } from 'src/environments/environment';
 // import { Room } from 'src/app/hostel/room.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HostelService {
-  baseApiUrl: string | undefined;
+  baseApiUrl: string | undefined = environment.baseApiUrl;
 
   constructor(private httpClient: HttpClient,
-    @Inject("BASE_URL") baseUrl:string
+    
     ) { 
-      this.baseApiUrl = baseUrl
     }
 
 
-  createPolicy1(product: Room):Observable<Room>{
+  createPolicy1(product: vacate):Observable<vacate>{
 
       console.log(product);
   
   
       
-    return this.httpClient.post<Room>(this.baseApiUrl+'/api/AddRoom',product);
+    return this.httpClient.post<vacate>(this.baseApiUrl+'api/Class1',product);
     
 }
 
