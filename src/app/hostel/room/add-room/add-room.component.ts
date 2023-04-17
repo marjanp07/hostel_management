@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Room } from 'src/app/shared/interfaces/hostel.interface';
+
 import { HostelService } from 'src/app/shared/services/hostel.service';
 import { MatInputModule } from '@angular/material/input';
 // import { Room } from '../../room.model';
@@ -15,7 +16,7 @@ export class AddRoomComponent implements OnInit {
   data : any ;
   image: any;
   // data1s: Room[]=[];
-  constructor(private fb:FormBuilder ,private apiService:HostelService, private router:Router) { }
+  constructor(private fb:FormBuilder ,private apiService:HostelService, private router:Router,private route: ActivatedRoute) { }
 
   registrationForm=this.fb.group({
     Room_name:['',[Validators.required]],
@@ -31,29 +32,57 @@ get f()
   return this.registrationForm.controls;
 }
 
-onFileSelect (event:any)
-{if (event.target.files.length > 0) {
-  this.image= event.target.files[0];
-}}
+
 ngOnInit(): void {
-  this.data = true
-  // this.apiService.readdata().subscribe((datas: Room[])=>{
-  //   this.datas1 = datas;
+  const id = this.route.snapshot.params['id'];
+  if(id == 0)
+    console.log("add");
+  else if( id > 0)
+    console.log("edit");
+}
+  onsub()
+  {
+    let data1 = this.registrationForm.value as Room;
+  
+    this.apiService.AddRooms(data1).subscribe((product: any)=>{
+    
+     
+  //  this.router.navigate(['/home'])
+  });
+  }
+
+
+
+
+
+
+
+
+
+
+// onFileSelect (event:any)
+// {if (event.target.files.length > 0) {
+//   this.image= event.target.files[0];
+// }}
+// ngOnInit(): void {
+//   this.data = true
+//   // this.apiService.readdata().subscribe((datas: Room[])=>{
+//   //   this.datas1 = datas;
    
 
   
 
-  // })
+//   // })
 
-}
-
-
-onsub()
-{
-  console.log(this.registrationForm.value)
-
-  this.apiService.saveRoom(this.registrationForm.value,this.image)
+// }
 
 
-}
+// onsub()
+// {
+//   console.log(this.registrationForm.value)
+
+//   this.apiService.saveRoom(this.registrationForm.value,this.image)
+
+
+// }
 }

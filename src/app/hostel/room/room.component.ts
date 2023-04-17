@@ -26,12 +26,32 @@ export class RoomComponent implements OnInit {
     'ACTIONS'
   ];
 
-  constructor(
-    private Api: HostelService,
-    private dialog: MatDialog,
+  // constructor(
+  //   private Api: HostelService,
+  //   private dialog: MatDialog,
 
-    private router: Router
-  ) {}
+  //   private router: Router
+  // ) {}
+
+  // async ngOnInit(): Promise<void> {
+  //   this.init();
+  // }
+
+  // async GetDocTypes() {
+  //   this.dataSource.data = (await this.Api.readdata() as unknown as Room[]);
+  // }
+
+  // async init() {
+  //   await this.GetDocTypes();
+  //   this.dataSource.sort = this.sort;
+    
+  // }
+
+
+  /////////////////////////////////////////////////////////////
+
+  datas1:  Room[]=[];
+  constructor(private Api: HostelService) { }
 
   async ngOnInit(): Promise<void> {
     this.init();
@@ -42,13 +62,12 @@ export class RoomComponent implements OnInit {
   }
 
   async init() {
-    await this.GetDocTypes();
-    this.dataSource.sort = this.sort;
-    
-
-    // if (this.permission.EditPermission || this.permission.DeletePermission)
-    //   this.displayedColumns.push('ACTIONS');
-  }
+    this.Api.readroomdata().subscribe((datas: any[])=>{
+      this.datas1 = datas;
+      console.log(this.datas1)
+     
+  });
+}
 
 
 

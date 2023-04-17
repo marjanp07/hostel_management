@@ -25,7 +25,7 @@ const routes: Routes = [
   { path:'admissionEntry',component:AdmissionEntryComponent},
   { path:'leave',component:LeaveApplicationComponent},
   { path:'room',component:RoomComponent},
-  { path:'room/add_room',component:AddRoomComponent},
+  { path:'room/add_room/:id',component:AddRoomComponent},
   { path:'assets',component:AssetsComponent},
   { path:'outpass',component:OutpassComponent},
   { path:'hostel_fee',component:HostelFeeComponent},

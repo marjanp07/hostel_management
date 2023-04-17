@@ -5,6 +5,8 @@ import { HostelService } from 'src/app/shared/services/hostel.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { vacate } from 'src/app/shared/interfaces/hostel.interface';
 import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+import { AddRoomVacateComponent } from './add-room-vacate/add-room-vacate.component';
 @Component({
   selector: 'app-room-vacate',
   templateUrl: './room-vacate.component.html',
@@ -23,14 +25,14 @@ import { MatSort } from '@angular/material/sort';
     'ACTIONS'
   ];
   datas1:  vacate[]=[];
-  constructor(private Api: HostelService) { }
+  constructor(private Api: HostelService,public dialog: MatDialog) { }
 
   async ngOnInit(): Promise<void> {
     this.init();
   }
 
   async GetDocTypes() {
-    this.dataSource.data = (await this.Api.readdata() as unknown as vacate[]);
+    this.dataSource.data = (await this.Api.readdata1() as unknown as vacate[]);
   }
 
   async init() {
@@ -55,6 +57,15 @@ import { MatSort } from '@angular/material/sort';
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  openDialog(vacate?:vacate) {
+    const dialogRef = this.dialog.open(AddRoomVacateComponent, {
+      data:vacate
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   deleteDocType(item: vacate) {

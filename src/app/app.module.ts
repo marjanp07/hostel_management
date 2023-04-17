@@ -14,6 +14,7 @@ import { ErrorInterceptor } from './shared/authHelpers/error.interceptor';
 import { JwtInterceptor } from './shared/authHelpers/jwt.interceptor';
 import { FunctionCallerPipe } from './shared/pipes/function-caller.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
 
 
 export function getBaseUrl() {
@@ -38,6 +39,7 @@ export function getBaseUrl() {
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatDialogModule
   ],
   providers: [
     { provide: 'BASE_URL', useFactory: getBaseUrl },
