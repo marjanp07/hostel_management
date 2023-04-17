@@ -4,7 +4,7 @@
       {{ this.data.val ? "Edit" : "Add" }} Room</span
     >
   </div>
-  <form [formGroup]="AddCognitiveLevelFG">
+  <form [formGroup]="AddRoom">
     <div class="form-row mb-1">
       <mat-form-field appearance="outline" class="col-12 pl-0 mb-2">
         <mat-label class=""> Room Name </mat-label>

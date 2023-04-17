@@ -24,6 +24,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 import {MatInputModule} from '@angular/material/input';
+import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
 
 
 
@@ -42,6 +43,7 @@ import {MatInputModule} from '@angular/material/input';
     TotallBillGenerateComponent,
     AllotRoomComponent,
     RoomComponent,
+    AddRoomVacateComponent,
     // RoomAllotComponent
   ],
   imports: [

@@ -13,11 +13,13 @@ import { MessFeeComponent } from './mess-fee/mess-fee.component';
 import { TotallBillGenerateComponent } from './totall-bill-generate/totall-bill-generate.component';
 import { AllotRoomComponent } from './admission-entry/allot-room/allot-room.component';
 import { RoomComponent } from './room/room.component';
+import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 
 
 const routes: Routes = [
 
+  { path:'roomvacate/addroomvacate/:id', component: AddRoomVacateComponent},
   { path:'roomvacate', component: RoomVacateComponent},
   { path:'attendance',component:StudentAttendanceComponent},
   { path:'admissionEntry',component:AdmissionEntryComponent},

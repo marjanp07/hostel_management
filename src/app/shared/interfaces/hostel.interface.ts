@@ -35,6 +35,7 @@ export interface InstitutionMasterModel {
 
 // Add Room
 export interface Room{
+  id:number
   Room_name:string
   Block_name:string
   Floor:number
@@ -46,7 +47,7 @@ export interface Room{
 
 //room vacate
 export interface vacate{
-
+  id:number
   hosteler_name:string
   reg_no:number
   vacating_date:string

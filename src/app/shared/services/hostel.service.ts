@@ -3,6 +3,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Room, vacate } from '../interfaces/hostel.interface';
 import { environment } from 'src/environments/environment';
+import { map } from 'rxjs/operators';
 // import { Room } from 'src/app/hostel/room.model';
 
 @Injectable({
@@ -23,16 +24,36 @@ export class HostelService {
   
   
       
-    return this.httpClient.post<vacate>(this.baseApiUrl+'api/Class1',product);
+    return this.httpClient.post<vacate>(this.baseApiUrl+'api/vacates',product);
     
 }
 
 readdata(){
   console.log(this.baseApiUrl);
   
-  return this.httpClient.get<Room[]>(this.baseApiUrl+'api/AddRoom')!.toPromise();
+  return this.httpClient.get<Room[]>(this.baseApiUrl+'api/AddRooms');
   }
 
 
-/// gwtroom 
+readvacatedata(){
+  
+  
+  return this.httpClient.get<Room[]>(this.baseApiUrl+'api/vacates');
+  }
+
+saveRoom(formDatas:any,image:any)
+{
+  let formData = new FormData();
+  console.log(formDatas.Room_name)
+  formData.append('Room_name', formDatas.Room_name);
+  formData.append('Block_name', formDatas.Block_name);
+  formData.append('Floor', formDatas.Floor);
+  formData.append('Total_space', formDatas.Total_space);
+  formData.append('Available_space', formDatas.Available_space);
+  formData.append('photo', image);
+  return this.httpClient.post(this.baseApiUrl + "api/AddRooms", formData)
+      .pipe(map(data => {})).subscribe(result => {
+        return result;
+      })
+}
 }

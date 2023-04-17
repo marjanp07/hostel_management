@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Room } from 'src/app/shared/interfaces/hostel.interface';
 import { HostelService } from 'src/app/shared/services/hostel.service';
+import { MatInputModule } from '@angular/material/input';
 // import { Room } from '../../room.model';
 
 @Component({
@@ -11,26 +12,31 @@ import { HostelService } from 'src/app/shared/services/hostel.service';
   styleUrls: ['./add-room.component.scss']
 })
 export class AddRoomComponent implements OnInit {
-//   datas1: Room[]=[];
-//   constructor(private fb:FormBuilder ,private apiService:HostelService, private router:Router) { }
+  data : any ;
+  image: any;
+  // data1s: Room[]=[];
+  constructor(private fb:FormBuilder ,private apiService:HostelService, private router:Router) { }
 
-//   registrationForm=this.fb.group({
-//     Room_name:['',[Validators.required]],
-//     Block_name:['',[Validators.required]],
-//     Floor:[0,[Validators.required]],
-//     Total_space:[0,[Validators.required]],
-//     Available_space:[0,[Validators.required]],
-//     photo:['',[Validators.required]],
-// })
+  registrationForm=this.fb.group({
+    Room_name:['',[Validators.required]],
+    Block_name:['',[Validators.required]],
+    Floor:[0,[Validators.required]],
+    Total_space:[0,[Validators.required]],
+    Available_space:[0,[Validators.required]],
+    photo:['',[Validators.required]],
+})
 
-// get f()
-// {
-//   return this.registrationForm.controls;
-// }
+get f()
+{
+  return this.registrationForm.controls;
+}
 
-
+onFileSelect (event:any)
+{if (event.target.files.length > 0) {
+  this.image= event.target.files[0];
+}}
 ngOnInit(): void {
-
+  this.data = true
   // this.apiService.readdata().subscribe((datas: Room[])=>{
   //   this.datas1 = datas;
    
@@ -42,15 +48,12 @@ ngOnInit(): void {
 }
 
 
-// onsub()
-// {
-//   let data1 = this.registrationForm.value as Room;
+onsub()
+{
+  console.log(this.registrationForm.value)
 
-//   this.apiService.createPolicy1(data1).subscribe((product: any)=>{
-  
-   
-//  this.router.navigate(['/allot_room'])
-// });
+  this.apiService.saveRoom(this.registrationForm.value,this.image)
 
-// }
+
+}
 }

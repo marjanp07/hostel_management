@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { vacate } from 'src/app/shared/interfaces/hostel.interface';
 import { HostelService } from 'src/app/shared/services/hostel.service';
-
+import { MatTableDataSource } from '@angular/material/table';
+import { vacate } from 'src/app/shared/interfaces/hostel.interface';
+import { MatSort } from '@angular/material/sort';
 @Component({
   selector: 'app-room-vacate',
   templateUrl: './room-vacate.component.html',
@@ -11,47 +12,64 @@ import { HostelService } from 'src/app/shared/services/hostel.service';
 })
 // export class RoomVacateComponent implements OnInit {
   export class RoomVacateComponent {
+    dataSource = new MatTableDataSource<vacate>([]);
+    @ViewChild(MatSort, { static: true }) sort: MatSort = new MatSort();
+  displayedColumns: string[] = [
+    'NO',
+    'hosteler_name',
+    'reg_no',
+    'vacating_date',
+    'vacating_reason',
+    'ACTIONS'
+  ];
+  datas1:  vacate[]=[];
+  constructor(private Api: HostelService) { }
 
-
-  // constructor() { }
-
-  // ngOnInit(): void {
-  // }
-
-  constructor(private fb:FormBuilder,private router:Router,private apiService:HostelService) { }
-
-
-
-  registrationForm=this.fb.group({
-
-
-    hosteler_name:['',[Validators.required]],
-    reg_no:[0,[Validators.required]],
-    vacating_date:['',[Validators.required]],
-    vacating_reason:['',[Validators.required]],
-   
-
-
-
-
-
-})
-  onsub()
-  {
-    let data1 = this.registrationForm.value as vacate;
-  
-    this.apiService.createPolicy1(data1).subscribe((product: any)=>{
-    
-     
-  //  this.router.navigate(['/home'])
-  });
+  async ngOnInit(): Promise<void> {
+    this.init();
   }
-  
 
+  async GetDocTypes() {
+    this.dataSource.data = (await this.Api.readdata() as unknown as vacate[]);
+  }
 
+  async init() {
+    this.Api.readvacatedata().subscribe((datas: any[])=>{
+      this.datas1 = datas;
+      console.log(this.datas1)
+     
+  });
+}
 
+  addDocType(item?: vacate) {
+    // const dialogRef = this.dialog.open(AddCognitiveLevelComponent, {
+    //   data: {
+    //     val: item,
+    //   },
+    // });
+    // dialogRef.afterClosed().subscribe(async () => {
+    //   this.GetDocTypes();
+    // });
+  }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
-
+  deleteDocType(item: vacate) {
+    // const dialogRef = this.dialog.open(CommonConfirmationDialogueComponent, {
+    //   width: '400px',
+    //   data: {
+    //     title: 'Delete Cognitive Level',
+    //     description: 'Are you sure you want to dele  te this Cognitive Level?',
+    //     type: 'delete-cognitive-level',
+    //     id: item.CognitiveLevelID,
+    //   },
+    // });
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   this.GetDocTypes();
+    // });
+  }
 
 }

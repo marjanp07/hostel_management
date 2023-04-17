@@ -1,0 +1,27 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onsub()">
+    <div class="s">
+
+<div class="mb-10">
+  <label class="form-label">Hosteler Name </label>
+  <input type="text" class="form-control" formControlName="hosteler_name" aria-describedby="emailHelp">
+</div>
+<div class="mb-10">
+  <label class="form-label">Register Number </label>
+  <input type="number" class="form-control" formControlName="reg_no">
+</div>
+
+<div class="mb-10">
+    <label class="form-label">Vacating Date </label>
+    <input type="date" class="form-control" formControlName="vacating_date">
+  </div>
+
+
+<div class="mb-10"> 
+    <label class="form-label">Vacating Reason</label>
+    <input type="text" class="form-control" formControlName="vacating_reason" aria-describedby="emailHelp">
+  </div>
+
+<br>
+<button type="submit" class="btn btn-primary" >Submit</button>
+</div>
+</form>

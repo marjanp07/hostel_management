@@ -1,48 +1,38 @@
-<!-- <div class="dialogue-body">
-  <div class="row m-0 align-items-center justify-content-between mb-3">
-    <span class="bodyFont-inter-semiBold-16">
-      {{ this.data.val ? "Edit" : "Add" }} Room</span
-    >
-  </div>
-  <form [formGroup]="AddCognitiveLevelFG">
-    <div class="form-row mb-1">
-      <mat-form-field appearance="outline" class="col-12 pl-0 mb-2">
-        <mat-label class=""> Room Name </mat-label>
-        <input matInput type="text" formControlName="Room_name" />
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="col-6 pl-0 mb-2">
-        <mat-label class="">Block name</mat-label>
-        <input matInput type="text" formControlName="Block_name" />
-      </mat-form-field>
 
-      <mat-form-field appearance="outline" class="col-6 pl-0 mb-2">
-        <mat-label class="">Floor</mat-label>
-        <input matInput type="number" formControlName="Floor" />
-      </mat-form-field>
+<form [formGroup]="registrationForm" (ngSubmit)="onsub()">
+  <div class="s">
 
-      <mat-form-field appearance="outline" class="col-6 pl-0 mb-2">
-        <mat-label class="">Total Space</mat-label>
-        <input matInput type="number" formControlName="Total_space" />
-      </mat-form-field>
+<div class="mb-10">
+<label class="form-label">Room Name </label>
+<input type="text" class="form-control" formControlName="Room_name" aria-describedby="emailHelp">
+</div>
+<div class="mb-10">
+<label class="form-label">Block Name</label>
+<input type="text" class="form-control" formControlName="Block_name">
+</div>
 
-      <mat-form-field appearance="outline" class="col-6 pl-0 mb-2">
-        <mat-label class="">Available Space</mat-label>
-        <input matInput type="number" formControlName="Available_space" />
-      </mat-form-field>
+<div class="mb-10">
+  <label class="form-label">Floor </label>
+  <input type="text" class="form-control" formControlName="Floor">
+</div>
 
-      <mat-form-field appearance="outline" class="col-6 pl-0 mb-2">
-        <mat-label class="">photo</mat-label>
-        <input matInput type="file" formControlName="photo" />
-      </mat-form-field>
 
-    </div>
-  </form>
-  <div class="d-flex row m-0 justify-content-end mt-3">
-    <button mat-flat-button class="cancel-button button mr-2" mat-dialog-close>
-      Cancel
-    </button>
-    <button mat-flat-button class="submit-button" (click)="onSubmit()">
-      {{ this.data.val ? "Update" : "Submit" }}
-    </button>
-  </div>
-</div> -->
+<div class="mb-10"> 
+  <label class="form-label">Total Space</label>
+  <input type="number" class="form-control" formControlName="Total_space" aria-describedby="emailHelp">
+</div>
+
+<div class="mb-10"> 
+  <label class="form-label">Available Space</label>
+  <input type="number" class="form-control" formControlName="Available_space" aria-describedby="emailHelp">
+</div>
+
+<div class="mb-10"> 
+  <label class="form-label">photo</label>
+  <input type="file" class="form-control" formControlName="photo"  (change)="onFileSelect($event)" aria-describedby="emailHelp">
+</div>
+
+<br>
+<button type="submit" class="btn btn-primary" >Submit</button>
+</div>
+</form>
