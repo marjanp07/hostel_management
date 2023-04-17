@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Room, asset, vacate } from '../interfaces/hostel.interface';
+import { Room, asset, outPass, vacate } from '../interfaces/hostel.interface';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 // import { Room } from 'src/app/hostel/room.model';
@@ -67,6 +67,36 @@ postassetdata(product: asset):Observable<asset>{
 return this.httpClient.post<asset>(this.baseApiUrl+'api/Assets',product);
 
 }
+
+postOutPass(product: outPass):Observable<outPass>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<outPass>(this.baseApiUrl+'api/outPasses',product);
+
+}
+
+getOutPass(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<outPass[]>(this.baseApiUrl+'api/outPasses');
+  }
+
+readOutPass(id:number){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/outPasses/'+id);
+  }
+
+
+
+updateOutPass(id:number,data:outPass){
+  console.log(id)
+  console.log(data)
+   return this.httpClient.put<any>(this.baseApiUrl+'/api/outPasses/'+id,data);
+   
+ }
+
 
 
 

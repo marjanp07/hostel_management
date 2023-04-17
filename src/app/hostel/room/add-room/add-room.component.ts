@@ -47,7 +47,7 @@ ngOnInit(): void {
     this.apiService.AddRooms(data1).subscribe((product: any)=>{
     
      
-  //  this.router.navigate(['/home'])
+   this.router.navigate(['/room'])
   });
   }
 

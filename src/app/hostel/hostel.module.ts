@@ -26,7 +26,12 @@ import {MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
 import { AddAssetComponent } from './assets/add-asset/add-asset.component';
+<<<<<<< HEAD
 import { UpdateViewassetComponent } from './assets/update-viewasset/update-viewasset.component';
+=======
+import { AddOutPassComponent } from './outpass/add-out-pass/add-out-pass.component';
+import { EditOutPassComponent } from './outpass/edit-out-pass/edit-out-pass.component';
+>>>>>>> ad22aba4bdeba4fee7f741cb7b8af292865d4982
 
 
 
@@ -48,7 +53,12 @@ import { UpdateViewassetComponent } from './assets/update-viewasset/update-viewa
     RoomComponent,
     AddRoomVacateComponent,
     AddAssetComponent,
+<<<<<<< HEAD
     UpdateViewassetComponent,
+=======
+    AddOutPassComponent,
+    EditOutPassComponent,
+>>>>>>> ad22aba4bdeba4fee7f741cb7b8af292865d4982
     // RoomAllotComponent
   ],
   imports: [

@@ -62,14 +62,28 @@ export interface vacate{
   Asset_name:string
   Asset_type:string
   Description:string
-
-
-
-
-
-
-
-
-
-
 }
+
+
+  //Out pass
+
+  export interface outPass{
+    id:number
+    reg_no:number
+    hosteler_name:string
+    Contact_no:number
+    date_of_outpass:string
+    time_of_departure:string
+    return_time:string
+    reason_outpass:string
+  }
+
+
+
+
+
+
+
+
+
+
