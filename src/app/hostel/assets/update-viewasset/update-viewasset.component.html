@@ -1,6 +1,6 @@
+
 <form class="row g-3" [formGroup]="registrationForm" (ngSubmit)="onsub()">
  
-    <!-- <form [formGroup]="registrationForm" (ngSubmit)="onsub()"> -->
         <div class="s">
     
     <!-- <div class="mb-10">
@@ -14,7 +14,6 @@
     
     <div class="mb-10">
         <label class="form-label">Asset type </label>
-        <!-- <input type="date" class="form-control" formControlName="Asset_type"> -->
         <select class="form-select" formControlName="Asset_type" required>
           <option  value="Furniture">Furniture</option>
           <option value="Kitchen facilities">Kitchen facilities</option>
@@ -30,7 +29,7 @@
       </div>
     
     <br>
-    <button type="submit" class="btn btn-primary" >Submit</button>
+    <button type="submit" class="btn btn-primary" >update</button>
     </div>
       </form>
       

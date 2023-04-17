@@ -38,7 +38,7 @@ onsub()
   this.apiService.postassetdata(data1).subscribe((product: any)=>{
   
    
-//  this.router.navigate(['/home'])
+ this.router.navigate(['/hostel/assethome'])
 });
 }
 

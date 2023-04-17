@@ -24,7 +24,7 @@ displayedColumns: string[] = [
   'ACTIONS'
 ];
 datas1:  asset[]=[];
-constructor(private Api: HostelService) { }
+constructor(private Api: HostelService,private r:Router) { }
 
 async ngOnInit(): Promise<void> {
   this.init();
@@ -35,7 +35,7 @@ async GetDocTypes() {
 }
 
 async init() {
-  this.Api.readvacatedata().subscribe((datas: any[])=>{
+  this.Api.getasset().subscribe((datas: asset[])=>{
     this.datas1 = datas;
     console.log(this.datas1)
      
@@ -73,5 +73,15 @@ deleteDocType(item: asset) {
   // });
 }
 
+update(id:number)
+{
+
+this.r.navigate(['/up2',id])
+     
+};
+
+
 }
+
+
 

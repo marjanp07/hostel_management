@@ -15,11 +15,20 @@ import { AllotRoomComponent } from './admission-entry/allot-room/allot-room.comp
 import { RoomComponent } from './room/room.component';
 import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
 import { AddAssetComponent } from './assets/add-asset/add-asset.component';
+import { UpdateViewassetComponent } from './assets/update-viewasset/update-viewasset.component';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 
 
 const routes: Routes = [
-  { path:'assets/addasset/:id', component: AddAssetComponent},
+  { path:'assets/addasset/0', component: AddAssetComponent},
+  // { path:'up2/:id', component: UpdateViewassetComponent},
+  { path:'assets/addasset/:id', component: UpdateViewassetComponent},
+
+  { path:'update', component: AssetsComponent},
+  
+
+  
+  { path:'assethome', component: AssetsComponent},
 
   { path:'roomvacate/addroomvacate/:id', component: AddRoomVacateComponent},
   { path:'roomvacate', component: RoomVacateComponent},

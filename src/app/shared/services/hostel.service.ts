@@ -64,19 +64,29 @@ postassetdata(product: asset):Observable<asset>{
 
 
   
-return this.httpClient.post<asset>(this.baseApiUrl+'api/vacates',product);
+return this.httpClient.post<asset>(this.baseApiUrl+'api/Assets',product);
 
 }
 
 
 
+getasset(){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/Assets');
+  }
 
 
 
+getasset1(id:number){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/Assets/'+id);
+  }
 
 
-
-
+  assetupdate(id:number,data:asset){
+    console.log(id)
+    console.log(data)
+     return this.httpClient.put<any>(this.baseApiUrl+'/api/Assets/'+id,data);
+     
+   }
 
 
 

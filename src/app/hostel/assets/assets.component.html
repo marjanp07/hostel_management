@@ -24,8 +24,10 @@
       <td>{{item.Asset_name}}</td>
       <td>{{item.Asset_type}}</td>
       <td>{{item.Description}}</td>
+        <!-- <td><button type="button" (click)="update(item.id)">Edit</button></td> -->
         <td> <a routerLink="/hostel/assets/addasset/{{item.id}}"><button>Edit</button></a> <button>Delete</button></td>
-    </tr>
+
+      </tr>
   </tbody>
 </table>
 </div>
