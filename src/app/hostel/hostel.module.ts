@@ -21,11 +21,12 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 import {MatInputModule} from '@angular/material/input';
 import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
 import { AddAssetComponent } from './assets/add-asset/add-asset.component';
+
 
 
 

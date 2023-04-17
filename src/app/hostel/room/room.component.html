@@ -1,4 +1,4 @@
-<div class="mainbody">
+<!-- <div class="mainbody">
     <div class="d-flex justify-content-between align-items-center">
       <span class="grey-inter-bold-24 schedule-title"> Rooms </span>
     </div>
@@ -86,10 +86,7 @@
                 [matMenuTriggerFor]="menu"
                 class="icon-container icon-more-container bg-greylighter-100-greyMain m-auto"
               >
-                <!-- <span
-                  class="my-2"
-                  [inlineSVG]="'assets/icons/icon-more.svg'"
-                ></span> -->
+               
               </button>
               <mat-menu #menu="matMenu">
                 <button
@@ -121,7 +118,6 @@
               <div
                 class="d-flex flex-column justify-content-center align-items-center"
               >
-                <!-- <span [inlineSVG]="'assets/icons/no-data.svg'"></span> -->
                 <span style="color: var(--border-color); margin-top: 0.75rem"
                   >No Record Found</span
                 >
@@ -133,4 +129,46 @@
       </div>
       
     </div>
+  </div> -->
+
+
+
+
+
+  <div class="mainbody">
+    <div class="d-flex justify-content-between align-items-center">
+      <span class="grey-inter-bold-24 schedule-title "> Add Room  </span>
+    </div>
+  
+  
+  
+  <div class="a">
+  <a routerLink="/hostel/room/add_room/0"> <button class="btn btn-primary">Add</button></a>
+  </div><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">NO</th>
+        <th scope="col">Room_name</th>
+        <th scope="col">Block_name</th>
+        <th scope="col">Floor</th>
+        <th scope="col">Total_space</th>
+        <th scope="col">Available_space</th>
+        <th scope="col">photo</th>
+        <th scope="col">ACTIONS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of datas1">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.Room_name}}</td>
+        <td>{{item.Block_name}}</td>
+        <td>{{item.Floor}}</td>
+          <td>{{item.Total_space}}</td>
+          <td>{{item.Available_space}}</td>
+          <td>{{item.photo}}</td>
+          <td> <a routerLink="/hostel/room/add_room/{{item.id}}"><button>Edit</button></a> <button>Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
   </div>

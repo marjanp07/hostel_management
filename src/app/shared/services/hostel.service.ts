@@ -28,10 +28,27 @@ export class HostelService {
     
 }
 
+AddRooms(product: Room):Observable<Room>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<Room>(this.baseApiUrl+'api/AddRooms',product);
+
+}
+
+
 readdata(){
   console.log(this.baseApiUrl);
   
   return this.httpClient.get<Room[]>(this.baseApiUrl+'api/AddRooms');
+  }
+
+readdata1(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<vacate[]>(this.baseApiUrl+'api/vacates');
   }
 
 
@@ -41,6 +58,7 @@ readvacatedata(){
   return this.httpClient.get<Room[]>(this.baseApiUrl+'api/vacates');
   }
 
+<<<<<<< HEAD
 postassetdata(product: asset):Observable<asset>{
 
   console.log(product);
@@ -63,6 +81,13 @@ return this.httpClient.post<asset>(this.baseApiUrl+'api/vacates',product);
 
 
 
+=======
+readroomdata(){
+  
+  
+  return this.httpClient.get<Room[]>(this.baseApiUrl+'api/AddRooms');
+  }
+>>>>>>> 19bf6ef3aefa65c3e6154e27b7081dfa74491c15
 
 
 saveRoom(formDatas:any,image:any)

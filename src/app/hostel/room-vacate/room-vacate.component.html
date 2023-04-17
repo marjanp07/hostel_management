@@ -133,7 +133,7 @@
 
 
 <div class="a">
-<a routerLink="/hostel/roomvacate/addroomvacate/0"> <button class="btn btn-primary">Add</button></a>
+<a routerLink="/hostel/roomvacate/addroomvacate/0"> <button class="btn btn-primary" (click)="openDialog()">Add</button></a>
 </div><br>
 <table class="table">
   <thead>
@@ -153,7 +153,7 @@
       <td>{{item.reg_no}}</td>
       <td>{{item.vacating_date}}</td>
         <td>{{item.vacating_reason}}</td>
-        <td> <a routerLink="/hostel/roomvacate/addroomvacate/{{item.id}}"><button>Edit</button></a> <button>Delete</button></td>
+        <td> <a routerLink="/hostel/roomvacate/addroomvacate/{{item.id}}"><button (click)="openDialog(item)">Edit</button></a> <button>Delete</button></td>
     </tr>
   </tbody>
 </table>
