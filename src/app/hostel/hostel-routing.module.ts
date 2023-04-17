@@ -15,12 +15,9 @@ import { AllotRoomComponent } from './admission-entry/allot-room/allot-room.comp
 import { RoomComponent } from './room/room.component';
 import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
 import { AddAssetComponent } from './assets/add-asset/add-asset.component';
-<<<<<<< HEAD
 import { UpdateViewassetComponent } from './assets/update-viewasset/update-viewasset.component';
-=======
 import { AddOutPassComponent } from './outpass/add-out-pass/add-out-pass.component';
 import { EditOutPassComponent } from './outpass/edit-out-pass/edit-out-pass.component';
->>>>>>> ad22aba4bdeba4fee7f741cb7b8af292865d4982
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 
 
