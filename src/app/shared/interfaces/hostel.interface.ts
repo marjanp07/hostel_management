@@ -52,6 +52,23 @@ export interface vacate{
   reg_no:number
   vacating_date:string
   vacating_reason:string
+}
+
+  //asset
+
+  export interface asset{
+  id:number
+  // Asset_No:number
+  Asset_name:string
+  Asset_type:string
+  Description:string
+
+
+
+
+
+
+
 
 
 

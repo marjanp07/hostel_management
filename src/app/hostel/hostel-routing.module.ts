@@ -14,10 +14,12 @@ import { TotallBillGenerateComponent } from './totall-bill-generate/totall-bill-
 import { AllotRoomComponent } from './admission-entry/allot-room/allot-room.component';
 import { RoomComponent } from './room/room.component';
 import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
+import { AddAssetComponent } from './assets/add-asset/add-asset.component';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 
 
 const routes: Routes = [
+  { path:'assets/addasset/:id', component: AddAssetComponent},
 
   { path:'roomvacate/addroomvacate/:id', component: AddRoomVacateComponent},
   { path:'roomvacate', component: RoomVacateComponent},
@@ -34,7 +36,6 @@ const routes: Routes = [
   { path:'total_bill',component:TotallBillGenerateComponent},
   { path:'allot_room',component:AllotRoomComponent},
   // { path:'room_allot',component:RoomAllotComponent},
-
 
 ];
 

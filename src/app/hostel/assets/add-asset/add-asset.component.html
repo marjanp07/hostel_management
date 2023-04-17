@@ -1,0 +1,39 @@
+<!-- <form class="row g-3" [formGroup]="registrationForm" (ngSubmit)="onsub()"> -->
+ 
+    <form>
+        <div class="s">
+    
+    <!-- <div class="mb-10">
+      <label class="form-label">Asset No </label>
+      <input type="number" class="form-control" formControlName="Asset_No" aria-describedby="emailHelp">
+    </div> -->
+    <div class="mb-10">
+      <label class="form-label">Asset name</label>
+      <input type="text" class="form-control" formControlName="Asset_name">
+    </div>
+    
+    <div class="mb-10">
+        <label class="form-label">Asset type </label>
+        <!-- <input type="date" class="form-control" formControlName="Asset_type"> -->
+        <select class="form-select" formControlName="Asset_type" required>
+          <option  value="Furniture">Furniture</option>
+          <option value="Kitchen facilities">Kitchen facilities</option>
+          <option value="Shared facilities">Shared facilities</option>
+          <option value="Electronics">Electronics</option>
+        </select>
+      </div>
+    
+    
+    <div class="mb-10"> 
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" formControlName="Description" aria-describedby="emailHelp">
+      </div>
+    
+    <br>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+    </div>
+      </form>
+      
+      
+  
+  

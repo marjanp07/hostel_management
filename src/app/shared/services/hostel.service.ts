@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Room, vacate } from '../interfaces/hostel.interface';
+import { Room, asset, vacate } from '../interfaces/hostel.interface';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 // import { Room } from 'src/app/hostel/room.model';
@@ -40,6 +40,30 @@ readvacatedata(){
   
   return this.httpClient.get<Room[]>(this.baseApiUrl+'api/vacates');
   }
+
+postassetdata(product: asset):Observable<asset>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<asset>(this.baseApiUrl+'api/vacates',product);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 saveRoom(formDatas:any,image:any)
 {

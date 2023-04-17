@@ -25,6 +25,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 import {MatInputModule} from '@angular/material/input';
 import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
+import { AddAssetComponent } from './assets/add-asset/add-asset.component';
 
 
 
@@ -44,6 +45,7 @@ import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-v
     AllotRoomComponent,
     RoomComponent,
     AddRoomVacateComponent,
+    AddAssetComponent,
     // RoomAllotComponent
   ],
   imports: [
