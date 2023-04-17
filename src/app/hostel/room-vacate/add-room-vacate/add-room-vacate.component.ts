@@ -44,7 +44,7 @@ export class AddRoomVacateComponent implements OnInit {
     this.apiService.createPolicy1(data1).subscribe((product: any) => {
 
 
-      //  this.router.navigate(['/home'])
+       this.router.navigate(['/roomvacate'])
     });
   }
 
