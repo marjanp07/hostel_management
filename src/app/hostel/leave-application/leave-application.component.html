@@ -1,44 +1,44 @@
-<!-- <form class="row g-3" [formGroup]="registrationForm" (ngSubmit)="onsub()"> -->
+<div class="mainbody">
+  <div class="d-flex justify-content-between align-items-center">
+    <span class="grey-inter-bold-24 schedule-title "> LEAVE APPLICATION </span>
+  </div>
 
 
-<form>
-    <div class="s">
 
-<div class="mb-10">
-  <label class="form-label">Hosteler Name </label>
-  <input type="text" class="form-control" formControlName="hosteler_name" aria-describedby="emailHelp">
+<div class="a">
+<a routerLink="/hostel/leaveapplication/addleaveapplication/0"> <button class="btn btn-primary">Add</button></a>
+</div><br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">hosteler_id</th>
+      <th scope="col">hosteler_name</th>
+      <th scope="col">Application_date</th>
+      <th scope="col">Leave_form</th>
+      <th scope="col">Leave_till</th>
+      <th scope="col">Reason</th>
+      <th scope="col">Visiting_person</th>
+      <th scope="col">Guardian_details</th>
+
+      <th scope="col">ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of datas1">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.hosteler_name}}</td>
+      <td>{{item.Application_date}}</td>
+      <td>{{item.Leave_form}}</td>
+      <td>{{item.Leave_till}}</td>
+      <td>{{item.Reason}}</td>
+      <td>{{item.Visiting_person}}</td>
+      <td>{{item.Guardian_details}}</td>
+
+
+        <!-- <td><button type="button" (click)="update(item.id)">Edit</button></td> -->
+        <td> <a routerLink="/hostel/leaveapplication/addleaveapplication/{{item.id}}"><button>Edit</button></a> <button>Delete</button></td>
+
+      </tr>
+  </tbody>
+</table>
 </div>
-<div class="mb-10">
-  <label class="form-label">Application date </label>
-  <input type="date" class="form-control" formControlName="Application_date">
-</div>
-
-<div class="mb-10">
-    <label class="form-label">Leave form </label>
-    <input type="date" class="form-control" formControlName="Leave_form">
-  </div>
-  <div class="mb-10">
-    <label class="form-label">Leave till </label>
-    <input type="date" class="form-control" formControlName="Leave_till">
-  </div>
-
-
-<div class="mb-10"> 
-    <label class="form-label">Reason</label>
-    <input type="text" class="form-control" formControlName="Reason" aria-describedby="emailHelp">
-  </div>
-
-  <div class="mb-10"> 
-    <label class="form-label">Visiting person</label>
-    <input type="text" class="form-control" formControlName="Visiting_person" aria-describedby="emailHelp">
-  </div>
-
-  <div class="mb-10"> 
-    <label class="form-label">Guardian details</label>
-    <input type="text" class="form-control" formControlName="Guardian_details" aria-describedby="emailHelp">
-  </div>
-
-<br>
-<button type="submit" class="btn btn-primary" >Submit</button>
-</div>
-</form>

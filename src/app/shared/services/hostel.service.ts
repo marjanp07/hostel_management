@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Room, asset, outPass, vacate } from '../interfaces/hostel.interface';
+import { Room, asset, leave, outPass, vacate } from '../interfaces/hostel.interface';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 // import { Room } from 'src/app/hostel/room.model';
@@ -125,6 +125,42 @@ readroomdata(){
   
   return this.httpClient.get<Room[]>(this.baseApiUrl+'api/AddRooms');
   }
+
+
+postleave(product: leave):Observable<leave>{
+
+  console.log(product);
+
+return this.httpClient.post<leave>(this.baseApiUrl+'api/Assets',product);
+
+}
+
+
+
+getleave(){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/Assets');
+  }
+
+
+
+
+
+getleave1(id:number){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/Assets/'+id);
+  }
+
+
+
+leaveupdate(id:number,data:leave){
+  console.log(id)
+  console.log(data)
+   return this.httpClient.put<any>(this.baseApiUrl+'/api/Assets/'+id,data);
+   
+ }
+
+
+
+
 
 
 saveRoom(formDatas:any,image:any)

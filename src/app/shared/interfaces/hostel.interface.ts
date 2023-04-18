@@ -78,6 +78,18 @@ export interface vacate{
     reason_outpass:string
   }
 
+  //LEAV
+
+  export interface leave{
+    id:number
+    hosteler_name:string
+    Application_date:string
+    Leave_form:string
+    Leave_till:string
+    Reason:string
+    Visiting_person:string
+    Guardian_details:string
+  }
 
 
 
