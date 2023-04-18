@@ -33,7 +33,7 @@ color="primary"
         <table class="table mt-3" mat-table [dataSource]="dataSource" matSort>
           <ng-container matColumnDef="NO">
             <th mat-header-cell *matHeaderCellDef>NO</th>
-            <td mat-cell *matCellDef="let row; let i = index" class="text-center">
+            <td mat-cell *matCellDef="let row; let i = index" class="text-left">
               {{ i + 1 }}
             </td>
 
