@@ -52,3 +52,41 @@
     --sidebar-primary-color: #1a73e8;
     --sidebar-secondary-color: #3c4043;
 }
+
+:root {
+    --primaryBlue: hsla(214, 100%, 54%, 1);
+    --primaryBlue-8: hsla(214, 100%, 54%, 0.08);
+    --primaryBlue-12: hsla(214, 100%, 54%, 0.12);
+    --background: hsla(214, 100%, 99%, 1);
+    --green: hsla(151, 73%, 37%, 1);
+    --red: hsla(342, 90%, 51%, 1);
+    --yellow: hsla(40, 100%, 53%, 1);
+    --infoblue: hsla(202, 75%, 56%, 1);
+    --lightGreen: hsla(151, 73%, 37%, 0.2);
+    --lightRed: hsla(342, 90%, 51%, 0.2);
+    --lightyellow: hsla(40, 100%, 53%, 0.2);
+    --lightblue: hsla(214, 100%, 54%, 0.12);
+    --lightInfoBlue: hsla(40, 100%, 53%, 0.2);
+    --fontDarkBlue: hsla(215, 47%, 22%, 1);
+    --fontBlack: hsla(211, 29%, 18%, 1);
+    --fontBlackAlt: hsla(214, 61%, 19%, 1);
+    --fontNavyAlt: hsla(214, 68%, 16%, 1);
+    --grey: hsla(218, 20%, 51%, 1);
+    --lightGrey: hsla(220, 17%, 93%, 1);
+    --grey-main: hsla(214, 34%, 63%, 1);
+    --primary-white: hsla(0, 0%, 100%, 1);
+    --title-font: hsla(214, 54%, 36%, 1);
+    --grey-light: hsla(218, 17%, 71%, 1);
+    --body-font: hsla(218, 33%, 30%, 1);
+    --grey-lighter: hsla(220, 17%, 93%, 1);
+    --border-color: hsla(222, 35%, 81%, 1);
+    --table-header-bgcolor: hsla(210, 33%, 96%, 1);
+    --table-header-textcolor: hsla(221, 15%, 32%, 1);
+    /*======================================*/
+    --fancy-violet: hsla(234, 85%, 73%, 1);
+    --fancy-green: hsla(137, 48%, 56%, 1);
+    --fancy-pink: hsla(342, 100%, 69%, 1);
+    --fancy-blue: hsla(214, 100%, 64%, 1);
+    /*======================================*/
+    --border-color-75: hsla(222, 35%, 81%, 0.75);
+  }

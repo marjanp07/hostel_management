@@ -38,8 +38,7 @@ export function getBaseUrl() {
     MatMenuModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    MatDialogModule
+    HttpClientModule
   ],
   providers: [
     { provide: 'BASE_URL', useFactory: getBaseUrl },

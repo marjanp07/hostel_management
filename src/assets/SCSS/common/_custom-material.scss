@@ -1,113 +1,171 @@
-.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: hsla(223, 36%, 81%, 1) !important;
-}
-
-.mat-form-field-appearance-standard .mat-form-field-wrapper {
-    padding-bottom: 1.34375em !important;
-}
-
-.mat-form-field-appearance-outline .mat-form-field-wrapper {
-    padding-bottom: 0.625em !important;
-}
-
-mat-form-field.mat-form-field.mat-form-field-appearance-outline>div.mat-form-field-wrapper>div.mat-form-field-flex>div.mat-form-field-infix {
-    padding: 8px 0px;
-}
-
-mat-form-field.mat-form-field.mat-form-field-appearance-outline>div.mat-form-field-wrapper>div.mat-form-field-flex>div.mat-form-field-infix>span.mat-form-field-label-wrapper {
-    top: -1.2em;
-}
-
-.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
-    transform: translateY(-1.32373em) scale(0.75) !important;
-    width: 133.3333533333%;
-}
-
-.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
-    color: red !important;
-    opacity: 0.8 !important;
-}
-
-//// ========[Mat Dialog Style]=============
-.mat-dialog-container {
-    box-shadow: none !important;
-}
-
-// ========[Mat Menu Style]=============
-mat-menu button {
-    padding: 8px 12px;
-}
-
-.mat-menu-content:not(:empty) {
-    padding: 4px 2px;
-}
-
-.mat-menu-panel {
-    box-shadow: none !important;
-    min-height: inherit;
-}
-
-// ========[Mat Button Toggle]=============
-.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
-    line-height: 36px;
-}
-
-.mat-button-toggle-group {
-    height: fit-content;
-}
-
-.mat-form-field {
-    font-size: inherit;
-    font-weight: 400;
-    line-height: 1.125;
-    font-family: "Rubik", sans-serif;
-    letter-spacing: normal;
-}
-
-// ========[Mat step header]=============
-.mat-step-header {
-    height: inherit !important;
-    padding: 12px 12px !important;
-
-    &[ng-reflect-selected="true"] {
+//layout
+.main-table {
+    background: #FFFFFF;
+    // border: 1px solid #DADCE0;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    // box-shadow: 1px 0px 14px rgba(43, 75, 150, 0.14),
+    //   4px 6px 42px rgba(45, 82, 170, 0.01);
+    // border-radius: 12px;
+    margin-top: 24px;
+    padding: 32px;
+  }
+  //table
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+  }
+  tr.mat-header-row {
+    height: inherit;
+    font-family: Inter;
+  }
+  th.mat-header-cell {
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.03em;
+    color: #344767;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #809cc114;
+  }
+  .table {
+    margin-bottom: 0px;
+    // display: table;
+    td,
+    th {
+      padding: 0.75rem;
+      vertical-align: middle;
+      border: none;
+    }
+  }
+  .mat-dialog-content {
+    min-width: 600px !important;
+  }
+//   ::ng-deep {
+    // ========[Mat Form Field Style]=============
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+      color: hsla(223, 36%, 81%, 1) !important;
+    }
+    .mat-form-field-wrapper {
+      padding-bottom: 0px;
+    }
+    mat-form-field.mat-form-field.mat-form-field-appearance-outline>div.mat-form-field-wrapper>div.mat-form-field-flex>div.mat-form-field-infix {
+      padding: 8px 0px;
+    }
+    mat-form-field.mat-form-field.mat-form-field-appearance-outline>div.mat-form-field-wrapper>div.mat-form-field-flex>div.mat-form-field-infix>span.mat-form-field-label-wrapper {
+      top: -1.2em;
+    }
+    .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+      transform: translateY(-1.3em) scale(0.75);
+      width: 133.33333%;
+    }
+    .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+      color: red !important;
+      opacity: 0.8 !important;
+    }
+    // ========[Mat Dialog Style]=============
+    .mat-dialog-container {
+      box-shadow: none;
+    }
+    // ========[Mat CheckBox Style]=============
+    mat-checkbox {
+      .mat-checkbox-layout {
+        margin-bottom: 0;
+      }
+      border-radius: 4px;
+    }
+    // ========[Mat Menu Style]=============
+    mat-menu button {
+      padding: 8px 12px;
+    }
+    .mat-menu-content:not(:empty) {
+      padding: 4px 2px;
+    }
+    .mat-menu-panel {
+      box-shadow: -1px 0px 9px rgba(24, 73, 190, 0.06),
+        2px 2px 5px -1px rgba(26, 35, 55, 0.06);
+      min-height: inherit;
+    }
+    // ========[Mat Button Toggle]=============
+    .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+      line-height: 36px;
+    }
+    .mat-button-toggle-group {
+      height: fit-content;
+    }
+    // ========[Mat step header]=============
+    .mat-step-header {
+      height: inherit !important;
+      padding: 12px 12px !important;
+      &[ng-reflect-selected="true"] {
         background-color: rgba(0, 0, 0, 0.04);
         border-radius: 8px;
         border: var(--primaryBlue-12) solid 1px;
+      }
     }
-}
-
-.mat-menu-item {
-    display: flex !important;
-    align-items: center;
-}
-
-//Dropdown
-.mat-select-panel {
-    background: #ffffff;
-    border: 1px solid #e9edf5;
-    border-radius: 8px;
-}
-
-.mat-select-panel:not([class*="mat-elevation-z"]) {
-    box-shadow: none;
-}
-
-.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
-    background: hsla(214, 100%, 54%, 0.12);
-}
-
-table {
-    border-collapse: collapse;
-}
-
-.mat-menu-panel {
-    box-shadow: none;
-    min-height: 0 !important;
-    border: 1px solid var(--border-color);
-
-    .mat-menu-content {
-        &:not(:empty) {
-            padding: 0px;
-        }
+    //Dropdown
+    .mat-select-panel {
+      background: #FFFFFF;
+      border: 1px solid #E9EDF5;
+      border-radius: 8px;
     }
+    .mat-select-panel:not([class*="mat-elevation-z"]) {
+      box-shadow: none;
+    }
+    .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+      background: hsla(214, 100%, 54%, 0.12);
+    }
+    // ========[Mat Date Picker Style]=============
+    .mat-calendar {
+      .mat-button {
+        color: var(--bodyFont) !important;
+        font-family: "Inter" !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.219429px !important;
+      }
+      .mat-icon-button {
+        color: var(--primaryBlue) !important;
+        border-radius: 3.80344px !important;
+        padding-right: 8px;
+      }
+      tr {
+        border: none !important;
+      }
+      .mat-calendar-table-header-divider {
+        position: static !important;
+        height: 0 !important;
+      }
+      .mat-calendar-abbr {
+        text-decoration: none !important;
+      }
+      .mat-calendar-body-selected {
+        background-color: var(--primaryBlue) !important;
+        border: 3.2px solid hsl(214, 71%, 84%) !important;
+      }
+      .mat-calendar-body-today {
+        border: 1px solid #464E5F !important;
+      }
+      .mat-datepicker-popup {
+        transform: translate(-10%, 8%) !important;
+      }
+      .mat-calendar-table-header-divider::after {
+        background: none;
+      }
+    }
+//   }
+  .submit-button {
+    background-color: var(--primaryBlue);
+    color: #fff;
+  }
+  .gap-2 {
+    gap: 0.5rem;
+  }
+  .gap-3 {
+    gap: 1rem;
+  }
+  .ml-2 {
+    margin-left: .5rem !important;
 }

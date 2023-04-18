@@ -21,16 +21,17 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule} from '@angular/material/dialog';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 import {MatInputModule} from '@angular/material/input';
-import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
 import { AddAssetComponent } from './assets/add-asset/add-asset.component';
 import { UpdateViewassetComponent } from './assets/update-viewasset/update-viewasset.component';
 import { AddOutPassComponent } from './outpass/add-out-pass/add-out-pass.component';
 import { EditOutPassComponent } from './outpass/edit-out-pass/edit-out-pass.component';
 import { UpdateFormleavComponent } from './leave-application/update-formleav/update-formleav.component';
 import { AddLeaveapplicationComponent } from './leave-application/add-leaveapplication/add-leaveapplication.component';
+import { CommonDeleteDialogueComponent } from '../shared/components/common-delete-dialogue/common-delete-dialogue.component';
+import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
 
 
 
@@ -57,6 +58,7 @@ import { AddLeaveapplicationComponent } from './leave-application/add-leaveappli
     EditOutPassComponent,
     UpdateFormleavComponent,
     AddLeaveapplicationComponent,
+    CommonDeleteDialogueComponent
     // RoomAllotComponent
   ],
   imports: [
@@ -71,6 +73,9 @@ import { AddLeaveapplicationComponent } from './leave-application/add-leaveappli
    MatIconModule,
    MatDialogModule,
    MatInputModule
+  ],
+  exports: [
+    MatDialogModule
   ]
 })
 export class HostelModule { }

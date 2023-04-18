@@ -23,8 +23,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of datas1">
-      <th scope="row">{{item.id}}</th>
+    <tr *ngFor="let item of datas1;let i = index">
+      <th scope="row">{{i + 1}}</th>
       <td>{{item.reg_no}}</td>
       <td>{{item.hosteler_name}}</td>
       <td>{{item.Contact_no}}</td>
@@ -37,7 +37,7 @@
               
           Edit</button><button>Delete</button></td> -->
         
-        <td> <a routerLink="/hostel/outpass/editoutpass/{{item.id}}"><button>Edit</button></a> <button (click)="deleteDocType()">Delete</button></td>
+        <td> <a routerLink="/hostel/outpass/editoutpass/{{item.id}}"><button>Edit</button></a> <button (click)="deleteDocType(item)">Delete</button></td>
     </tr>
   </tbody>
 </table>

@@ -64,6 +64,7 @@ export class RoomComponent implements OnInit {
   async init() {
     this.Api.readroomdata().subscribe((datas: any[])=>{
       this.datas1 = datas;
+      this.dataSource.data=datas
       console.log(this.datas1)
      
   });

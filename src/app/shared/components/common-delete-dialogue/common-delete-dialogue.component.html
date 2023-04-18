@@ -20,7 +20,7 @@
     </ul>
   </mat-dialog-content> -->
   
-  <mat-dialog-actions align="end">
+  <div mat-dialog-actions align="end">
     <div class="d-flex">
       <button
         mat-flat-button
@@ -31,8 +31,8 @@
         Cancel
       </button>
   
-      <button mat-flat-button color="warn" type="button" (click)="confirmDelete()">
+      <button mat-flat-button color="warn" type="button" (click)="confirmDelete(details.id)">
         Delete
       </button>
     </div>
-  </mat-dialog-actions>
+  </div>

@@ -37,16 +37,16 @@ export class OutpassComponent implements OnInit {
     this.init();
   }
 
-  async GetDocTypes() {
-    this.dataSource.data = (await this.Api.getOutPass() as unknown as outPass[]);
-  }
-
-  async init() {
+  async GetOutpass() {
     this.Api.getOutPass().subscribe((datas: any[])=>{
       this.datas1 = datas;
       console.log(this.datas1)
      
   });
+  }
+
+   init() {
+    this.GetOutpass()
 }
 
   addDocType(item?: outPass) {
@@ -75,17 +75,19 @@ export class OutpassComponent implements OnInit {
   // }
 
   deleteDocType(item?: outPass) {
+    console.log(item);
+    
     const dialogRef = this.dialog.open(CommonDeleteDialogueComponent, {
       width: '400px',
       data: {
         title: 'Delete Cognitive Level',
         description: 'Are you sure you want to dele  te this Cognitive Level?',
-        type: 'delete-cognitive-level',
+        type: 'Delete-outPass',
         id: item?.id,
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      this.GetDocTypes();
+      this.GetOutpass();
     });
   }
 

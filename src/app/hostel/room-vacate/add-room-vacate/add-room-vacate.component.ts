@@ -12,7 +12,12 @@ import { HostelService } from 'src/app/shared/services/hostel.service';
 })
 export class AddRoomVacateComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: vacate, private dialogRef: MatDialogRef<AddRoomVacateComponent>, private fb: FormBuilder, private router: Router, private apiService: HostelService, private route: ActivatedRoute
+  constructor(@Inject(MAT_DIALOG_DATA) public data: vacate,
+   private dialogRef: MatDialogRef<AddRoomVacateComponent>,
+    private fb: FormBuilder, 
+    private router: Router,
+     private apiService: HostelService,
+      private route: ActivatedRoute
 
   ) { }
 
@@ -20,7 +25,7 @@ export class AddRoomVacateComponent implements OnInit {
 
 
   registrationForm = this.fb.group({
-
+    id: 0,
     hosteler_name: ['', [Validators.required]],
     reg_no: [0, [Validators.required]],
     vacating_date: ['', [Validators.required]],
@@ -31,21 +36,38 @@ export class AddRoomVacateComponent implements OnInit {
     const id = this.route.snapshot.params['id'];
 
     if (this.data) {
+      console.log(this.data);
+      
       this.registrationForm.patchValue(this.data)
+    
     }
-    if (id == 0)
-      console.log("add");
-    else if (id > 0)
-      console.log("edit");
+    // if (id == 0)
+    //   console.log("add");
+    // else if (id > 0)
+    //   console.log("edit");
   }
-  onsub() {
-    let data1 = this.registrationForm.value as vacate;
-
-    this.apiService.createPolicy1(data1).subscribe((product: any) => {
-
-
-       this.router.navigate(['/roomvacate'])
+  onsub()
+  {
+    let formVal = this.registrationForm.value as vacate
+  
+   if(this.data){
+    this.apiService.updatevacate(this.data.id,formVal).subscribe((policy: any)=>{
+      this.dialogRef.close()
+        
+       
+    // this.router.navigate(['/hostel/outpass'])
+       
     });
+   }
+   else {
+    this.apiService.AddVacate(formVal)
+    .subscribe((policy: any)=>{
+      this.dialogRef.close()
+        
+       
+    // this.router.navigate(['/hostel/outpass'])
+       
+    });
+   }
   }
-
 }

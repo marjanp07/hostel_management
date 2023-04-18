@@ -27,4 +27,21 @@ a {
 section.content {
     margin-left: var(--sidebar-width);
     margin-top: 65px;
+    transition: 0.5s;
 }
+.bg-grey-8-greyMain {
+    background-color: #E8EBF0 !important;
+    color: var(--grey-main);
+}
+.grey-inter-bold-24 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: bold;
+    font-size: var(--font-size-24);
+    color: var(--grey-main);
+}
+.mainbody {
+    padding: 24px;
+    background-color: var(--background);
+}
+
