@@ -83,7 +83,7 @@ import { CommonDeleteDialogueComponent } from 'src/app/shared/components/common-
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      this.GetOutpass();
+      this.GetRoomVacate();
     });
   }
 

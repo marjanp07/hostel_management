@@ -214,7 +214,7 @@ confirmoutPassDelete(id:number){
 
 confirmVacateDelete(id:number){
   console.log(id)
-  return this.httpClient.delete<any>(this.baseApiUrl+'/api/outPasses',{
+  return this.httpClient.delete<any>(this.baseApiUrl+'/api/vacates',{
     params:{
       id
     }
