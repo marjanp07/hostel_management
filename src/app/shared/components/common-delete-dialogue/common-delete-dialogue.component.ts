@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DeleteDialogModel } from '../../interfaces/hostel.interface';
 import { HostelService } from '../../services/hostel.service';
 
@@ -11,18 +11,42 @@ import { HostelService } from '../../services/hostel.service';
 export class CommonDeleteDialogueComponent implements OnInit {
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public details: DeleteDialogModel,private api:HostelService
+    @Inject(MAT_DIALOG_DATA) public details: DeleteDialogModel,private api:HostelService,private dialogRef: MatDialogRef<CommonDeleteDialogueComponent>,
   ) { }
 
   ngOnInit(): void {
+    console.log(this.details)
   }
 
-  async confirmDelete() {
+  async confirmDelete(id:number) {
+    console.log(id);
+    
     // this.isLoading = true;
     let status = this.details.type;
  try {
       switch (status) {
-        case 'tutor':
+        case 'Delete-outPass':
+          console.log('h');
+          
+        this.api.confirmoutPassDelete(id).subscribe(data=>{
+          this.dialogRef.close()
+
+        })
+          //  let response=this.api.delevacca(this.details.id)
+          
+          break;
+      
+
+      ///////  delete vacate
+
+      
+        case 'Delete-roomVacate':
+          console.log('h');
+          
+        this.api.confirmVacateDelete(id).subscribe(data=>{
+          this.dialogRef.close()
+
+        })
           //  let response=this.api.delevacca(this.details.id)
           
           break;

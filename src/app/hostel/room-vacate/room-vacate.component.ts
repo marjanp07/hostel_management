@@ -7,6 +7,7 @@ import { vacate } from 'src/app/shared/interfaces/hostel.interface';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { AddRoomVacateComponent } from './add-room-vacate/add-room-vacate.component';
+import { CommonDeleteDialogueComponent } from 'src/app/shared/components/common-delete-dialogue/common-delete-dialogue.component';
 @Component({
   selector: 'app-room-vacate',
   templateUrl: './room-vacate.component.html',
@@ -27,20 +28,20 @@ import { AddRoomVacateComponent } from './add-room-vacate/add-room-vacate.compon
   datas1:  vacate[]=[];
   constructor(private Api: HostelService,public dialog: MatDialog) { }
 
-  async ngOnInit(): Promise<void> {
+   ngOnInit() {
     this.init();
   }
 
-  async GetDocTypes() {
-    this.dataSource.data = (await this.Api.readdata1() as unknown as vacate[]);
-  }
-
-  async init() {
+  GetRoomVacate() {
     this.Api.readvacatedata().subscribe((datas: any[])=>{
       this.datas1 = datas;
       console.log(this.datas1)
      
   });
+  }
+
+  init() {
+    this.GetRoomVacate()
 }
 
   addDocType(item?: vacate) {
@@ -65,22 +66,25 @@ import { AddRoomVacateComponent } from './add-room-vacate/add-room-vacate.compon
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      this.GetRoomVacate()
     });
   }
 
-  deleteDocType(item: vacate) {
-    // const dialogRef = this.dialog.open(CommonConfirmationDialogueComponent, {
-    //   width: '400px',
-    //   data: {
-    //     title: 'Delete Cognitive Level',
-    //     description: 'Are you sure you want to dele  te this Cognitive Level?',
-    //     type: 'delete-cognitive-level',
-    //     id: item.CognitiveLevelID,
-    //   },
-    // });
-    // dialogRef.afterClosed().subscribe((result) => {
-    //   this.GetDocTypes();
-    // });
+  deleteDocType(item?: vacate) {
+    console.log(item);
+    
+    const dialogRef = this.dialog.open(CommonDeleteDialogueComponent, {
+      width: '400px',
+      data: {
+        title: 'Delete Cognitive Level',
+        description: 'Are you sure you want to dele  te this Cognitive Level?',
+        type: 'Delete-roomVacate',
+        id: item?.id,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      this.GetOutpass();
+    });
   }
 
 }

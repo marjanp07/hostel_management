@@ -18,7 +18,7 @@ export class HostelService {
     }
 
 
-  createPolicy1(product: vacate):Observable<vacate>{
+  AddVacate(product: vacate):Observable<vacate>{
 
       console.log(product);
   
@@ -93,10 +93,17 @@ readOutPass(id:number){
 updateOutPass(id:number,data:outPass){
   console.log(id)
   console.log(data)
-   return this.httpClient.put<any>(this.baseApiUrl+'/api/outPasses/'+id,data);
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
    
  }
 
+
+ updatevacate(id:number,data:vacate){
+  console.log(id)
+  console.log(data)
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/vacates/${id}`,data);
+   
+ }
 
 
 
@@ -163,6 +170,7 @@ leaveupdate(id:number,data:leave){
 
 
 
+
 saveRoom(formDatas:any,image:any)
 {
   let formData = new FormData();
@@ -178,4 +186,49 @@ saveRoom(formDatas:any,image:any)
         return result;
       })
 }
+
+
+
+
+
+/////////////////////   delete   ///////////////////////////
+
+
+//// outpass delete
+
+
+confirmoutPassDelete(id:number){
+  console.log(id)
+  return this.httpClient.delete<any>(this.baseApiUrl+'/api/outPasses',{
+    params:{
+      id
+    }
+  });
+  }
+
+
+
+//// vacate delete
+
+
+
+confirmVacateDelete(id:number){
+  console.log(id)
+  return this.httpClient.delete<any>(this.baseApiUrl+'/api/outPasses',{
+    params:{
+      id
+    }
+  });
+  }
+
+
+
+
+
+
+
+
+
+
+
 }
