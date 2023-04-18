@@ -92,6 +92,17 @@ export interface vacate{
   }
 
 
+  export interface DeleteDialogModel {
+    title?: string | undefined;
+    description?: string | undefined;
+    type: string ;
+    id:number
+
+    
+  }
+
+
+
 
 
 

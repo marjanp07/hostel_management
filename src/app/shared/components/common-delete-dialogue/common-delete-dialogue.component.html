@@ -1,0 +1,38 @@
+<div>
+    <h2 mat-dialog-title class="text-xl font-bold">
+      {{ details.title }}
+    </h2>
+    <span class="text-xs font-light --color-black-400">
+      {{ details.description }}
+    </span>
+  </div>
+  
+  <!-- <mat-dialog-content class="text-left delete-dialog-maxwidth">
+    <ul class="my-3">
+      <li *ngFor="let item of details.datasArray | custom_key_value">
+        <div class="d-flex justify-content-between">
+          <p class="text-sm font-light --color-black-400">{{ item.key }}:</p>
+          <p class="text-sm font-semibold --color-black-800 ml-2">
+            {{ item.value }}
+          </p>
+        </div>
+      </li>
+    </ul>
+  </mat-dialog-content> -->
+  
+  <mat-dialog-actions align="end">
+    <div class="d-flex">
+      <button
+        mat-flat-button
+        mat-dialog-close
+        class="cancel-button"
+        type="button"
+      >
+        Cancel
+      </button>
+  
+      <button mat-flat-button color="warn" type="button" (click)="confirmDelete()">
+        Delete
+      </button>
+    </div>
+  </mat-dialog-actions>
