@@ -5,6 +5,8 @@ import { HostelService } from 'src/app/shared/services/hostel.service';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { CommonDeleteDialogueComponent } from 'src/app/shared/components/common-delete-dialogue/common-delete-dialogue.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-outpass',
@@ -27,7 +29,9 @@ export class OutpassComponent implements OnInit {
     'ACTIONS'
   ];
   datas1:  outPass[]=[];
-  constructor(private Api: HostelService,private r:Router) { }
+  constructor(private Api: HostelService,private r:Router,
+    private dialog: MatDialog
+    ) { }
 
   async ngOnInit(): Promise<void> {
     this.init();
@@ -70,19 +74,19 @@ export class OutpassComponent implements OnInit {
   //   });
   // }
 
-  deleteDocType(item: outPass) {
-    // const dialogRef = this.dialog.open(CommonConfirmationDialogueComponent, {
-    //   width: '400px',
-    //   data: {
-    //     title: 'Delete Cognitive Level',
-    //     description: 'Are you sure you want to dele  te this Cognitive Level?',
-    //     type: 'delete-cognitive-level',
-    //     id: item.CognitiveLevelID,
-    //   },
-    // });
-    // dialogRef.afterClosed().subscribe((result) => {
-    //   this.GetDocTypes();
-    // });
+  deleteDocType(item?: outPass) {
+    const dialogRef = this.dialog.open(CommonDeleteDialogueComponent, {
+      width: '400px',
+      data: {
+        title: 'Delete Cognitive Level',
+        description: 'Are you sure you want to dele  te this Cognitive Level?',
+        type: 'delete-cognitive-level',
+        id: item?.id,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      this.GetDocTypes();
+    });
   }
 
   // Edit(id:number)
