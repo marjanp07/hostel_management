@@ -52,11 +52,6 @@ readdata1(){
   }
 
 
-readvacatedata(){
-  
-  
-  return this.httpClient.get<Room[]>(this.baseApiUrl+'api/vacates');
-  }
 
 postassetdata(product: asset):Observable<asset>{
 
@@ -105,6 +100,14 @@ updateOutPass(id:number,data:outPass){
    
  }
 
+ updateAddRoom(id:number,data:Room){
+  console.log(id)
+  console.log(data)
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/AddRooms/${id}`,data);
+   
+ }
+
+
 
 
 getasset(){
@@ -127,11 +130,6 @@ getasset1(id:number){
 
 
 
-readroomdata(){
-  
-  
-  return this.httpClient.get<Room[]>(this.baseApiUrl+'api/AddRooms');
-  }
 
 
 postleave(product: leave):Observable<leave>{
@@ -188,6 +186,25 @@ saveRoom(formDatas:any,image:any)
 }
 
 
+//////////////////// Read ///////////////////////////
+
+///// read vacate data
+
+readvacatedata(){
+  
+  
+  return this.httpClient.get<vacate[]>(this.baseApiUrl+'api/vacates');
+  }
+
+/////// read room data
+
+readroomdata(){
+  
+  
+  return this.httpClient.get<Room[]>(this.baseApiUrl+'api/AddRooms');
+  }
+
+
 
 
 
@@ -222,6 +239,17 @@ confirmVacateDelete(id:number){
   }
 
 
+
+////// Add Room Delete
+
+confirmAddRoomDelete(id:number){
+  console.log(id)
+  return this.httpClient.delete<any>(this.baseApiUrl+'/api/AddRooms',{
+    params:{
+      id
+    }
+  });
+  }
 
 
 

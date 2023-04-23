@@ -1,6 +1,9 @@
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { StepperOrientation } from '@angular/cdk/stepper';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-admission-entry',
@@ -9,7 +12,25 @@ import { Router } from '@angular/router';
 })
 export class AdmissionEntryComponent implements OnInit {
 
-  constructor(private fb:FormBuilder , private router:Router) { }
+  constructor(private fb:FormBuilder , private router:Router,
+    breakpointObserver: BreakpointObserver
+    ) {
+      this.stepperOrientation = breakpointObserver
+      .observe('(min-width: 800px)')
+      .pipe(map(({matches}) => (matches ? 'horizontal' : 'vertical')));
+     }
+
+  stepperOrientation: Observable<StepperOrientation>;
+
+  firstFormGroup = this.fb.group({
+    firstCtrl: ['', Validators.required],
+  });
+  secondFormGroup = this.fb.group({
+    secondCtrl: ['', Validators.required],
+  });
+  thirdFormGroup = this.fb.group({
+    thirdCtrl: ['', Validators.required],
+  });
 
   registrationForm=this.fb.group({
     // id:[0],
