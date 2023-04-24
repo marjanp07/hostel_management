@@ -134,13 +134,20 @@ readroomdata(){
   }
 
 
+
+
 postleave(product: leave):Observable<leave>{
 
   console.log(product);
 
-return this.httpClient.post<leave>(this.baseApiUrl+'api/Assets',product);
+
+  
+return this.httpClient.post<leave>(this.baseApiUrl+'api/vacates',product);
 
 }
+
+
+
 
 
 
@@ -158,10 +165,12 @@ getleave1(id:number){
 
 
 
-leaveupdate(id:number,data:leave){
+
+
+ leaveupdate(id:number,data:leave){
   console.log(id)
   console.log(data)
-   return this.httpClient.put<any>(this.baseApiUrl+'/api/Assets/'+id,data);
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/vacates/${id}`,data);
    
  }
 

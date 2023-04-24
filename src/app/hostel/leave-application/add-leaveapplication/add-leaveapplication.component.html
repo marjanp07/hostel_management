@@ -1,8 +1,10 @@
-<!-- <form class="row g-3" [formGroup]="registrationForm" (ngSubmit)="onsub()"> -->
 
 
-    <form class="row g-3" [formGroup]="registrationForm" (ngSubmit)="onsub()">
-        <div class="s">
+<form [formGroup]="registrationForm" (ngSubmit)="onsub()">
+
+  <h1 mat-dialog-title>Room Vacate</h1>
+  <div mat-dialog-content>
+      <div class="s">
     
     <div class="mb-10">
       <label class="form-label">Hosteler Name </label>
@@ -38,7 +40,14 @@
         <input type="text" class="form-control" formControlName="Guardian_details" aria-describedby="emailHelp">
       </div>
     
-    <br>
-    <button type="submit" class="btn btn-primary" >Submit</button>
+      <br>
+      
+    </div>
+    </div>
+    
+    <div class="mat-dialog-actions" align="end">
+      <button type="submit" class="btn btn-primary" >Submit</button>
     </div>
     </form>
+
+

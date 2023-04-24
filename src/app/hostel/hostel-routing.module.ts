@@ -18,7 +18,6 @@ import { AddAssetComponent } from './assets/add-asset/add-asset.component';
 import { UpdateViewassetComponent } from './assets/update-viewasset/update-viewasset.component';
 import { AddOutPassComponent } from './outpass/add-out-pass/add-out-pass.component';
 import { EditOutPassComponent } from './outpass/edit-out-pass/edit-out-pass.component';
-import { UpdateFormleavComponent } from './leave-application/update-formleav/update-formleav.component';
 import { AddLeaveapplicationComponent } from './leave-application/add-leaveapplication/add-leaveapplication.component';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 
@@ -27,7 +26,6 @@ const routes: Routes = [
 
 
   { path:'leaveapplication/addleaveapplication/0', component: AddLeaveapplicationComponent},
-  { path:'leaveapplication/addleaveapplication/:id', component: UpdateFormleavComponent},
 
 
 
