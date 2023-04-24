@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { RoomVacateComponent } from './room-vacate/room-vacate.component';
 import { AdmissionEntryComponent } from './admission-entry/admission-entry.component';
 import { AddRoomComponent } from './room/add-room/add-room.component';
@@ -21,6 +21,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 import { MatDialogModule} from '@angular/material/dialog';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 import {MatInputModule} from '@angular/material/input';
@@ -31,9 +34,21 @@ import { EditOutPassComponent } from './outpass/edit-out-pass/edit-out-pass.comp
 import { AddLeaveapplicationComponent } from './leave-application/add-leaveapplication/add-leaveapplication.component';
 import { CommonDeleteDialogueComponent } from '../shared/components/common-delete-dialogue/common-delete-dialogue.component';
 import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
+import { DateAdapter, MAT_DATE_FORMATS, MatNativeDateModule } from '@angular/material/core';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
-
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'LL',
+  },
+  display: {
+    dateInput: 'LL',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
 
 @NgModule({
   declarations: [
@@ -56,7 +71,8 @@ import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-v
     AddOutPassComponent,
     EditOutPassComponent,
     AddLeaveapplicationComponent,
-    CommonDeleteDialogueComponent
+    CommonDeleteDialogueComponent,
+    
     // RoomAllotComponent
   ],
   imports: [
@@ -70,10 +86,17 @@ import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-v
    MatButtonModule,
    MatIconModule,
    MatDialogModule,
-   MatInputModule
+   MatInputModule,
+   MatSnackBarModule,
+   MatDatepickerModule,
+   MatNativeDateModule,
+   MatStepperModule
   ],
   exports: [
     MatDialogModule
-  ]
+  ],providers:[DatePipe,{
+    provide:MAT_DATE_FORMATS,useValue:MY_FORMATS
+  },]
 })
 export class HostelModule { }
+

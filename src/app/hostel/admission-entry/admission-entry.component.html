@@ -1,5 +1,5 @@
 <!-- <form class="row g-3" [formGroup]="registrationForm" (ngSubmit)="onsub()"> -->
-    <form class="row g-3">
+    <!-- <form class="row g-3">
     <div class="head">
     <h2><u>STUDENT DETAILS</u></h2>
 </div>
@@ -8,35 +8,30 @@
     <div class="a">
 
         <div >
-    <!-- <div class="col-md-4"> -->
-       <!-- <div> -->
+  
       <label for="validationDefault01" class="form-label">Register No</label>
       <input type="number" class="form-control" formControlName="Register_no"  required>
-    <!-- </div> -->
-    <!-- <div class="col-md-4"> -->
+   \
       <label for="validationDefault02" class="form-label">Student name</label>
       <input type="text" class="form-control" formControlName="Student_name"  required>
-    <!-- </div> -->
+    
     <label for="validationDefault04" class="form-label">Gender</label>
         <select class="form-select" formControlName="Gender" required>
           <option  value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Others">Others</option>
         </select>
-    <!-- <div class="col-12"> -->
+   
       <label for="validationDefault03" class="form-label">Admission date</label>
       <input type="date" class="form-control" formControlName="Admission_date" required>
-    <!-- </div>
-    <div class="col-md-3"> -->
+   
         <label for="validationDefault04" class="form-label">Religion</label>
         <select class="form-select" formControlName="Religion" required>
           <option  value="ISLAM">ISLAM</option>
           <option value="HINDU">HINDU</option>
           <option value="CHRISTIAN">CHRISTIAN</option>
         </select>
-      <!-- </div>
-
-      <div class="col-12"> -->
+     
         <label for="validationDefault04" class="form-label">Category</label>
         <select class="form-select" formControlName="Category" required>
           <option  value="SC">SC</option>
@@ -51,11 +46,7 @@
           <option value="Passport">Passport</option>
           <option value="VoterId">Voter Id</option>
         </select>
-      <!-- </div>
-
-        
-
-      <div class="col-12"> -->
+      
         <br>
         <div class="form-check">
             <label>Mess status</label>
@@ -65,7 +56,6 @@
           </label>
         </div>
     
-      <!-- </div> -->
     </div>
     <br>
 
@@ -153,11 +143,74 @@
 
 <div class="head">
   <a href="/hostel/allot_room" >click here to Allot Room</a><br><br>
-  <!-- <a routerLink="/allot_room">click here to Allot Room</a><br> -->
     <button class="btn btn-primary" type="submit" >Submit form</button>
   </div> 
 
-</form>
+</form> -->
+
+
+
+
+
+<section class="content">
+  <div class="container-fluid px-3">
+    <div class="main-table">
+    <ng-container [ngSwitch]="stepperOrientation | async">
+      <div *ngSwitchCase="'horizontal'">Make your screen smaller to see a vertical stepper</div>
+      <div *ngSwitchCase="'vertical'">Make your screen larger to see a horizontal stepper</div>
+    </ng-container>
+    
+    <mat-stepper
+      class="example-stepper"
+      [orientation]="(stepperOrientation | async)!">
+      <mat-step [stepControl]="firstFormGroup" label="Fill out your name">
+        <form [formGroup]="firstFormGroup">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+        <form [formGroup]="secondFormGroup">
+          <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup" label="Fill out your phone number">
+        <form [formGroup]="thirdFormGroup">
+          <mat-form-field appearance="fill">
+            <mat-label>Phone number</mat-label>
+            <input matInput formControlName="thirdCtrl" placeholder="Ex. 12345678" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+    </div>
+  </div>
+</section>
+
 
    
 

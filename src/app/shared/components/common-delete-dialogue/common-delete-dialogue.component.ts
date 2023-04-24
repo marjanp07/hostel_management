@@ -50,6 +50,19 @@ export class CommonDeleteDialogueComponent implements OnInit {
           //  let response=this.api.delevacca(this.details.id)
           
           break;
+
+          //////// delete Add Room
+
+          case 'Delete-AddRoom':
+            console.log('h');
+            
+          this.api.confirmAddRoomDelete(id).subscribe(data=>{
+            this.dialogRef.close()
+  
+          })
+            //  let response=this.api.delevacca(this.details.id)
+            
+            break;
       }
     }
  catch (error) {

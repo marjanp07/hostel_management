@@ -1,16 +1,21 @@
 
 <form [formGroup]="registrationForm" (ngSubmit)="onsub()">
+  <h1 mat-dialog-title>Add Rooms </h1>
   <div class="s">
-
+    
 <div class="mb-10">
 <label class="form-label">Room Name </label>
 <input type="text" class="form-control" formControlName="Room_name" aria-describedby="emailHelp">
 </div>
 <div class="mb-10">
-<label class="form-label">Block Name</label>
-<input type="text" class="form-control" formControlName="Block_name">
-</div>
-
+  <label for="validationDefault04" class="mb-10">Block Name</label>
+  <select class="form-select" formControlName="Block Name" required>
+    <option  value="Block_A">Block A</option>
+    <option value="Block_B">Block B</option>
+    <option value="Block_C">Block C</option>
+    <option  value="Block_D">Block D</option>
+  
+  </select></div>
 <div class="mb-10">
   <label class="form-label">Floor </label>
   <input type="text" class="form-control" formControlName="Floor">

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Inject} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Room } from 'src/app/shared/interfaces/hostel.interface';
 
 import { HostelService } from 'src/app/shared/services/hostel.service';
 import { MatInputModule } from '@angular/material/input';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 // import { Room } from '../../room.model';
 
 @Component({
@@ -13,12 +14,20 @@ import { MatInputModule } from '@angular/material/input';
   styleUrls: ['./add-room.component.scss']
 })
 export class AddRoomComponent implements OnInit {
-  data : any ;
-  image: any;
+  // data : any ;
+  // image: any;
   // data1s: Room[]=[];
-  constructor(private fb:FormBuilder ,private apiService:HostelService, private router:Router,private route: ActivatedRoute) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Room,
+  private dialogRef: MatDialogRef<AddRoomComponent>,
+   private fb: FormBuilder, 
+   private router: Router,
+    private apiService: HostelService,
+     private route: ActivatedRoute
+
+ ) { }
 
   registrationForm=this.fb.group({
+    id: 0,
     Room_name:['',[Validators.required]],
     Block_name:['',[Validators.required]],
     Floor:[0,[Validators.required]],
@@ -35,54 +44,37 @@ get f()
 
 ngOnInit(): void {
   const id = this.route.snapshot.params['id'];
-  if(id == 0)
-    console.log("add");
-  else if( id > 0)
-    console.log("edit");
-}
-  onsub()
-  {
-    let data1 = this.registrationForm.value as Room;
-  
-    this.apiService.AddRooms(data1).subscribe((product: any)=>{
+
+  if (this.data) {
+    console.log(this.data);
     
-     
-   this.router.navigate(['/room'])
-  });
-  }
-
-
-
-
-
-
-
-
-
-
-// onFileSelect (event:any)
-// {if (event.target.files.length > 0) {
-//   this.image= event.target.files[0];
-// }}
-// ngOnInit(): void {
-//   this.data = true
-//   // this.apiService.readdata().subscribe((datas: Room[])=>{
-//   //   this.datas1 = datas;
-   
-
+    this.registrationForm.patchValue(this.data)
   
+  }
+  
+}
+onsub()
+{
+  let formVal = this.registrationForm.value as Room
 
-//   // })
-
-// }
-
-
-// onsub()
-// {
-//   console.log(this.registrationForm.value)
-
-//   this.apiService.saveRoom(this.registrationForm.value,this.image)
-
-
-// }
+ if(this.data){
+  this.apiService.updateAddRoom(this.data.id,formVal).subscribe((policy: any)=>{
+    this.dialogRef.close()
+      
+     
+  // this.router.navigate(['/hostel/outpass'])
+     
+  });
+ }
+ else {
+  this.apiService.AddRooms(formVal)
+  .subscribe((policy: any)=>{
+    this.dialogRef.close()
+      
+     
+  // this.router.navigate(['/hostel/outpass'])
+     
+  });
+ }
+}
 }
