@@ -29,9 +29,7 @@ import {MatRadioModule} from '@angular/material/radio';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 import {MatInputModule} from '@angular/material/input';
 import { AddAssetComponent } from './assets/add-asset/add-asset.component';
-import { UpdateViewassetComponent } from './assets/update-viewasset/update-viewasset.component';
 import { AddOutPassComponent } from './outpass/add-out-pass/add-out-pass.component';
-import { EditOutPassComponent } from './outpass/edit-out-pass/edit-out-pass.component';
 import { AddLeaveapplicationComponent } from './leave-application/add-leaveapplication/add-leaveapplication.component';
 import { CommonDeleteDialogueComponent } from '../shared/components/common-delete-dialogue/common-delete-dialogue.component';
 import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
@@ -70,9 +68,7 @@ export const MY_FORMATS = {
     RoomComponent,
     AddRoomVacateComponent,
     AddAssetComponent,
-    UpdateViewassetComponent,
     AddOutPassComponent,
-    EditOutPassComponent,
     AddLeaveapplicationComponent,
     CommonDeleteDialogueComponent,
     

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { asset } from 'src/app/shared/interfaces/hostel.interface';
 import { HostelService } from 'src/app/shared/services/hostel.service';
@@ -11,13 +12,21 @@ import { HostelService } from 'src/app/shared/services/hostel.service';
 })
 export class AddAssetComponent implements OnInit {
 
-constructor(private fb:FormBuilder,private router:Router,private apiService:HostelService,private route: ActivatedRoute) { }
+
+constructor(@Inject(MAT_DIALOG_DATA) public data: asset,
+private dialogRef: MatDialogRef<AddAssetComponent>,
+ private fb: FormBuilder, 
+ private router: Router,
+  private apiService: HostelService,
+   private route: ActivatedRoute
+
+) { }
 
 
-  
+
 
 registrationForm=this.fb.group({
-  // Asset_No:[0,[Validators.required]],
+
   Asset_name:['',[Validators.required]],
   Asset_type:['',[Validators.required]],
   Description:['',[Validators.required]],
@@ -25,22 +34,43 @@ registrationForm=this.fb.group({
 })
 
 ngOnInit(): void {
-const id = this.route.snapshot.params['id'];
-if(id == 0)
-  console.log("add");
-else if( id > 0)
-  console.log("edit");
+ const id = this.route.snapshot.params['id'];
+
+ if (this.data) {
+   console.log(this.data);
+   
+   this.registrationForm.patchValue(this.data)
+ 
+ }
+ // if (id == 0)
+ //   console.log("add");
+ // else if (id > 0)
+ //   console.log("edit");
 }
 onsub()
 {
-  let data1 = this.registrationForm.value as asset;
+ let formVal = this.registrationForm.value as asset
 
-  this.apiService.postassetdata(data1).subscribe((product: any)=>{
-  
-   
- this.router.navigate(['/hostel/assethome'])
-});
+if(this.data){
+ this.apiService.assetupdate(this.data.id,formVal).subscribe((policy: any)=>{
+   this.dialogRef.close()
+     
+    
+ // this.router.navigate(['/hostel/outpass'])
+    
+ });
+}
+else {
+ this.apiService.postassetdata(formVal)
+ .subscribe((policy: any)=>{
+   this.dialogRef.close()
+     
+    
+ // this.router.navigate(['/hostel/outpass'])
+    
+ });
+}
+}
 }
 
-}
 

@@ -15,9 +15,7 @@ import { AllotRoomComponent } from './admission-entry/allot-room/allot-room.comp
 import { RoomComponent } from './room/room.component';
 import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
 import { AddAssetComponent } from './assets/add-asset/add-asset.component';
-import { UpdateViewassetComponent } from './assets/update-viewasset/update-viewasset.component';
 import { AddOutPassComponent } from './outpass/add-out-pass/add-out-pass.component';
-import { EditOutPassComponent } from './outpass/edit-out-pass/edit-out-pass.component';
 import { AddLeaveapplicationComponent } from './leave-application/add-leaveapplication/add-leaveapplication.component';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 
@@ -32,7 +30,6 @@ const routes: Routes = [
 
   { path:'assets/addasset/0', component: AddAssetComponent},
   // { path:'up2/:id', component: UpdateViewassetComponent},
-  { path:'assets/addasset/:id', component: UpdateViewassetComponent},
 
   { path:'update', component: AssetsComponent},
   
@@ -58,7 +55,6 @@ const routes: Routes = [
   { path:'allot_room',component:AllotRoomComponent},
   // { path:'room_allot',component:RoomAllotComponent},
   { path:'outpass/addoutpass/0',component:AddOutPassComponent},
-  { path:'outpass/editoutpass/:id',component:EditOutPassComponent},
 
 ];
 

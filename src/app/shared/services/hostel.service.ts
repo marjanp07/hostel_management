@@ -53,15 +53,12 @@ readdata1(){
 
 
 
-postassetdata(product: asset):Observable<asset>{
-
-  console.log(product);
 
 
-  
-return this.httpClient.post<asset>(this.baseApiUrl+'api/Assets',product);
 
-}
+
+
+
 
 postOutPass(product: outPass):Observable<outPass>{
 
@@ -109,6 +106,16 @@ updateOutPass(id:number,data:outPass){
 
 
 
+ postassetdata(product: asset):Observable<asset>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<asset>(this.baseApiUrl+'api/Assets',product);
+
+}
+
 
 getasset(){
   return this.httpClient.get<any>(this.baseApiUrl+'/api/Assets');
@@ -121,10 +128,14 @@ getasset1(id:number){
   }
 
 
-  assetupdate(id:number,data:asset){
+
+
+
+
+   assetupdate(id:number,data:asset){
     console.log(id)
     console.log(data)
-     return this.httpClient.put<any>(this.baseApiUrl+'/api/Assets/'+id,data);
+     return this.httpClient.put<any>(this.baseApiUrl+`/api/vacates/${id}`,data);
      
    }
 
