@@ -18,7 +18,7 @@ export class LeaveApplicationComponent {
   dataSource = new MatTableDataSource<leave>([]);
   @ViewChild(MatSort, { static: true }) sort: MatSort = new MatSort();
 displayedColumns: string[] = [
-  'hosteler_id',
+  'NO',
   'hosteler_name',
   'Application_date',
   'Leave_from',
