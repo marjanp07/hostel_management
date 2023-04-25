@@ -39,6 +39,7 @@ import {  } from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AddMessfeeComponent } from './mess-fee/add-messfee/add-messfee.component';
 import { AddHostelfeeComponent } from './hostel-fee/add-hostelfee/add-hostelfee.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 export const MY_FORMATS = {
@@ -97,6 +98,8 @@ export const MY_FORMATS = {
    MatSelectModule,
    MatCheckboxModule,
    MatRadioModule,
+   MatCardModule,
+   
 
   ],
   exports: [

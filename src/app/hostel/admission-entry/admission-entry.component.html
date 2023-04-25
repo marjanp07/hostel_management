@@ -157,30 +157,30 @@
   <div class="container-fluid px-3">
     <div class="main-table">
     <ng-container [ngSwitch]="stepperOrientation | async">
-      <div *ngSwitchCase="'horizontal'">Make your screen smaller to see a vertical stepper</div>
-      <div *ngSwitchCase="'vertical'">Make your screen larger to see a horizontal stepper</div>
+      <!-- <div *ngSwitchCase="'horizontal'">Make your screen smaller to see a vertical stepper</div> -->
+      <!-- <div *ngSwitchCase="'vertical'">Make your screen larger to see a horizontal stepper</div> -->
     </ng-container>
     
     <mat-stepper
       class="example-stepper"
       [orientation]="(stepperOrientation | async)!">
-      <mat-step [stepControl]="firstFormGroup" label="Fill out your name">
+      <mat-step [stepControl]="firstFormGroup" label="Personal Details">
         <form [formGroup]="firstFormGroup">
           <div class="row">
-          <div class="col">
+          <div class="col-4">
 
           <mat-form-field class="w-100" appearance="fill">
             <mat-label>Register No</mat-label>
             <input matInput placeholder="Register no" formControlName="Register_no" required>
           </mat-form-field>
         </div>
-        <div class="col">
+        <div class="col-4">
           <mat-form-field class="w-100" appearance="fill">
             <mat-label>Student Name</mat-label>
             <input matInput placeholder=" First name ,Last name" formControlName="Student_name" required>
           </mat-form-field></div>
 
-          <div class="col">
+          <div class="col-4">
           <mat-form-field class="w-100" appearance="fill">
             <mat-label>Gender</mat-label>
             <mat-select  formControlName="Gender" required>
@@ -192,44 +192,40 @@
         </div>
       
 
-          <mat-form-field appearance="fill">
+        <div class="col-4">
+          <mat-form-field class="w-100" appearance="fill">
             <mat-label>Admission date</mat-label>
-            <input matInput placeholder=" Admission_date" formControlName="Admission_date" required>
-          </mat-form-field>
+            <input matInput type="date" placeholder=" Admission_date" formControlName="Admission_date" required>
+          </mat-form-field></div>
 
-          <mat-form-field appearance="fill">
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
             <mat-label>Religion</mat-label>
             <mat-select  formControlName="Religion" required>
               <mat-option  value="ISLAM">ISLAM</mat-option>
               <mat-option value="HINDU">HINDU</mat-option>
               <mat-option value="CHRISTIAN">CHRISTIAN</mat-option>
             </mat-select>          
-          </mat-form-field>
+          </mat-form-field></div>
 
-          <mat-form-field appearance="fill">
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
             <mat-label>Category</mat-label>
             <mat-select  formControlName="Category" required>
               <mat-option  value="SC">SC</mat-option>
               <mat-option value="GENERAL">GENERAL</mat-option>
               <mat-option value="OBC">OBC</mat-option>
             </mat-select>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Id Proof Type</mat-label>
-            <mat-select  formControlName="id_proof_type" required>
-              <mat-option  value="Aadhar">aadhar</mat-option>
-              <mat-option value="License">License</mat-option>
-              <mat-option value="Passport">Passport</mat-option>
-              <mat-option value="VoterId">Voter Id</mat-option>
-            </mat-select>
-          </mat-form-field>
+          </mat-form-field></div>
 
           
 
           
 
-          <mat-form-field appearance="fill">
+          
+
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
             <mat-label>Current Class / Department</mat-label>
             <mat-select  formControlName="Current_Class" required>
               <mat-option  value="First year - B TECH">First year - B TECH</mat-option>
@@ -239,14 +235,16 @@
               <mat-option value="First year - MCA">First year - MCA</mat-option>
               <mat-option value="Second year - MCA">Second year - MCA</mat-option>
             </mat-select>
-          </mat-form-field>
+          </mat-form-field></div>
 
-          <mat-form-field appearance="fill">
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput placeholder=" Email" formControlName="Email" required>
-          </mat-form-field>
+            <input matInput type="email" placeholder=" Email" formControlName="Email" required>
+          </mat-form-field></div>
 
-          <mat-form-field appearance="fill">
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
             <mat-label>Blood Group</mat-label>
             <mat-select  formControlName="Blood_Group" required>
               <mat-option  value="A+">A+</mat-option>
@@ -258,49 +256,108 @@
               <mat-option value="O+">O+</mat-option>
               <mat-option value="O-">O-</mat-option>
             </mat-select>
-          </mat-form-field>
+          </mat-form-field></div>
 
          
-          <mat-form-field appearance="fill">
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
             <mat-label>date Of Birth</mat-label>
-            <input matInput placeholder=" date_of_birth" formControlName="date_of_birth" required>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
+            <input matInput type="date" placeholder=" date_of_birth" formControlName="date_of_birth" required>
+          </mat-form-field></div>
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
             <mat-label>Contact Number</mat-label>
-            <input matInput placeholder=" c_number" formControlName="c_number" required>
-          </mat-form-field>
+            <input matInput type="number" placeholder=" c_number" formControlName="c_number" required>
+          </mat-form-field></div>
           
 
-          
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Id Proof Type</mat-label>
+            <mat-select  formControlName="id_proof_type" required>
+              <mat-option  value="Aadhar">aadhar</mat-option>
+              <mat-option value="License">License</mat-option>
+              <mat-option value="Passport">Passport</mat-option>
+              <mat-option value="VoterId">Voter Id</mat-option>
+            </mat-select>
+          </mat-form-field></div>
 
+          <section class="example-section">
+            <label class="example-margin">Mess status:</label>
+            <mat-radio-group>
+              <mat-radio-button class="example-margin" value="after">Yes</mat-radio-button>
+              <mat-radio-button class="example-margin" value="before">No</mat-radio-button>
+            </mat-radio-group>
+          </section>
 
           <div>
             <button mat-button matStepperNext>Next</button>
           </div>
           </div>
+          
         </form>
       </mat-step>
      
 
-      <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+      <mat-step [stepControl]="secondFormGroup" label="Personal address">
         <form [formGroup]="secondFormGroup">
-          <mat-form-field appearance="fill">
+          <div class="row">
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Father name</mat-label>
+            <input matInput type="text" placeholder=" Father name" formControlName="Father_name" required>
+          </mat-form-field></div>
+
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Mother name</mat-label>
+            <input matInput type="text" placeholder=" Mother name" formControlName="Mother_name" required>
+          </mat-form-field></div>
+
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Guardian name</mat-label>
+            <input matInput type="text" placeholder=" Guardian name" formControlName="Guardian_name" required>
+          </mat-form-field></div>
+
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Guardian Contact No</mat-label>
+            <input matInput type="text" placeholder=" Guardian Contact No" formControlName="Guardian_contact_no" required>
+          </mat-form-field></div>
+
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Occupation</mat-label>
+            <input matInput type="text" placeholder=" Occupation" formControlName="Occupation" required>
+          </mat-form-field></div>
+
+          <div class="col-4">
+            <mat-form-field class="w-100" appearance="fill">
             <mat-label>Address</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                   required>
-          </mat-form-field>
+            <input matInput type="text" placeholder=" Address" formControlName="Address" required>
+          </mat-form-field></div>
           <div>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
           </div>
+        </div>
         </form>
       </mat-step>
-      <mat-step [stepControl]="thirdFormGroup" label="Fill out your phone number">
+      <mat-step [stepControl]="thirdFormGroup" label="Allot Room">
         <form [formGroup]="thirdFormGroup">
-          <mat-form-field appearance="fill">
-            <mat-label>Phone number</mat-label>
-            <input matInput formControlName="thirdCtrl" placeholder="Ex. 12345678" required>
-          </mat-form-field>
+        
+          <div class="col-4">
+              <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Select Block</mat-label>
+              <mat-select  formControlName="Select_block" required>
+                <mat-option  value="Block_A">Block A</mat-option>
+                <mat-option value="Block_B">Block B</mat-option>
+                <mat-option value="Block_C">Block C</mat-option>
+                <mat-option value="Block_D">Block D</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button mat-button matStepperNext>Allot</button></div>
           <div>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
@@ -311,6 +368,7 @@
         <ng-template matStepLabel>Done</ng-template>
         <p>You are now done.</p>
         <div>
+          <button mat-button >Submit</button>
           <button mat-button matStepperPrevious>Back</button>
         </div>
       </mat-step>
@@ -346,13 +404,7 @@
 
 
 
-          <!-- <section class="example-section">
-            <label class="example-margin">Align:</label>
-            <mat-radio-group [(ngModel)]="labelPosition">
-              <mat-radio-button class="example-margin" value="after">After</mat-radio-button>
-              <mat-radio-button class="example-margin" value="before">Before</mat-radio-button>
-            </mat-radio-group>
-          </section> -->
+          
 
 
 
