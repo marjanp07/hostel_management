@@ -1,0 +1,38 @@
+
+<form [formGroup]="registrationForm" (ngSubmit)="onsub()">
+
+    <h1 mat-dialog-title>Leave application</h1>
+    <div mat-dialog-content>
+       
+
+<div class="mb-10">
+  <label class="form-label">Hosteler Name </label>
+  <input type="text" class="form-control" formControlName="hosteler_name" aria-describedby="emailHelp">
+</div>
+<div class="mb-10">
+  <label class="form-label">Register Number </label>
+  <input type="number" class="form-control" formControlName="reg_no">
+</div>
+
+<div class="mb-10">
+    <label class="form-label">Hostel Room Number  </label>
+    <input type="number" class="form-control" formControlName="Hostel_room_number">
+  </div>
+
+
+<div class="mb-10"> 
+    <label class="form-label">Academic Year/Session</label>
+    <input type="text" class="form-control" formControlName="Academic_yearsession" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-10"> 
+    <label class="form-label">Room Rent</label>
+    <input type="number" class="form-control" formControlName="Room_rent" aria-describedby="emailHelp">
+  </div>
+
+<br>
+<div class="mat-dialog-actions" align="end">
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </div>
+</div>
+  </form>

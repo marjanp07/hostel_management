@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Room, asset, leave, outPass, vacate } from '../interfaces/hostel.interface';
+import { Room, asset, hostelFee, leave, messFee, outPass, vacate } from '../interfaces/hostel.interface';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 // import { Room } from 'src/app/hostel/room.model';
@@ -257,6 +257,81 @@ confirmVacateDelete(id:number){
     }
   });
   }
+
+
+//messfee
+
+
+postmessfee(product: messFee):Observable<messFee>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<messFee>(this.baseApiUrl+'api/outPasses',product);
+
+}
+
+getmessfee(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<messFee[]>(this.baseApiUrl+'api/outPasses');
+  }
+
+readmessfee(id:number){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/outPasses/'+id);
+  }
+
+
+
+updatemessfee(id:number,data:messFee){
+  console.log(id)
+  console.log(data)
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
+   
+ }
+
+
+
+
+//hostelfee
+
+
+
+posthostelfee(product: hostelFee):Observable<hostelFee>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<hostelFee>(this.baseApiUrl+'api/outPasses',product);
+
+}
+
+gethostelfee(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<hostelFee[]>(this.baseApiUrl+'api/outPasses');
+  }
+
+readhostelfee(id:number){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/outPasses/'+id);
+  }
+
+
+
+updatehostelfee(id:number,data:hostelFee){
+  console.log(id)
+  console.log(data)
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
+   
+ }
+
+
+
+
+
+
 
 
 

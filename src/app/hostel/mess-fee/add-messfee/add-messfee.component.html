@@ -1,0 +1,41 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onsub()">
+
+  <h1 mat-dialog-title>Mess fee</h1>
+  <div mat-dialog-content>
+      <div class="s">
+
+<div class="mb-10">
+  <label class="form-label">Register Number </label>
+  <input type="number" class="form-control" formControlName="reg_no" aria-describedby="emailHelp">
+</div>
+<div class="mb-10">
+  <label class="form-label">Hosteler Name </label>
+  <input type="text" class="form-control" formControlName="hosteler_name">
+</div>
+
+<div class="mb-10">
+    <label class="form-label">Mess bill Month/Period </label>
+    <input type="text" class="form-control" formControlName="Contact_no">
+  </div>
+
+
+<div class="mb-10"> 
+    <label class="form-label">Mess charge</label>
+    <input type="number" class="form-control" formControlName="mess_charge" aria-describedby="emailHelp">
+  </div>
+
+  <br>
+  
+</div>
+</div>
+
+<div class="mat-dialog-actions" align="end">
+  <button type="submit" class="btn btn-primary" >Submit</button>
+</div>
+</form>
+
+
+
+
+
+

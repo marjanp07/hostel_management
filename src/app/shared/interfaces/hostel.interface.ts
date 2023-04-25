@@ -101,6 +101,28 @@ export interface vacate{
     
   }
   
+  //mess fee
+
+  export interface messFee{
+    id:number
+    reg_no:number
+    hosteler_name:string
+    Period:number
+    mess_charge:number
+   
+  }
+
+  //hostel fee
+
+  export interface hostelFee{
+    id:number
+    hosteler_name:string
+    reg_no:number
+    Hostel_room_number:number
+    Academic_yearsession:number
+    Room_rent:number
+   
+  }
 
 
 

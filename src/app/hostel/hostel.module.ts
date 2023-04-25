@@ -37,6 +37,8 @@ import { DateAdapter, MAT_DATE_FORMATS, MatNativeDateModule } from '@angular/mat
 import {MatStepperModule} from '@angular/material/stepper';
 import {  } from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { AddMessfeeComponent } from './mess-fee/add-messfee/add-messfee.component';
+import { AddHostelfeeComponent } from './hostel-fee/add-hostelfee/add-hostelfee.component';
 
 
 export const MY_FORMATS = {
@@ -71,6 +73,8 @@ export const MY_FORMATS = {
     AddOutPassComponent,
     AddLeaveapplicationComponent,
     CommonDeleteDialogueComponent,
+    AddMessfeeComponent,
+    AddHostelfeeComponent,
     
     // RoomAllotComponent
   ],
