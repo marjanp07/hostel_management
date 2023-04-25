@@ -36,9 +36,9 @@ export interface InstitutionMasterModel {
 // Add Room
 export interface Room{
   id:number
-  Room_name:string
+  Room_number:number
   Block_name:string
-  Floor:number
+  Floor:string
   Total_space:number
   Available_space:number
   photo:string

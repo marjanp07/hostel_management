@@ -28,9 +28,9 @@ export class AddRoomComponent implements OnInit {
 
   registrationForm=this.fb.group({
     id: 0,
-    Room_name:['',[Validators.required]],
+    Room_number:[0,[Validators.required]],
     Block_name:['',[Validators.required]],
-    Floor:[0,[Validators.required]],
+    Floor:['',[Validators.required]],
     Total_space:[0,[Validators.required]],
     Available_space:[0,[Validators.required]],
     photo:['',[Validators.required]],

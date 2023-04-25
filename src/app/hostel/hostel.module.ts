@@ -37,6 +37,7 @@ import { DateAdapter, MAT_DATE_FORMATS, MatNativeDateModule } from '@angular/mat
 import {MatStepperModule} from '@angular/material/stepper';
 import {  } from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
 
 
 export const MY_FORMATS = {
@@ -93,6 +94,8 @@ export const MY_FORMATS = {
    MatSelectModule,
    MatCheckboxModule,
    MatRadioModule,
+   MatCardModule,
+   
 
   ],
   exports: [

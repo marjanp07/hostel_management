@@ -19,7 +19,7 @@ export class RoomComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort = new MatSort();
   displayedColumns: string[] = [
     'NO',
-    'Room_name',
+    'Room_number',
     'Block_name',
     'Floor',
     'Total_space',
