@@ -1,44 +1,145 @@
-<div class="mainbody">
-  <div class="d-flex justify-content-between align-items-center">
-    <span class="grey-inter-bold-24 schedule-title "> Out Pass </span>
+
+<section class="content">
+  <div class="container-fluid px-3">
+  
+   <div class="main-table">
+     <div class="d-flex justify-content-between align-items-center mb-2">
+       <span class="text-h5"> outpass </span>
+     </div>
+     <div class="d-flex justify-content-between">
+       <mat-form-field appearance="outline" class="flex-grow-1 pl-0 ml-1">
+         <mat-icon matPrefix style="color: rgb(52, 71, 103)">search</mat-icon>
+         <mat-label class="">Search</mat-label>
+         <input matInput (keyup)="applyFilter($event)" #input />
+       </mat-form-field>
+ 
+       <div class="d-flex justify-content-end align-items-center">
+         <div>
+           <button
+             type="button"
+             mat-flat-button
+              color="primary"
+             class="button-fill-blue d-flex align-items-center ml-2 mb-3"
+             (click)="openDialog()"
+           >
+             <mat-icon>add</mat-icon>
+             <span class="white-rubik-normal-14"> Apply for outpass </span>
+           </button>
+         </div>
+       </div>
+     </div>
+     <div class="table-responsive">
+       <table class="table mt-3" mat-table [dataSource]="dataSource" matSort>
+         <ng-container matColumnDef="NO">
+           <th mat-header-cell *matHeaderCellDef>NO</th>
+           <td mat-cell *matCellDef="let row; let i = index" class="text-left">
+             {{ i + 1 }}
+           </td>
+
+       
+
+         </ng-container>
+         <ng-container matColumnDef="reg_no">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            reg no
+          </th>
+          <td mat-cell *matCellDef="let row; let i = index">
+            {{ row.reg_no }}
+          </td>
+        </ng-container>
+
+    <ng-container matColumnDef="hosteler_name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        hosteler name 
+      </th>
+      <td mat-cell *matCellDef="let row; let i = index">
+        {{ row.hosteler_name }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Contact_no">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>contact no</th>
+      <td mat-cell *matCellDef="let row; let i = index">
+        {{ row.Contact_no }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="date_of_outpass">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>date of outpass</th>
+      <td mat-cell *matCellDef="let row; let i = index">
+        {{ row.date_of_outpass }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="time_of_departure">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>time of departure</th>
+      <td mat-cell *matCellDef="let row; let i = index">
+        {{ row.time_of_departure }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="return_time">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>return time</th>
+      <td mat-cell *matCellDef="let row; let i = index">
+        {{ row.return_time }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="reason_outpass">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>reason</th>
+      <td mat-cell *matCellDef="let row; let i = index">
+        {{ row.reason_outpass }}
+      </td>
+    </ng-container>
+
+         <ng-container matColumnDef="ACTIONS">
+           <th mat-header-cell *matHeaderCellDef>ACTIONS</th>
+           <td mat-cell *matCellDef="let item; let i = index">
+             <button
+               [matMenuTriggerFor]="menu"
+               class="auto-button bg-greylighter-100-greyMain m-auto"
+             >
+             <mat-icon>more_horiz</mat-icon>
+             </button>
+             <mat-menu #menu="matMenu">
+               <button
+                 style="color: var(--greyMain)"
+                 (click)="openDialog(item)"
+                 mat-menu-item
+                
+               >
+                 <mat-icon>edit</mat-icon> <span>Edit</span>
+               </button>
+               <button
+                 mat-menu-item
+                 style="color: var(--red)"
+                
+                 (click)="deleteDocType(item)"
+               >
+                 <mat-icon color="warn">delete</mat-icon> <span>Delete</span>
+               </button>
+             </mat-menu>
+           </td>
+         </ng-container>
+         <tr
+           mat-header-row
+           *matHeaderRowDef="displayedColumns"
+           class="bg-grey-8-greyMain"
+         ></tr>
+         <tr class="mat-row" *matNoDataRow>
+           <td class="no-results" [attr.colspan]="displayedColumns.length">
+             <div
+               class="d-flex flex-column justify-content-center align-items-center"
+             >
+               <span style="color: var(--border-color); margin-top: 0.75rem"
+                 >No Record Found</span
+               >
+             </div>
+           </td>
+         </tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+       </table>
+     </div>
+     
+   </div>
   </div>
-
-
-
-<div class="a">
-<a routerLink="/hostel/outpass/addoutpass/0"> <button class="btn btn-primary">Add</button></a>
-</div><br>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">NO</th>
-      <th scope="col">reg_no</th>
-      <th scope="col">hosteler_name</th>
-      <th scope="col">Contact_no</th>
-      <th scope="col">date_of_outpass</th>
-      <th scope="col">time_of_departure</th>
-      <th scope="col">return_time</th>
-      <th scope="col">reason_outpass</th>
-      <th scope="col">ACTIONS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of datas1;let i = index">
-      <th scope="row">{{i + 1}}</th>
-      <td>{{item.reg_no}}</td>
-      <td>{{item.hosteler_name}}</td>
-      <td>{{item.Contact_no}}</td>
-        <td>{{item.date_of_outpass}}</td>
-        <td>{{item.time_of_departure}}</td>
-        <td>{{item.return_time}}</td>
-        <td>{{item.reason_outpass}}</td>
-
-        <!-- <td>  <button type="button" class="btn btn-danger" (click)="Edit(item.id)">
-              
-          Edit</button><button>Delete</button></td> -->
-        
-        <td> <a routerLink="/hostel/outpass/editoutpass/{{item.id}}"><button>Edit</button></a> <button (click)="deleteDocType(item)">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
-</div>
+</section>

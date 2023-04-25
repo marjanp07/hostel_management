@@ -29,26 +29,26 @@ export class OutpassComponent implements OnInit {
     'ACTIONS'
   ];
   datas1:  outPass[]=[];
-  constructor(private Api: HostelService,private r:Router,
-    private dialog: MatDialog
-    ) { }
-
-  async ngOnInit(): Promise<void> {
+  constructor(private Api: HostelService,public dialog: MatDialog) { }
+  
+  ngOnInit() {
     this.init();
   }
-
-  async GetOutpass() {
-    this.Api.getOutPass().subscribe((datas: any[])=>{
+  
+  GetRoomVacate() {
+    this.Api.readvacatedata().subscribe((datas: any[])=>{
       this.datas1 = datas;
+      this.dataSource.data=datas
       console.log(this.datas1)
-     
+       
   });
   }
-
-   init() {
-    this.GetOutpass()
-}
-
+  
+  init() {
+    this.GetRoomVacate()
+  }
+  
+  
   addDocType(item?: outPass) {
     // const dialogRef = this.dialog.open(AddCognitiveLevelComponent, {
     //   data: {
@@ -59,21 +59,22 @@ export class OutpassComponent implements OnInit {
     //   this.GetDocTypes();
     // });
   }
-
+  
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  // openDialog(vacate?:outPass) {
-  //   const dialogRef = this.dialog.open(AddOutPassComponent, {
-  //     data:vacate
-  //   });
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log(`Dialog result: ${result}`);
-  //   });
-  // }
-
+  openDialog(outPass?:outPass) {
+    const dialogRef = this.dialog.open(AddOutPassComponent, {
+      data:outPass
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      this.GetRoomVacate()
+    });
+  }
+  
   deleteDocType(item?: outPass) {
     console.log(item);
     
@@ -82,20 +83,14 @@ export class OutpassComponent implements OnInit {
       data: {
         title: 'Delete Cognitive Level',
         description: 'Are you sure you want to dele  te this Cognitive Level?',
-        type: 'Delete-outPass',
+        type: 'Delete-roomVacate',
         id: item?.id,
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      this.GetOutpass();
+      this.GetRoomVacate();
     });
   }
-
-  // Edit(id:number)
-  // {
-  // this.r.navigate(['/hostel/outpass/editoutpass/',id])
-  //      
-  // }
-
-
-}
+  
+  }
+  
