@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FormBuilder,Validators } from '@angular/forms';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
@@ -35,8 +36,8 @@ ngOnInit() {
   this.init();
 }
 
-GetRoomVacate() {
-  this.Api.readvacatedata().subscribe((datas: any[])=>{
+GetLeave() {
+  this.Api.getleave().subscribe((datas: any[])=>{
     this.datas1 = datas;
     this.dataSource.data=datas
     console.log(this.datas1)
@@ -45,7 +46,7 @@ GetRoomVacate() {
 }
 
 init() {
-  this.GetRoomVacate()
+  this.GetLeave()
 }
 
 
@@ -64,14 +65,14 @@ applyFilter(event: Event) {
   const filterValue = (event.target as HTMLInputElement).value;
   this.dataSource.filter = filterValue.trim().toLowerCase();
 }
-openDialog(vacate?:leave) {
+openDialog(leave?:leave) {
   const dialogRef = this.dialog.open(AddLeaveapplicationComponent, {
-    data:vacate
+    data:leave
   });
 
   dialogRef.afterClosed().subscribe(result => {
     console.log(`Dialog result: ${result}`);
-    this.GetRoomVacate()
+    this.GetLeave()
   });
 }
 
@@ -88,7 +89,7 @@ deleteDocType(item?: leave) {
     },
   });
   dialogRef.afterClosed().subscribe((result) => {
-    this.GetRoomVacate();
+    this.GetLeave();
   });
 }
 
