@@ -84,7 +84,7 @@ export interface vacate{
     id:number
     hosteler_name:string
     Application_date:string
-    Leave_form:string
+    Leave_from:string
     Leave_till:string
     Reason:string
     Visiting_person:string
