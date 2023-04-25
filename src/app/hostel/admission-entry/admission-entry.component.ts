@@ -5,6 +5,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, map } from 'rxjs';
 
+
 @Component({
   selector: 'app-admission-entry',
   templateUrl: './admission-entry.component.html',
@@ -23,7 +24,19 @@ export class AdmissionEntryComponent implements OnInit {
   stepperOrientation: Observable<StepperOrientation>;
 
   firstFormGroup = this.fb.group({
-    firstCtrl: ['', Validators.required],
+    Register_no: ['', Validators.required],
+    Student_name: ['', Validators.required],
+    Gender: ['', Validators.required],
+    Admission_date: ['', Validators.required],
+    Religion: ['', Validators.required],
+    Category: ['', Validators.required],
+    id_proof_type: ['', Validators.required],
+    Current_Class: ['', Validators.required],
+    Email: ['', Validators.required],
+    Blood_Group: ['', Validators.required],
+    date_of_birth: ['', Validators.required],
+    c_number: ['', Validators.required],
+  
   });
   secondFormGroup = this.fb.group({
     secondCtrl: ['', Validators.required],

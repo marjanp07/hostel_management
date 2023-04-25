@@ -17,9 +17,9 @@
     
     <label for="validationDefault04" class="form-label">Gender</label>
         <select class="form-select" formControlName="Gender" required>
-          <option  value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Others">Others</option>
+          <mat-option  value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <mat-option value="Others">Others</mat-option>
         </select>
    
       <label for="validationDefault03" class="form-label">Admission date</label>
@@ -27,24 +27,24 @@
    
         <label for="validationDefault04" class="form-label">Religion</label>
         <select class="form-select" formControlName="Religion" required>
-          <option  value="ISLAM">ISLAM</option>
-          <option value="HINDU">HINDU</option>
-          <option value="CHRISTIAN">CHRISTIAN</option>
+          <mat-option  value="ISLAM">ISLAM</mat-option>
+          <mat-option value="HINDU">HINDU</mat-option>
+          <mat-option value="CHRISTIAN">CHRISTIAN</mat-option>
         </select>
      
         <label for="validationDefault04" class="form-label">Category</label>
         <select class="form-select" formControlName="Category" required>
-          <option  value="SC">SC</option>
-          <option value="GENERAL">GENERAL</option>
-          <option value="OBC">OBC</option>
+          <mat-option  value="SC">SC</mat-option>
+          <mat-option value="GENERAL">GENERAL</mat-option>
+          <mat-option value="OBC">OBC</mat-option>
         </select>
 
         <label for="validationDefault04" class="form-label">Id proof type</label>
         <select class="form-select" formControlName="id_proof_type" required>
-          <option  value="Aadhar">aadhar</option>
-          <option value="License">License</option>
-          <option value="Passport">Passport</option>
-          <option value="VoterId">Voter Id</option>
+          <mat-option  value="Aadhar">aadhar</mat-option>
+          <mat-option value="License">License</mat-option>
+          <mat-option value="Passport">Passport</mat-option>
+          <mat-option value="VoterId">Voter Id</mat-option>
         </select>
       
         <br>
@@ -62,12 +62,12 @@
     <div class="b">
         <label for="validationDefault04" class="form-label">Current Class/Department</label>
         <select class="form-select" formControlName="Current_Class/Department" required>
-          <option  value="First year - B TECH">First year - B TECH</option>
-          <option value="Second year - B TECH">Second year - B TECH</option>
-          <option  value="Third year - B TECH">Third year - B TECH</option>
-          <option  value="Fourth year - B TECH">Fourth year - B TECH</option>
-          <option value="First year - MCA">First year - MCA</option>
-          <option value="Second year - MCA">Second year - MCA</option>
+          <mat-option  value="First year - B TECH">First year - B TECH</mat-option>
+          <mat-option value="Second year - B TECH">Second year - B TECH</mat-option>
+          <mat-option  value="Third year - B TECH">Third year - B TECH</mat-option>
+          <mat-option  value="Fourth year - B TECH">Fourth year - B TECH</mat-option>
+          <mat-option value="First year - MCA">First year - MCA</mat-option>
+          <mat-option value="Second year - MCA">Second year - MCA</mat-option>
         </select>
       
         <label for="validationDefault02" class="form-label">Email</label>
@@ -75,14 +75,14 @@
 
         <label for="validationDefault04" class="form-label">Blood Group</label>
         <select class="form-select" formControlName="Blood_Group" required>
-          <option  value="A+">A+</option>
-          <option value="AB+">AB+</option>
-          <option value="A-">A-</option>
-          <option  value="AB-">AB-</option>
-          <option value="B+">B+</option>
-          <option value="B-">B-</option>
-          <option value="O+">O+</option>
-          <option value="O-">O-</option>
+          <mat-option  value="A+">A+</mat-option>
+          <mat-option value="AB+">AB+</mat-option>
+          <mat-option value="A-">A-</mat-option>
+          <mat-option  value="AB-">AB-</mat-option>
+          <mat-option value="B+">B+</mat-option>
+          <mat-option value="B-">B-</mat-option>
+          <mat-option value="O+">O+</mat-option>
+          <mat-option value="O-">O-</mat-option>
         </select>
       
         <label for="validationDefault03" class="form-label">date of birth</label>
@@ -153,6 +153,7 @@
 
 
 <section class="content">
+  
   <div class="container-fluid px-3">
     <div class="main-table">
     <ng-container [ngSwitch]="stepperOrientation | async">
@@ -165,15 +166,122 @@
       [orientation]="(stepperOrientation | async)!">
       <mat-step [stepControl]="firstFormGroup" label="Fill out your name">
         <form [formGroup]="firstFormGroup">
-          <mat-form-field appearance="fill">
-            <mat-label>Name</mat-label>
-            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          <div class="row">
+          <div class="col">
+
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Register No</mat-label>
+            <input matInput placeholder="Register no" formControlName="Register_no" required>
           </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Student Name</mat-label>
+            <input matInput placeholder=" First name ,Last name" formControlName="Student_name" required>
+          </mat-form-field></div>
+
+          <div class="col">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Gender</mat-label>
+            <mat-select  formControlName="Gender" required>
+              <mat-option  value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+              <mat-option value="Others">Others</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      
+
+          <mat-form-field appearance="fill">
+            <mat-label>Admission date</mat-label>
+            <input matInput placeholder=" Admission_date" formControlName="Admission_date" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Religion</mat-label>
+            <mat-select  formControlName="Religion" required>
+              <mat-option  value="ISLAM">ISLAM</mat-option>
+              <mat-option value="HINDU">HINDU</mat-option>
+              <mat-option value="CHRISTIAN">CHRISTIAN</mat-option>
+            </mat-select>          
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Category</mat-label>
+            <mat-select  formControlName="Category" required>
+              <mat-option  value="SC">SC</mat-option>
+              <mat-option value="GENERAL">GENERAL</mat-option>
+              <mat-option value="OBC">OBC</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Id Proof Type</mat-label>
+            <mat-select  formControlName="id_proof_type" required>
+              <mat-option  value="Aadhar">aadhar</mat-option>
+              <mat-option value="License">License</mat-option>
+              <mat-option value="Passport">Passport</mat-option>
+              <mat-option value="VoterId">Voter Id</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          
+
+          
+
+          <mat-form-field appearance="fill">
+            <mat-label>Current Class / Department</mat-label>
+            <mat-select  formControlName="Current_Class" required>
+              <mat-option  value="First year - B TECH">First year - B TECH</mat-option>
+              <mat-option value="Second year - B TECH">Second year - B TECH</mat-option>
+              <mat-option  value="Third year - B TECH">Third year - B TECH</mat-option>
+              <mat-option  value="Fourth year - B TECH">Fourth year - B TECH</mat-option>
+              <mat-option value="First year - MCA">First year - MCA</mat-option>
+              <mat-option value="Second year - MCA">Second year - MCA</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder=" Email" formControlName="Email" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Blood Group</mat-label>
+            <mat-select  formControlName="Blood_Group" required>
+              <mat-option  value="A+">A+</mat-option>
+              <mat-option value="AB+">AB+</mat-option>
+              <mat-option value="A-">A-</mat-option>
+              <mat-option  value="AB-">AB-</mat-option>
+              <mat-option value="B+">B+</mat-option>
+              <mat-option value="B-">B-</mat-option>
+              <mat-option value="O+">O+</mat-option>
+              <mat-option value="O-">O-</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+         
+          <mat-form-field appearance="fill">
+            <mat-label>date Of Birth</mat-label>
+            <input matInput placeholder=" date_of_birth" formControlName="date_of_birth" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Contact Number</mat-label>
+            <input matInput placeholder=" c_number" formControlName="c_number" required>
+          </mat-form-field>
+          
+
+          
+
+
           <div>
             <button mat-button matStepperNext>Next</button>
           </div>
+          </div>
         </form>
       </mat-step>
+     
+
       <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
         <form [formGroup]="secondFormGroup">
           <mat-form-field appearance="fill">
@@ -209,6 +317,7 @@
     </mat-stepper>
     </div>
   </div>
+
 </section>
 
 
@@ -216,9 +325,34 @@
 
    
 
+<!-- <mat-form-field appearance="fill">
+            <mat-label>Student Photo</mat-label>
+            <input matInput type="file" placeholder="Choose File" formControlName="Student_photo" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>id Proof Photo</mat-label>
+            <input matInput type="file" placeholder=" Choose File" formControlName="id_photo" required>
+          </mat-form-field> -->
+
+<!-- <mat-form-field appearance="fill">
+            <div class="form-check">
+              <mat-label>Mess status</mat-label>
+            <input matInput class="form-check-input" type="checkbox" value="" formControlName="Mess_status"  required>
+            <mat-label matInput class="form-check-label" for="invalidCheck2">
+              Tick if mess included?
+           </mat-label></div>
+          </mat-form-field> -->
 
 
 
+          <!-- <section class="example-section">
+            <label class="example-margin">Align:</label>
+            <mat-radio-group [(ngModel)]="labelPosition">
+              <mat-radio-button class="example-margin" value="after">After</mat-radio-button>
+              <mat-radio-button class="example-margin" value="before">Before</mat-radio-button>
+            </mat-radio-group>
+          </section> -->
 
 
 

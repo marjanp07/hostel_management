@@ -16,15 +16,16 @@ import { MessFeeComponent } from './mess-fee/mess-fee.component';
 import { TotallBillGenerateComponent } from './totall-bill-generate/totall-bill-generate.component';
 import { AllotRoomComponent } from './admission-entry/allot-room/allot-room.component';
 import { RoomComponent } from './room/room.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatFormFieldControl, MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 import {MatInputModule} from '@angular/material/input';
 import { AddAssetComponent } from './assets/add-asset/add-asset.component';
@@ -36,6 +37,8 @@ import { CommonDeleteDialogueComponent } from '../shared/components/common-delet
 import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-vacate.component';
 import { DateAdapter, MAT_DATE_FORMATS, MatNativeDateModule } from '@angular/material/core';
 import {MatStepperModule} from '@angular/material/stepper';
+import {  } from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 export const MY_FORMATS = {
@@ -90,7 +93,11 @@ export const MY_FORMATS = {
    MatSnackBarModule,
    MatDatepickerModule,
    MatNativeDateModule,
-   MatStepperModule
+   MatStepperModule,
+   MatSelectModule,
+   MatCheckboxModule,
+   MatRadioModule,
+
   ],
   exports: [
     MatDialogModule
