@@ -40,6 +40,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AddMessfeeComponent } from './mess-fee/add-messfee/add-messfee.component';
 import { AddHostelfeeComponent } from './hostel-fee/add-hostelfee/add-hostelfee.component';
 import {MatCardModule} from '@angular/material/card';
+import { AddTtlBillComponent } from './totall-bill-generate/add-ttl-bill/add-ttl-bill.component';
+import { AddFeeReductionComponent } from './fee-reduction/add-fee-reduction/add-fee-reduction.component';
 
 
 export const MY_FORMATS = {
@@ -76,6 +78,8 @@ export const MY_FORMATS = {
     CommonDeleteDialogueComponent,
     AddMessfeeComponent,
     AddHostelfeeComponent,
+    AddTtlBillComponent,
+    AddFeeReductionComponent,
     
     // RoomAllotComponent
   ],
