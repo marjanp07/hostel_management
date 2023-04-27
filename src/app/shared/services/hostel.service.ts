@@ -348,6 +348,14 @@ confirmAddRoomDelete(id:number){
 
 
 
+/////////////// Allot Room
+
+GetAllotRoom(){
+    return this.httpClient.get<any>(this.baseApiUrl+'/api/AddRooms');
+  }
+
+
+
 
 
 

@@ -82,5 +82,9 @@ onsub()
   this.router.navigate(['/room'])
 // });
 }
+allot()
+{
+  this.router.navigate(['/hostel/room_allot'])
+}
 
 }

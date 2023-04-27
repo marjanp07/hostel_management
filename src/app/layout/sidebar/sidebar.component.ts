@@ -38,6 +38,7 @@ export class SidebarComponent implements AfterViewInit {
     console.log(StudentRoute);
 
     let menu: SidebarMenuModel[] & RouteInfo[] = [];
+    
     StudentRoute.forEach((item) => {
       let mainMenu = new GroupMenuItems('0', item.title, item.icon);
 

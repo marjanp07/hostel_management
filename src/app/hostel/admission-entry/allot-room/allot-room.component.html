@@ -1,16 +1,45 @@
-<!-- <section class="content">
+<section class="content">
    <div class="container-fluid px-1">
-   <div class="d-flex" style="flex-wrap: wrap;gap: 10px;">
+    <mat-card class="example-card">
     <div class="card w-50 m-auto" *ngFor="let item of rooms">
         <img src="../../../../assets/lottie-files/room 2.jpg " class="card-img-top" alt="...">
         
 
 
         <div >
-          <table border="3">
+
+
+          <mat-card-header>
+            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+            <mat-card-title>Room_number:{{item.Room_number}}</mat-card-title>
+            <mat-card-subtitle>Block Name :{{item.Block_name}}</mat-card-subtitle>
+            <mat-card-subtitle>Floor :{{item.Floor}}</mat-card-subtitle>
+
+            <mat-card-subtitle>Total Space :{{item.Total_space}}</mat-card-subtitle>
+            <mat-card-subtitle>Available Space :{{item.Available_space}}</mat-card-subtitle>
+
+            <mat-card-subtitle>photo :{{item.photo}}</mat-card-subtitle>
+            <button mat-button>Allot</button>
+
+
+          </mat-card-header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- <table border="3">
               <thead>
                 <tr>
-                  <th scope="col">Room_name</th>
+                  <th scope="col">Room_number</th>
                   <th scope="col">Block_name</th>
                   <th scope="col">Floor</th>
                   <th scope="col">Total_space</th>
@@ -23,8 +52,8 @@
                 </tr>
               </thead>
               <tbody>
-                  <tr *ngFor="let a of datas1">
-                    {{ a.Room_name }}
+                  <tr *ngFor="let a of rooms">
+                    {{ a.Room_number }}
                     <td>{{ a.Block_name}}</td>
                     <td>{{ a.Floor }}</td>
                     <td>{{ a.Total_space}}</td>
@@ -35,7 +64,7 @@
             
                     </tr>
               </tbody>
-          </table>
+          </table> -->
           </div>
 
 
@@ -47,7 +76,7 @@
 
 
       </div>
-   </div>
+    </mat-card>
    </div>
     
-</section> -->
+  </section>

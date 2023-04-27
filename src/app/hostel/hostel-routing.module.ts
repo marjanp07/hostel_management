@@ -52,7 +52,7 @@ const routes: Routes = [
   { path:'fee_reduction',component:FeeReductionComponent},
   { path:'messfee',component:MessFeeComponent},
   { path:'total_bill',component:TotallBillGenerateComponent},
-  { path:'allot_room',component:AllotRoomComponent},
+  { path:'room_allot',component:AllotRoomComponent},
   // { path:'room_allot',component:RoomAllotComponent},
   { path:'outpass/addoutpass/0',component:AddOutPassComponent},
 
