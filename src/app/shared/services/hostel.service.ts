@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Room, asset, hostelFee, leave, messFee, outPass, vacate } from '../interfaces/hostel.interface';
+import { Room, asset, feeReduction, hostelFee, leave, messFee, outPass, totelBill, vacate } from '../interfaces/hostel.interface';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 // import { Room } from 'src/app/hostel/room.model';
@@ -326,6 +326,86 @@ updatehostelfee(id:number,data:hostelFee){
    return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
    
  }
+
+
+
+
+
+//totelbill
+
+
+
+posttotelbill(product: totelBill):Observable<totelBill>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<totelBill>(this.baseApiUrl+'api/outPasses',product);
+
+}
+
+gettotelbill(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<totelBill[]>(this.baseApiUrl+'api/outPasses');
+  }
+
+readtotelbill(id:number){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/outPasses/'+id);
+  }
+
+
+
+updatetotelbill(id:number,data:totelBill){
+  console.log(id)
+  console.log(data)
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
+   
+ }
+
+
+
+
+ //fee reduction
+
+
+
+postfeeReduct(product: feeReduction):Observable<feeReduction>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<feeReduction>(this.baseApiUrl+'api/outPasses',product);
+
+}
+
+getfeeReduct(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<feeReduction[]>(this.baseApiUrl+'api/outPasses');
+  }
+
+feeReduct(id:number){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/outPasses/'+id);
+  }
+
+
+
+updatefeeReduct(id:number,data:feeReduction){
+  console.log(id)
+  console.log(data)
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
+   
+ }
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,63 @@
+
+<form [formGroup]="registrationForm" (ngSubmit)="onsub()">
+
+    <h1 mat-dialog-title>Leave application</h1>
+    <div mat-dialog-content>
+        <div class="s">
+
+<div class="mb-10">
+  <label class="form-label">Register Number </label>
+  <input type="number" class="form-control" formControlName="reg_no" aria-describedby="emailHelp">
+</div>
+<div class="mb-10">
+  <label class="form-label">Hosteler Name </label>
+  <input type="text" class="form-control" formControlName="hosteler_name">
+</div>
+
+<div class="mb-10">
+    <label class="form-label">Hostel charge </label>
+    <input type="number" class="form-control" formControlName="hostel_charge">
+  </div>
+
+
+<div class="mb-10"> 
+    <label class="form-label">Mess charge</label>
+    <input type="number" class="form-control" formControlName="mess_charge" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-10">
+    <label class="form-label">Water and Electricity charge </label>
+    <input type="number" class="form-control" formControlName="W_E_charge">
+  </div>
+  
+  <div class="mb-10">
+      <label class="form-label">Inventory charge </label>
+      <input type="number" class="form-control" formControlName="Inventory_charge">
+    </div>
+  
+  
+  <div class="mb-10"> 
+      <label class="form-label">Penality</label>
+      <input type="number" class="form-control" formControlName="Penality" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-10">
+        <label class="form-label">Reducted amount</label>
+        <input type="number" class="form-control" formControlName="Reducted_amount">
+      </div>
+    
+    
+    <div class="mb-10"> 
+        <label class="form-label">Total amount</label>
+        <input type="number" class="form-control" formControlName="Total_amount" aria-describedby="emailHelp">
+      </div>
+  
+      <br>
+  
+    </div>
+    </div>
+    
+    <div class="mat-dialog-actions" align="end">
+      <button type="submit" class="btn btn-primary" >Submit</button>
+    </div>
+    </form>

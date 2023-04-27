@@ -124,11 +124,37 @@ export interface vacate{
    
   }
 
+ //totel bill
+
+ export interface totelBill{
+  id:number
+  reg_no:number
+  hosteler_name:string
+  hostel_charge:number
+  mess_charge:number
+  W_E_charge:number
+  Inventory_charge:number
+  Penality:number
+  Reducted_amount:number
+  Total_amount:number
+ 
+}
 
 
+ //fee reduction
 
-
-
+ export interface feeReduction{
+  id:number
+  hosteler_name:string
+  reg_no:number
+  Mess_charge:number
+  Number_of_days_continues_absent:string
+  purpose_of_leave:string
+  Leave_date:string
+  Leave_till:string
+  Reducted_mess_charge:number
+ 
+}
 
 
 

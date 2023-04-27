@@ -1,0 +1,61 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onsub()">
+
+    <h1 mat-dialog-title>Leave application</h1>
+    <div mat-dialog-content>
+        <div class="s">
+<div class="mb-10">
+  <label class="form-label">Hosteler Name </label>
+  <input type="text" class="form-control" formControlName="hosteler_name" aria-describedby="emailHelp">
+</div>
+<div class="mb-10">
+  <label class="form-label">Register Number </label>
+  <input type="number" class="form-control" formControlName="reg_no">
+</div>
+
+<div class="mb-10">
+    <label class="form-label">Mess charge </label>
+    <input type="number" class="form-control" formControlName="Mess_charge">
+  </div>
+
+<div class="mb-10"> 
+    <label class="form-label">Number of days continues absent</label>
+    <select class="form-select" formControlName="Number_of_days_continues_absent" required>
+        <option  value="10 days - Rs:500 ">10 days - Rs:500</option>
+        <option value="20 days - Rs:1000">20 days - Rs:900</option>
+        <option value="30 days - Rs:1300">10 days - Rs:1300</option>
+      </select>  </div>
+
+  <div class="mb-10"> 
+    <label class="form-label">Purpose Of Leave</label>
+    <input type="text" class="form-control" formControlName="purpose_of_leave" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-10"> 
+    <label class="form-label">Leave date</label>
+    <input type="date" class="form-control" formControlName="Leave_date" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-10"> 
+    <label class="form-label">Leave till</label>
+    <input type="date" class="form-control" formControlName="Leave_till" aria-describedby="emailHelp">
+  </div>
+
+  
+
+
+<div class="mb-10">
+    <label class="form-label">Reducted Mess charge </label>
+    <input type="number" class="form-control" formControlName="Reducted_mess_charge">
+  </div>
+
+
+  <br>
+  
+  </div>
+  </div>
+  
+  <div class="mat-dialog-actions" align="end">
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </div>
+  </form>
+
