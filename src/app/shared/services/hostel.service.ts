@@ -97,10 +97,25 @@ updateOutPass(id:number,data:outPass){
    
  }
 
- updateAddRoom(id:number,data:Room){
-  console.log(id)
-  console.log(data)
-   return this.httpClient.put<any>(this.baseApiUrl+`/api/AddRooms/${id}`,data);
+ updateAddRoom(id:number,data:Room,photo:File){
+
+  let formData = new FormData();
+ 
+  formData.append('Room_number', data.Room_number.toString());
+  formData.append('Block_name', data.Block_name.toString());
+  formData.append('Floor', data.Floor.toString());
+  formData.append('Total_space', data.Total_space.toString());
+  formData.append('Available_space', data.Available_space.toString());
+  formData.append('photo', "");
+  formData.append('FilePath', photo);
+  return this.httpClient.post(this.baseApiUrl + "api/AddRooms/${id}", formData)
+      // .pipe(map(data => {})).subscribe(result => {
+      //   return result;
+      // })
+
+  // console.log(id)
+  // console.log(data)
+  //  return this.httpClient.put<any>(this.baseApiUrl+`/api/AddRooms/${id}`,data);
    
  }
 
@@ -189,7 +204,7 @@ getleave1(id:number){
 
 
 
-saveRoom(formDatas:any,image:any)
+saveRoom(formDatas:any,photo:any)
 {
   let formData = new FormData();
   console.log(formDatas.Room_name)
@@ -198,7 +213,7 @@ saveRoom(formDatas:any,image:any)
   formData.append('Floor', formDatas.Floor);
   formData.append('Total_space', formDatas.Total_space);
   formData.append('Available_space', formDatas.Available_space);
-  formData.append('photo', image);
+  formData.append('photo', photo);
   return this.httpClient.post(this.baseApiUrl + "api/AddRooms", formData)
       .pipe(map(data => {})).subscribe(result => {
         return result;

@@ -45,7 +45,8 @@
 
 <div class="mb-10"> 
   <label class="form-label">photo</label>
-  <input type="file" class="form-control" formControlName="photo"   aria-describedby="emailHelp">
+  <input type="file" class="form-control" formControlName="photo" (change)="handleFileInput($event)" 
+ accept="image/*" >
 </div>
 
 

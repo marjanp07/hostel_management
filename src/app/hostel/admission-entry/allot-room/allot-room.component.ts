@@ -18,7 +18,7 @@ export class AllotRoomComponent implements OnInit {
       Floor:'',
       Total_space:0,
       Available_space:0,
-      photo:'',
+      photo: '',
     }
   ]
   // datas1:  Room[]=[];

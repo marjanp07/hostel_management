@@ -347,7 +347,7 @@
       <mat-step [stepControl]="thirdFormGroup" label="Allot Room">
         <form [formGroup]="thirdFormGroup">
         
-          <div class="col-4">
+          <div class="col-5">
               <mat-form-field class="w-100" appearance="fill">
               <mat-label>Select Block</mat-label>
               <mat-select  formControlName="Select_block" required>
@@ -356,8 +356,21 @@
                 <mat-option value="Block_C">Block C</mat-option>
                 <mat-option value="Block_D">Block D</mat-option>
               </mat-select>
-            </mat-form-field>
-            <button mat-button matStepperNext (click)="allot()">Allot</button></div>
+            </mat-form-field></div>
+
+            <div class="col-5">
+              <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Current Class / Department</mat-label>
+              <mat-select  formControlName="Current_Class" required>
+                <mat-option  value="First year - B TECH">First year - B TECH</mat-option>
+                <mat-option value="Second year - B TECH">Second year - B TECH</mat-option>
+                <mat-option  value="Third year - B TECH">Third year - B TECH</mat-option>
+                <mat-option  value="Fourth year - B TECH">Fourth year - B TECH</mat-option>
+                <mat-option value="First year - MCA">First year - MCA</mat-option>
+                <mat-option value="Second year - MCA">Second year - MCA</mat-option>
+              </mat-select>
+            </mat-form-field></div>
+            <button mat-button matStepperNext (click)="allot()">Allot</button>
           <div>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
