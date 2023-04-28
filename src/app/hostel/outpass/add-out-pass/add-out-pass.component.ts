@@ -28,7 +28,7 @@ registrationForm=this.fb.group({
 
   reg_no:[0,[Validators.required]],
   hosteler_name:['',[Validators.required]],
-  Contact_no:[0,[Validators.required]],
+  c_number:[0,[Validators.required]],
   date_of_outpass:['',[Validators.required]],
   time_of_departure:['',[Validators.required]],
   return_time:['',[Validators.required]],

@@ -29,9 +29,9 @@ export class AddHostelfeeComponent implements OnInit {
 
   hosteler_name:['',[Validators.required]],
   reg_no:[0,[Validators.required]],
-  Hostel_room_number:[0,[Validators.required]],
+  Room_number:[0,[Validators.required]],
   Academic_yearsession:[0,[Validators.required]],
-  Room_rent:[0,[Validators.required]],
+  hostel_charge:[0,[Validators.required]],
 
 })
 

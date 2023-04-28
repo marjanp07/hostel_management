@@ -150,7 +150,7 @@ getasset1(id:number){
    assetupdate(id:number,data:asset){
     console.log(id)
     console.log(data)
-     return this.httpClient.put<any>(this.baseApiUrl+`/api/vacates/${id}`,data);
+     return this.httpClient.put<any>(this.baseApiUrl+`/api/Assets/${id}`,data);
      
    }
 

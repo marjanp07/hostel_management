@@ -24,8 +24,8 @@ export class AdmissionEntryComponent implements OnInit {
   stepperOrientation: Observable<StepperOrientation>;
 
   firstFormGroup = this.fb.group({
-    Register_no: [0, Validators.required],
-    Student_name: ['', Validators.required],
+    reg_no: [0, Validators.required],
+    hosteler_name: ['', Validators.required],
     Gender: ['', Validators.required],
     Admission_date: ['', Validators.required],
     Religion: ['', Validators.required],
@@ -48,6 +48,7 @@ export class AdmissionEntryComponent implements OnInit {
   });
   thirdFormGroup = this.fb.group({
     Select_block: ['', Validators.required],
+
   });
 
   registrationForm=this.fb.group({

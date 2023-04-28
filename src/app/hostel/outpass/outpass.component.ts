@@ -21,7 +21,7 @@ export class OutpassComponent implements OnInit {
     'NO',
     'reg_no',
     'hosteler_name',
-    'Contact_no',
+    'c_number',
     'date_of_outpass',
     'time_of_departure',
     'return_time',
