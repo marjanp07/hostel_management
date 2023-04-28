@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Room, asset, feeReduction, hostelFee, leave, messFee, outPass, totelBill, vacate } from '../interfaces/hostel.interface';
+import { Room, asset, feeReduction, hostelFee, leave, messFee, outPass, studentregisteration, totelBill, vacate } from '../interfaces/hostel.interface';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 // import { Room } from 'src/app/hostel/room.model';
@@ -200,11 +200,15 @@ getleave1(id:number){
 
 
 
+<<<<<<< HEAD
 
 
 
 
 saveRoom(formDatas:any,photo:any)
+=======
+saveRoom(formDatas:any,image:any)
+>>>>>>> a00ad3218e08e5c4e395103e44ef6bd948e8350d
 {
   let formData = new FormData();
   console.log(formDatas.Room_name)
@@ -448,6 +452,20 @@ confirmAddRoomDelete(id:number){
 GetAllotRoom(){
     return this.httpClient.get<any>(this.baseApiUrl+'/api/AddRooms');
   }
+
+
+
+
+//regform
+
+readstudentdata(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<studentregisteration[]>(this.baseApiUrl+'api/outPasses');
+  }
+
+
+
 
 
 
