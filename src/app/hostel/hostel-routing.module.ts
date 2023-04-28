@@ -17,6 +17,7 @@ import { AddRoomVacateComponent } from './room-vacate/add-room-vacate/add-room-v
 import { AddAssetComponent } from './assets/add-asset/add-asset.component';
 import { AddOutPassComponent } from './outpass/add-out-pass/add-out-pass.component';
 import { AddLeaveapplicationComponent } from './leave-application/add-leaveapplication/add-leaveapplication.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 
 
@@ -53,6 +54,8 @@ const routes: Routes = [
   { path:'messfee',component:MessFeeComponent},
   { path:'total_bill',component:TotallBillGenerateComponent},
   { path:'room_allot',component:AllotRoomComponent},
+  { path:'studentdetails',component:StudentDetailsComponent},
+
   // { path:'room_allot',component:RoomAllotComponent},
   { path:'outpass/addoutpass/0',component:AddOutPassComponent},
 

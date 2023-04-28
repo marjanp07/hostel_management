@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Room, asset, feeReduction, hostelFee, leave, messFee, outPass, totelBill, vacate } from '../interfaces/hostel.interface';
+import { Room, asset, feeReduction, hostelFee, leave, messFee, outPass, studentregisteration, totelBill, vacate } from '../interfaces/hostel.interface';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 // import { Room } from 'src/app/hostel/room.model';
@@ -182,10 +182,6 @@ getleave1(id:number){
    return this.httpClient.put<any>(this.baseApiUrl+`/api/vacates/${id}`,data);
    
  }
-
-
-
-
 
 
 
@@ -433,6 +429,20 @@ confirmAddRoomDelete(id:number){
 GetAllotRoom(){
     return this.httpClient.get<any>(this.baseApiUrl+'/api/AddRooms');
   }
+
+
+
+
+//regform
+
+readstudentdata(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<studentregisteration[]>(this.baseApiUrl+'api/outPasses');
+  }
+
+
+
 
 
 

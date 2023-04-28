@@ -36,7 +36,7 @@ ngOnInit() {
 }
 
 GetRoomVacate() {
-  this.Api.readvacatedata().subscribe((datas: any[])=>{
+  this.Api.getleave().subscribe((datas: any[])=>{
     this.datas1 = datas;
     this.dataSource.data=datas
     console.log(this.datas1)

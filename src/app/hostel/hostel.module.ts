@@ -42,6 +42,7 @@ import { AddHostelfeeComponent } from './hostel-fee/add-hostelfee/add-hostelfee.
 import {MatCardModule} from '@angular/material/card';
 import { AddTtlBillComponent } from './totall-bill-generate/add-ttl-bill/add-ttl-bill.component';
 import { AddFeeReductionComponent } from './fee-reduction/add-fee-reduction/add-fee-reduction.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 
 
 export const MY_FORMATS = {
@@ -80,6 +81,7 @@ export const MY_FORMATS = {
     AddHostelfeeComponent,
     AddTtlBillComponent,
     AddFeeReductionComponent,
+    StudentDetailsComponent,
     
     // RoomAllotComponent
   ],

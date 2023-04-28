@@ -156,6 +156,28 @@ export interface vacate{
  
 }
 
+//student registeration
 
+export interface studentregisteration{
+  id:number
+  Register_no:number
+  Student_name:string
+  Gender:string
+  Admission_date:string
+  Religion:string
+  Category:string
+  id_proof_type:string 
+  Current_Class:string 
+  Email:string 
+  Blood_Group:string 
+  date_of_birth:string
+  c_number:number 
+  Father_name:string 
+  Mother_name:string 
+  Guardian_name:string 
+  Guardian_contact_no:number 
+  Occupation:string 
+  Address:string 
+  Select_block:string
 
-
+}

@@ -36,7 +36,7 @@ export class OutpassComponent implements OnInit {
   }
   
   GetRoomVacate() {
-    this.Api.readvacatedata().subscribe((datas: any[])=>{
+    this.Api.getOutPass().subscribe((datas: any[])=>{
       this.datas1 = datas;
       this.dataSource.data=datas
       console.log(this.datas1)
