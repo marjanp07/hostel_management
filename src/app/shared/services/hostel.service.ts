@@ -200,15 +200,12 @@ getleave1(id:number){
 
 
 
-<<<<<<< HEAD
 
 
 
 
 saveRoom(formDatas:any,photo:any)
-=======
-saveRoom(formDatas:any,image:any)
->>>>>>> a00ad3218e08e5c4e395103e44ef6bd948e8350d
+
 {
   let formData = new FormData();
   console.log(formDatas.Room_name)
