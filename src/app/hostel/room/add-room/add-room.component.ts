@@ -17,7 +17,7 @@ export class AddRoomComponent implements OnInit {
   // data : any ;
   // image: any;
   // data1s: Room[]=[];
-  photo:any;
+  // photo:any;
  
   constructor(@Inject(MAT_DIALOG_DATA) public data: Room,
   private dialogRef: MatDialogRef<AddRoomComponent>,
@@ -35,7 +35,7 @@ export class AddRoomComponent implements OnInit {
     Floor:['',[Validators.required]],
     Total_space:[0,[Validators.required]],
     Available_space:[0,[Validators.required]],
-    photo:['',[Validators.required]],
+    // photo:['',[Validators.required]],
 })
 
 get f()
@@ -43,14 +43,14 @@ get f()
   return this.registrationForm.controls;
 }
 
-handleFileInput(event: any){
-  if (event.target.files.length>0){
-    this.photo=event.target.files[0]
-    console.log(this.photo);
+// handleFileInput(event: any){
+//   if (event.target.files.length>0){
+//     this.photo=event.target.files[0]
+//     console.log(this.photo);
     
-  }
+//   }
  
-}
+// }
 
 
 ngOnInit(): void {
@@ -69,7 +69,7 @@ onsub()
   let formVal = this.registrationForm.value as Room
 
  if(this.data){
-  this.apiService.updateAddRoom(this.data.id,formVal,this.photo).subscribe((policy: any)=>{
+  this.apiService.updateAddRoom(this.data.id,formVal).subscribe((policy: any)=>{
     this.dialogRef.close()
       
      
@@ -78,7 +78,7 @@ onsub()
   });
  }
  else {
-  this.apiService.AddRooms(formVal,this.photo)
+  this.apiService.AddRooms(formVal)
   .subscribe((policy: any)=>{
     this.dialogRef.close()
       
