@@ -24,7 +24,7 @@ export class RoomComponent implements OnInit {
     'Floor',
     'Total_space',
     'Available_space',
-    'photo',
+    // 'photo',
     'ACTIONS'
   ];
 

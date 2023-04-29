@@ -78,7 +78,7 @@ onsub()
   });
  }
  else {
-  this.apiService.AddRooms(formVal)
+  this.apiService.AddRooms(formVal,this.photo)
   .subscribe((policy: any)=>{
     this.dialogRef.close()
       

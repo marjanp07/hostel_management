@@ -41,7 +41,7 @@ export interface Room{
   Floor:string
   Total_space:number
   Available_space:number
-  photo:string
+  // photo:string
 
 }
 

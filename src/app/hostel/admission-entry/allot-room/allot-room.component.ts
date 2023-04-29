@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Room } from 'src/app/shared/interfaces/hostel.interface';
 import { HostelService } from 'src/app/shared/services/hostel.service';
 // import { Room } from '../../room.model';
@@ -18,11 +19,11 @@ export class AllotRoomComponent implements OnInit {
       Floor:'',
       Total_space:0,
       Available_space:0,
-      photo: '',
+      // photo: '',
     }
   ]
   // datas1:  Room[]=[];
-  constructor(private Api: HostelService) { }
+  constructor(private Api: HostelService,private router:Router) { }
 
   ngOnInit(): void {
     this.Api.GetAllotRoom().subscribe((datas: Room[])=>{
@@ -40,6 +41,8 @@ export class AllotRoomComponent implements OnInit {
 //      
 //   });
   
-
+allot(){
+  this.router.navigate(['/hostel/admissionEntry'])
+}
 
 }

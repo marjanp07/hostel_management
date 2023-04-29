@@ -1,14 +1,10 @@
 <section class="content">
+  <!-- <form [formGroup]="registrationForm" (ngSubmit)="onsub()"> -->
    <div class="container-fluid px-1">
     <mat-card class="example-card">
     <div class="card w-50 m-auto" *ngFor="let item of rooms">
-        <img src="../../../../assets/lottie-files/room 2.jpg " class="card-img-top" alt="...">
         
-
-
-        <div >
-
-
+        
           <mat-card-header>
             <!-- <div mat-card-avatar class="example-header-image"></div> -->
             <mat-card-title>Room_number:{{item.Room_number}}</mat-card-title>
@@ -18,8 +14,8 @@
             <mat-card-subtitle>Total Space :{{item.Total_space}}</mat-card-subtitle>
             <mat-card-subtitle>Available Space :{{item.Available_space}}</mat-card-subtitle>
 
-            <mat-card-subtitle>photo :{{item.photo}}</mat-card-subtitle>
-            <button mat-button>Allot</button>
+            <!-- <mat-card-subtitle>photo :{{item.photo}}</mat-card-subtitle> -->
+            <button mat-button (click)="allot()">Allot</button>
 
 
           </mat-card-header>
@@ -65,7 +61,7 @@
                     </tr>
               </tbody>
           </table> -->
-          </div>
+         
 
 
 
@@ -78,5 +74,5 @@
       </div>
     </mat-card>
    </div>
-    
+  <!-- </form> -->
   </section>

@@ -16,7 +16,7 @@ export class StudentDetailsComponent {
     @ViewChild(MatSort, { static: true }) sort: MatSort = new MatSort();
   displayedColumns: string[] = [
     'NO',
-    'Register_no',
+    'reg_no',
     'Student_name',
     'Current_Class',
     'date_of_birth',
