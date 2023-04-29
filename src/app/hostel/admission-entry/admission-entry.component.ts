@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, map } from 'rxjs';
-import { studentregisteration } from 'src/app/shared/interfaces/hostel.interface';
+import { Room, studentregisteration } from 'src/app/shared/interfaces/hostel.interface';
 import { HostelService } from 'src/app/shared/services/hostel.service';
 
 
@@ -66,11 +66,11 @@ export class AdmissionEntryComponent implements OnInit {
 // })
 
 ngOnInit(): void {
-  // this.apiService.readdata1().subscribe((datas: Shop[])=>{
-  //   this.datas1 = datas;
+  this.Api.GetAddRoomByBlockName('').subscribe((datas: Room[])=>{ 
+     //   this.datas1 = datas;
   //   console.log(this.datas1)
 
-  // })
+  })
   this.firstFormGroup.patchValue(this.state as any)
 
   console.log(this.router.getCurrentNavigation()?.extras.state);

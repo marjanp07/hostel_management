@@ -495,7 +495,9 @@ readadmissionentry() {
 }
 
 
-
+GetAddRoomByBlockName(Block_name:string) {
+  return this.httpClient.get<any>(this.baseApiUrl + '/api/AddRooms/' + Block_name);
+}
 
 
 
