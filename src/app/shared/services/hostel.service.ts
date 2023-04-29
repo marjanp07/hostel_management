@@ -89,6 +89,7 @@ export class HostelService {
   updateOutPass(id: number, data: outPass) {
     console.log(id)
     console.log(data)
+<<<<<<< HEAD
     return this.httpClient.put<any>(this.baseApiUrl + `/api/outPasses/${id}`, data);
 
   }
@@ -158,6 +159,11 @@ export class HostelService {
     return this.httpClient.put<any>(this.baseApiUrl + `/api/vacates/${id}`, data);
 
   }
+=======
+     return this.httpClient.put<any>(this.baseApiUrl+`/api/Assets/${id}`,data);
+     
+   }
+>>>>>>> fd749be841693b4c2d24acf770ff5480b16d2954
 
 
 
@@ -477,8 +483,208 @@ export class HostelService {
 
 }
 
+<<<<<<< HEAD
 function GetFormData(data: any) {
   return serialize(data, {
     indices: true
   })
+=======
+getmessfee(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<messFee[]>(this.baseApiUrl+'api/outPasses');
+  }
+
+readmessfee(id:number){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/outPasses/'+id);
+  }
+
+
+
+updatemessfee(id:number,data:messFee){
+  console.log(id)
+  console.log(data)
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
+   
+ }
+
+
+
+
+//hostelfee
+
+
+
+posthostelfee(product: hostelFee):Observable<hostelFee>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<hostelFee>(this.baseApiUrl+'api/outPasses',product);
+
+}
+
+gethostelfee(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<hostelFee[]>(this.baseApiUrl+'api/outPasses');
+  }
+
+readhostelfee(id:number){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/outPasses/'+id);
+  }
+
+
+
+updatehostelfee(id:number,data:hostelFee){
+  console.log(id)
+  console.log(data)
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
+   
+ }
+
+
+
+
+
+//totelbill
+
+
+
+posttotelbill(product: totelBill):Observable<totelBill>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<totelBill>(this.baseApiUrl+'api/outPasses',product);
+
+}
+
+gettotelbill(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<totelBill[]>(this.baseApiUrl+'api/outPasses');
+  }
+
+readtotelbill(id:number){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/outPasses/'+id);
+  }
+
+
+
+updatetotelbill(id:number,data:totelBill){
+  console.log(id)
+  console.log(data)
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
+   
+ }
+
+
+
+
+ //fee reduction
+
+
+
+postfeeReduct(product: feeReduction):Observable<feeReduction>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<feeReduction>(this.baseApiUrl+'api/outPasses',product);
+
+}
+
+getfeeReduct(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<feeReduction[]>(this.baseApiUrl+'api/outPasses');
+  }
+
+feeReduct(id:number){
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/outPasses/'+id);
+  }
+
+
+
+updatefeeReduct(id:number,data:feeReduction){
+  console.log(id)
+  console.log(data)
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
+   
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////// Add Room Delete
+
+confirmAddRoomDelete(id:number){
+  console.log(id)
+  return this.httpClient.delete<any>(this.baseApiUrl+'/api/AddRooms',{
+    params:{
+      id
+    }
+  });
+  }
+
+
+
+/////////////// Allot Room
+
+GetAllotRoom(){
+    return this.httpClient.get<any>(this.baseApiUrl+'/api/AddRooms');
+  }
+
+
+
+
+//regform
+
+readstudentdata(){
+  console.log(this.baseApiUrl);
+  
+  return this.httpClient.get<studentregisteration[]>(this.baseApiUrl+'api/outPasses');
+  }
+
+
+//admission entry post
+
+
+
+postadmissionentry(product: Partial<studentregisteration>):Observable<studentregisteration>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<studentregisteration>(this.baseApiUrl+'api/outPasses',product);
+
+}
+
+
+
+
+
+
+
+
+
+
+>>>>>>> fd749be841693b4c2d24acf770ff5480b16d2954
 }

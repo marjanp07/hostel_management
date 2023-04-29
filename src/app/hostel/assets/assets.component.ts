@@ -23,6 +23,7 @@ displayedColumns: string[] = [
   'NO',
   'Asset_name',
   'Asset_type',
+  'Asset_quantity',
   'Description',
   'ACTIONS'
 ];

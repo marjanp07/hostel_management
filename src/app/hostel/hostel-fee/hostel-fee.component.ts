@@ -22,7 +22,7 @@ displayedColumns: string[] = [
   'reg_no',
   'Hostel_room_number',
   'Academic_yearsession',
-  'Room_rent',
+  'hostel_charge',
   'ACTIONS'
 ];
 datas1:  hostelFee[]=[];

@@ -29,6 +29,7 @@ registrationForm=this.fb.group({
 
   Asset_name:['',[Validators.required]],
   Asset_type:['',[Validators.required]],
+  Asset_quantity:[0,[Validators.required]],
   Description:['',[Validators.required]],
 
 })

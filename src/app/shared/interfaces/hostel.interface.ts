@@ -61,6 +61,7 @@ export interface vacate{
   // Asset_No:number
   Asset_name:string
   Asset_type:string
+  Asset_quantity:number
   Description:string
 }
 
@@ -71,7 +72,7 @@ export interface vacate{
     id:number
     reg_no:number
     hosteler_name:string
-    Contact_no:number
+    c_number:number
     date_of_outpass:string
     time_of_departure:string
     return_time:string
@@ -118,9 +119,9 @@ export interface vacate{
     id:number
     hosteler_name:string
     reg_no:number
-    Hostel_room_number:number
+    Room_number:number
     Academic_yearsession:number
-    Room_rent:number
+    hostel_charge:number
    
   }
 
@@ -159,9 +160,9 @@ export interface vacate{
 //student registeration
 
 export interface studentregisteration{
-  id:number
-  Register_no:number
-  Student_name:string
+  // id:number
+  reg_no:number
+  hosteler_name:string
   Gender:string
   Admission_date:string
   Religion:string
@@ -181,3 +182,5 @@ export interface studentregisteration{
   Select_block:string
 
 }
+
+
