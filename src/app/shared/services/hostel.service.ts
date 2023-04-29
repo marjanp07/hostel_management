@@ -18,7 +18,7 @@ export class HostelService {
   ) {
   }
 
-
+//d
   AddVacate(product: vacate): Observable<vacate> {
 
     console.log(product);
