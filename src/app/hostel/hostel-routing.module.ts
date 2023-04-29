@@ -54,10 +54,13 @@ const routes: Routes = [
   { path:'messfee',component:MessFeeComponent},
   { path:'total_bill',component:TotallBillGenerateComponent},
   { path:'room_allot',component:AllotRoomComponent},
-  { path:'studentdetails',component:StudentDetailsComponent},
+  { path:'studentdetailsss',component:StudentDetailsComponent},
+  { path:'studentdetails',component:AdmissionEntryComponent},
+
 
   // { path:'room_allot',component:RoomAllotComponent},
   { path:'outpass/addoutpass/0',component:AddOutPassComponent},
+
 
 ];
 

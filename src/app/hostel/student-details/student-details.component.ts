@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { studentregisteration } from 'src/app/shared/interfaces/hostel.interface';
 import { HostelService } from 'src/app/shared/services/hostel.service';
 
@@ -17,23 +18,21 @@ export class StudentDetailsComponent {
   displayedColumns: string[] = [
     'NO',
     'reg_no',
-    'Student_name',
+    'hosteler_name',
     'Current_Class',
-    'date_of_birth',
     'c_number',
-    'Guardian_name',
-    'Guardian_contact_no',
     'Select_block',
+    'ACTIONS'
   ];
   datas1:  studentregisteration[]=[];
-  constructor(private Api: HostelService) { }
+  constructor(private Api: HostelService,private r:Router,) { }
   
   ngOnInit() {
     this.init();
   }
   
   GetRoomVacate() {
-    this.Api.readstudentdata().subscribe((datas: any[])=>{
+    this.Api.readadmissionentry().subscribe((datas: any[])=>{
       this.datas1 = datas;
       this.dataSource.data=datas
       console.log(this.datas1)
@@ -79,6 +78,19 @@ export class StudentDetailsComponent {
   //     this.GetRoomVacate();
   //   });
   // }
+
+pass(registration:studentregisteration){
+console.log(registration);
+
+
+  this.r.navigate(['hostel/studentdetails'],{
+    state: registration
+  })
+
+
+
+      }
+
   
   }
   

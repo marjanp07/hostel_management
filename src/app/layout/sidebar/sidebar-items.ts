@@ -119,7 +119,7 @@ export const StudentRoute: RouteInfo[] = [
         SubMenus: [],
       },
       {
-        path: 'hostel/studentdetails',
+        path: 'hostel/studentdetailsss',
         title: 'Student details',
         iconType: 'material-icons-two-tone',
         icon: 'about',
