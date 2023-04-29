@@ -471,11 +471,21 @@ postadmissionentry(product: Partial<studentregisteration>):Observable<studentreg
 
 
   
-return this.httpClient.post<studentregisteration>(this.baseApiUrl+'api/outPasses',product);
+return this.httpClient.post<studentregisteration>(this.baseApiUrl+'api/Admissionentries',product);
 
 }
 
 
+readadmissionentry() {
+
+
+  return this.httpClient.get<studentregisteration[]>(this.baseApiUrl + 'api/Admissionentries');
+}
+
+
+GetAddRoomByBlockName(Block_name:string) {
+  return this.httpClient.get<any>(this.baseApiUrl + '/api/AddRooms/' + Block_name);
+}
 
 
 

@@ -50,10 +50,10 @@
         </td>
       </ng-container>
   
-      <ng-container matColumnDef="Student_name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Student Name</th>
+      <ng-container matColumnDef="hosteler_name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>hosteler name</th>
         <td mat-cell *matCellDef="let row; let i = index">
-          {{ row.Student_name }}
+          {{ row.hosteler_name }}
         </td>
       </ng-container>
       <ng-container matColumnDef="Current_Class">
@@ -63,12 +63,7 @@
         </td>
       </ng-container>
   
-      <ng-container matColumnDef="date_of_birth">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>date of birth</th>
-        <td mat-cell *matCellDef="let row; let i = index">
-          {{ row.date_of_birth }}
-        </td>
-      </ng-container>
+ 
   
       <ng-container matColumnDef="c_number">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>contact number</th>
@@ -77,19 +72,9 @@
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="Guardian_name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Guardian name</th>
-        <td mat-cell *matCellDef="let row; let i = index">
-          {{ row.Guardian_name }}
-        </td>
-      </ng-container>
+   
 
-      <ng-container matColumnDef="Guardian_contact_no">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Guardian contact no</th>
-        <td mat-cell *matCellDef="let row; let i = index">
-          {{ row.Guardian_contact_no }}
-        </td>
-      </ng-container>
+ 
 
       <ng-container matColumnDef="Select_block">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Selected block</th>
@@ -97,8 +82,11 @@
           {{ row.Select_block }}
         </td>
       </ng-container>
+
+
+
   
-           <!-- <ng-container matColumnDef="ACTIONS">
+           <ng-container matColumnDef="ACTIONS">
              <th mat-header-cell *matHeaderCellDef>ACTIONS</th>
              <td mat-cell *matCellDef="let item; let i = index">
                <button
@@ -110,23 +98,27 @@
                <mat-menu #menu="matMenu">
                  <button
                    style="color: var(--greyMain)"
-                   (click)="openDialog(item)"
+
+
+                   (click)="pass(item)"
+                 
+
+
                    mat-menu-item
                   
                  >
-                   <mat-icon>edit</mat-icon> <span>Edit</span>
+                   <mat-icon>remove_red_eye</mat-icon> <span>view</span>
                  </button>
-                 <button
-                   mat-menu-item
-                   style="color: var(--red)"
-                  
-                   (click)="deleteDocType(item)"
-                 >
-                   <mat-icon color="warn">delete</mat-icon> <span>Delete</span>
-                 </button>
+               
                </mat-menu>
              </td>
-           </ng-container> -->
+           </ng-container>
+
+
+
+
+
+
            <tr
              mat-header-row
              *matHeaderRowDef="displayedColumns"
