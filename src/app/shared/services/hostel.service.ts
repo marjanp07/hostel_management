@@ -495,7 +495,7 @@ return this.httpClient.post<studentregisteration>(this.baseApiUrl+'api/outPasses
 
 }
 
-function GetFormData(data: any) {
+ function GetFormData(data: any) {
   return serialize(data, {
     indices: true
   })
