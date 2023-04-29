@@ -67,11 +67,13 @@ export class AdmissionEntryComponent implements OnInit {
 // })
 
 ngOnInit(): void {
-  // this.apiService.readdata1().subscribe((datas: Shop[])=>{
-  //   this.datas1 = datas;
-  //   console.log(this.datas1)
+  // this.Api.GetAddRoomByBlockName('').subscribe((datas: Room[])=>{
+    // this.datas1 = datas;
+    // console.log(this.datas1)
 
   // })
+
+  
 }
 
 
@@ -101,7 +103,9 @@ onsub()
 
 allot()
 {
-  this.router.navigate(['/hostel/room_allot'])
+  this.router.navigate(['/hostel/room_allot'],{
+    
+  })
 }
 
 }

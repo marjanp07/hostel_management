@@ -86,6 +86,13 @@ export class HostelService {
 
 
 
+
+  // GetBlocks(id: number) {
+  //   return this.httpClient.get<any>(this.baseApiUrl + '/api/AddRooms/' + id);
+  // }
+
+
+
   updateOutPass(id: number, data: outPass) {
     console.log(id)
     console.log(data)
@@ -355,9 +362,6 @@ updatehostelfee(id:number,data:hostelFee){
  }
 
 
-
-
-
 //totelbill
 
 
@@ -392,8 +396,6 @@ updatetotelbill(id:number,data:totelBill){
  }
 
 
-
-
  //fee reduction
 
 
@@ -426,20 +428,6 @@ updatefeeReduct(id:number,data:feeReduction){
    return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
    
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ////// Add Room Delete
