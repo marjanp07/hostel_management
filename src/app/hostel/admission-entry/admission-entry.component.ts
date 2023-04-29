@@ -1,9 +1,11 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { StepperOrientation } from '@angular/cdk/stepper';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, map } from 'rxjs';
+import { studentregisteration } from 'src/app/shared/interfaces/hostel.interface';
+import { HostelService } from 'src/app/shared/services/hostel.service';
 
 
 @Component({
@@ -13,8 +15,9 @@ import { Observable, map } from 'rxjs';
 })
 export class AdmissionEntryComponent implements OnInit {
 
-  constructor(private fb:FormBuilder , private router:Router,
-    breakpointObserver: BreakpointObserver
+  constructor(private fb:NonNullableFormBuilder , private router:Router,
+    breakpointObserver: BreakpointObserver,
+    private Api: HostelService
     ) {
       this.stepperOrientation = breakpointObserver
       .observe('(min-width: 800px)')
@@ -51,7 +54,7 @@ export class AdmissionEntryComponent implements OnInit {
 
   });
 
-  registrationForm=this.fb.group({
+  // registrationForm=this.fb.group({
     // id:[0],
     // shop_id:[0,[Validators.required]],
     // name:['',[Validators.required]],
@@ -61,7 +64,7 @@ export class AdmissionEntryComponent implements OnInit {
    
 
 
-})
+// })
 
 ngOnInit(): void {
   // this.apiService.readdata1().subscribe((datas: Shop[])=>{
@@ -78,11 +81,24 @@ onsub()
   // let data1 = this.registrationForm.value as Shop;
 
   // this.apiService.createPolicy2(data1).subscribe((product: any)=>{
+
+  const x:Partial<studentregisteration>= {
+    ...this.firstFormGroup.value!,
+    ...this.secondFormGroup.value!,
+    ...this.thirdFormGroup.value!,
+  }
+
+  this.Api.postadmissionentry(x).subscribe((product: any)=>{
   
 
-  this.router.navigate(['/room'])
-// });
-}
+
+
+  
+
+  // this.router.navigate(['/room'])
+  // });
+})}
+
 allot()
 {
   this.router.navigate(['/hostel/room_allot'])

@@ -462,6 +462,19 @@ readstudentdata(){
   }
 
 
+//admission entry post
+
+
+
+postadmissionentry(product: Partial<studentregisteration>):Observable<studentregisteration>{
+
+  console.log(product);
+
+
+  
+return this.httpClient.post<studentregisteration>(this.baseApiUrl+'api/outPasses',product);
+
+}
 
 
 

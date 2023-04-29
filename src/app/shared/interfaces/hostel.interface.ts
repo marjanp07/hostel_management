@@ -160,7 +160,7 @@ export interface vacate{
 //student registeration
 
 export interface studentregisteration{
-  id:number
+  // id:number
   reg_no:number
   hosteler_name:string
   Gender:string
@@ -182,3 +182,5 @@ export interface studentregisteration{
   Select_block:string
 
 }
+
+
