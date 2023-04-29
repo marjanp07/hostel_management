@@ -29,16 +29,16 @@ export class HostelService {
 
   }
 
-  AddRooms(product: Room, photo: File): Observable<Room> {
+  AddRooms(product: Room): Observable<Room> {
 
-    console.log(product, photo);
-    const form = GetFormData({
-      addRoom: product,
+    // console.log(product, photo);
+    // const form = GetFormData({
+    //   addRoom: product,
       
-    })
+    // })
 
 
-    return this.httpClient.post<Room>(this.baseApiUrl + 'api/AddRooms', form);
+    return this.httpClient.post<Room>(this.baseApiUrl + 'api/AddRooms',product);
 
   }
 
@@ -101,26 +101,29 @@ export class HostelService {
 
   }
 
-  updateAddRoom(id: number, data: Room, photo: File) {
+  // updateAddRoom(id: number, data: Room, photo: File) {
 
-    let formData = new FormData();
-    console.log(id)
-    formData.append('Room_number', data.Room_number.toString());
-    formData.append('Block_name', data.Block_name.toString());
-    formData.append('Floor', data.Floor.toString());
-    formData.append('Total_space', data.Total_space.toString());
-    formData.append('Available_space', data.Available_space.toString());
-    formData.append('photo', "");
-    formData.append('FilePath', photo);
-    formData.append('id', "");
-    return this.httpClient.post(this.baseApiUrl + `api/AddRooms/`, formData)
+    // let formData = new FormData();
+    // console.log(id)
+    // formData.append('Room_number', data.Room_number.toString());
+    // formData.append('Block_name', data.Block_name.toString());
+    // formData.append('Floor', data.Floor.toString());
+    // formData.append('Total_space', data.Total_space.toString());
+    // formData.append('Available_space', data.Available_space.toString());
+    // formData.append('photo', "");
+    // formData.append('FilePath', photo);
+    // formData.append('id', "");
+    // return this.httpClient.post(this.baseApiUrl + `api/AddRooms/`, formData)
     // .pipe(map(data => {})).subscribe(result => {
     //   return result;
     // })
 
-    // console.log(id)
-    // console.log(data)
-    //  return this.httpClient.put<any>(this.baseApiUrl+`/api/AddRooms/${id}`,data);
+
+
+    updateAddRoom(id: number, data: Room) {
+    console.log(id)
+    console.log(data)
+     return this.httpClient.put<any>(this.baseApiUrl+`/api/AddRooms/${id}`,data);
 
   }
 
@@ -212,20 +215,20 @@ export class HostelService {
 
 
 
-  saveRoom(formDatas: any, photo: any) {
-    let formData = new FormData();
-    console.log(formDatas.Room_name)
-    formData.append('Room_name', formDatas.Room_name);
-    formData.append('Block_name', formDatas.Block_name);
-    formData.append('Floor', formDatas.Floor);
-    formData.append('Total_space', formDatas.Total_space);
-    formData.append('Available_space', formDatas.Available_space);
-    formData.append('photo', photo);
-    return this.httpClient.post(this.baseApiUrl + "api/AddRooms", formData)
-      .pipe(map(data => { })).subscribe(result => {
-        return result;
-      })
-  }
+  // saveRoom(formDatas: any, photo: any) {
+  //   let formData = new FormData();
+  //   console.log(formDatas.Room_name)
+  //   formData.append('Room_name', formDatas.Room_name);
+  //   formData.append('Block_name', formDatas.Block_name);
+  //   formData.append('Floor', formDatas.Floor);
+  //   formData.append('Total_space', formDatas.Total_space);
+  //   formData.append('Available_space', formDatas.Available_space);
+  //   formData.append('photo', photo);
+  //   return this.httpClient.post(this.baseApiUrl + "api/AddRooms", formData)
+  //     .pipe(map(data => { })).subscribe(result => {
+  //       return result;
+  //     })
+  // }
 
 
   //////////////////// Read ///////////////////////////
