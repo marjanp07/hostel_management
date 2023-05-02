@@ -82,7 +82,7 @@ deleteDocType(item?: asset) {
     data: {
       title: 'Delete Cognitive Level',
       description: 'Are you sure you want to dele  te this Cognitive Level?',
-      type: 'Delete-roomVacate',
+      type: 'Delete-asset',
       id: item?.id,
     },
   });

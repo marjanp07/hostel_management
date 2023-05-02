@@ -26,9 +26,10 @@ export class AddLeaveapplicationComponent implements OnInit {
 
  registrationForm=this.fb.group({
 
+  id: [0],
   hosteler_name:['',[Validators.required]],
   Application_date:['',[Validators.required]],
-  Leave_form:['',[Validators.required]],
+  Leave_from:['',[Validators.required]],
   Leave_till:['',[Validators.required]],
   Reason:['',[Validators.required]],
   Visiting_person:['',[Validators.required]],
