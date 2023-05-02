@@ -26,7 +26,7 @@ private dialogRef: MatDialogRef<AddAssetComponent>,
 
 
 registrationForm=this.fb.group({
-
+  id: 0,
   Asset_name:['',[Validators.required]],
   Asset_type:['',[Validators.required]],
   Asset_quantity:[0,[Validators.required]],

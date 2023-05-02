@@ -25,7 +25,7 @@ private dialogRef: MatDialogRef<AddOutPassComponent>,
 
 
 registrationForm=this.fb.group({
-
+  id: [0],
   reg_no:[0,[Validators.required]],
   hosteler_name:['',[Validators.required]],
   c_number:[0,[Validators.required]],

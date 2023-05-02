@@ -63,6 +63,30 @@ export class CommonDeleteDialogueComponent implements OnInit {
             //  let response=this.api.delevacca(this.details.id)
             
             break;
+
+                //////// delete Asset
+
+            case 'Delete-asset':
+              console.log('h');
+              
+            this.api.confirmAssetDelete(id).subscribe(data=>{
+              this.dialogRef.close()
+    
+            })
+          
+            
+            break;
+
+            //////// delete LEAVE
+  
+            case 'Delete-leave':
+              console.log('h');
+              
+            this.api.confirmLeaveDelete(id).subscribe(data=>{
+              this.dialogRef.close()
+    
+            })
+
       }
     }
  catch (error) {

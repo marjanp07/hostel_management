@@ -165,13 +165,12 @@ export class HostelService {
   assetupdate(id: number, data: asset) {
     console.log(id)
     console.log(data)
-    return this.httpClient.put<any>(this.baseApiUrl + `/api/vacates/${id}`, data);
+    return this.httpClient.put<any>(this.baseApiUrl + `/api/Assets/${id}`, data);
 
   }
     //  return this.httpClient.put<any>(this.baseApiUrl+`/api/Assets/${id}`,data);
      
    
-
 
 
 
@@ -184,7 +183,7 @@ export class HostelService {
 
 
 
-    return this.httpClient.post<leave>(this.baseApiUrl + 'api/vacates', product);
+    return this.httpClient.post<leave>(this.baseApiUrl + 'api/Leaves', product);
 
   }
 
@@ -194,7 +193,7 @@ export class HostelService {
 
 
   getleave() {
-    return this.httpClient.get<any>(this.baseApiUrl + '/api/Assets');
+    return this.httpClient.get<any>(this.baseApiUrl + '/api/Leaves');
   }
 
 
@@ -212,7 +211,7 @@ export class HostelService {
   leaveupdate(id: number, data: leave) {
     console.log(id)
     console.log(data)
-    return this.httpClient.put<any>(this.baseApiUrl + `/api/vacates/${id}`, data);
+    return this.httpClient.put<any>(this.baseApiUrl + `/api/Leaves/${id}`, data);
 
   }
 
@@ -440,6 +439,32 @@ confirmAddRoomDelete(id:number){
     }
   });
   }
+
+
+///asset delete
+
+
+confirmAssetDelete(id:number){
+  console.log(id)
+  return this.httpClient.delete<any>(this.baseApiUrl+'/api/Assets',{
+    params:{
+      id
+    }
+  });
+  }
+
+
+////// leave Delete
+
+confirmLeaveDelete(id:number){
+  console.log(id)
+  return this.httpClient.delete<any>(this.baseApiUrl+'/api/Leaves',{
+    params:{
+      id
+    }
+  });
+  }
+
 
 
 
