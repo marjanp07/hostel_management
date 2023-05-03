@@ -1,9 +1,13 @@
 import { DatePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { MatRadioChange } from '@angular/material/radio';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { studentregisteration } from 'src/app/shared/interfaces/hostel.interface';
 import { HostelService } from 'src/app/shared/services/hostel.service';
 
 
@@ -16,12 +20,34 @@ import { HostelService } from 'src/app/shared/services/hostel.service';
   styleUrls: ['./student-attendance.component.scss']
 })
 export class StudentAttendanceComponent implements OnInit {
+  dataSource = new MatTableDataSource<studentregisteration>([]);
+  @ViewChild(MatSort, { static: true }) sort: MatSort = new MatSort();
+  displayedColumns: string[] = [
+    'NO',
+    'reg_no',
+    'hosteler_name',
+    'isPresent',
+    
+  ];
 
+  blocks: string[] = [
+    'Block_A',
+    'Block_B',
+    'Block_C',
+    'Block_D'
+  ]
+  // attendanceType: {code: string,value: string}[] = [
+  //   {
+  //     code: 
+  //   }
+  // ]
   markAttendanceGroup: UntypedFormGroup = this.fb.group({
     Date: [
       this.datePipe.transform(Date.now(), 'yyyy-MM-dd'),
       Validators.required,
     ],
+
+   
 
     Block: ['', Validators.required],
     // paper: ['', Validators.required],
@@ -49,167 +75,40 @@ export class StudentAttendanceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.init();
-  }
-  async init() {
-    this.markAttendanceGroup.get('hour')?.valueChanges.subscribe(async (e) => {
-    //   this.st.students = [];
-    //   this.st.hour = e;
-    //   if (
-    //     this.markAttendanceGroup.get('hour')?.value &&
-    //     this.markAttendanceGroup.get('paper')?.value
-    //   )
-    //     this.st.students = await this.Api.GetStudentsForAttendanceEntry(
-    //       this.markAttendanceGroup.get('class')?.value.split(',')[0] as number,
-    //       this.markAttendanceGroup.get('paper')?.value,
-    //       this.dateValue,
-    //       this.markAttendanceGroup.get('batch')?.value,
-    //       this.GroupID
-    //     );
-    //   this.getAttendanceEdit();
-    });
+
+    this.markAttendanceGroup.get('Block')?.valueChanges.subscribe(e=>{
+      this.Api.GetAdmissionentryByBlockName(this.markAttendanceGroup.get("Block")?.value).subscribe(e=>{
+        console.log(e);
+        this.dataSource.data=e
+        
+       })
+    } )
+   
+    // this.GetAttendance()
+   
   }
 
-  // isChecked = () => this.st.students.every((e) => e.isSelected);
-  // changeAllSelection() {
-  //   if (this.st.students.every((e) => e.isSelected))
-  //     this.st.students.forEach((e) => {
-  //       e.isSelected = false;
-  //     });
-  //   else
-  //     this.st.students.forEach((e) => {
-  //       e.isSelected = true;
-  //     });
-  // }
-  // getAttendanceStatus() {
-  //   if (
-  //     this.st.students.every((e) => e.AtendanceType == AtendanceType.Present)
-  //   ) {
-  //     this.AllAttendanceSelelcted = 'P';
-  //     return AtendanceType.Unmarked;
-  //   } else if (
-  //     this.st.students.every((e) => e.AtendanceType == AtendanceType.Absent)
-  //   ) {
-  //     this.AllAttendanceSelelcted = 'A';
-  //     return AtendanceType.Present;
-  //   } else if (
-  //     this.st.students.every((e) => e.AtendanceType == AtendanceType.Freeze)
-  //   ) {
-  //     this.AllAttendanceSelelcted = 'F';
-  //     return AtendanceType.Freeze;
-  //   } else {
-  //     this.AllAttendanceSelelcted = 'U';
-  //     return AtendanceType.Unmarked;
-  //   }
-  //   // this.students.forEach((e) => {
-  //   //   let allAttendance = AtendanceType.Unmarked;
-  //   //   if(e.AtendanceType != AtendanceType.Unmarked)
-  //   //   return AtendanceType.Unmarked;
-  //   //   else return
-  //   // });
-  // }
-  // changeAllAttendance() {
-  //   if (this.AllAttendanceSelelcted == 'P') {
-  //     this.st.students.forEach((e) => {
-  //       e.AtendanceType = AtendanceType.Absent;
-  //     });
-  //     this.AllAttendanceSelelcted = 'A';
-  //   } else if (this.AllAttendanceSelelcted == 'A') {
-  //     this.st.students.forEach((e) => {
-  //       e.AtendanceType = AtendanceType.Present;
-  //     });
-  //     this.AllAttendanceSelelcted = 'P';
-  //   } else if (this.AllAttendanceSelelcted == 'U') {
-  //     this.st.students.forEach((e) => {
-  //       e.AtendanceType = AtendanceType.Present;
-  //     });
-  //     this.AllAttendanceSelelcted = 'P';
-  //   }
+  // GetAttendance() {
+  //   this.Api.getAttendance().subscribe((datas: any[])=>{
+  //     // this.datas1 = datas;
+  //     this.dataSource.data=datas
+  //     // console.log(this.datas1)
+  //      
+  // });
   // }
 
-  // changeAttendance(student: StudentsForMarkAttendance) {
-  //   switch (student.AtendanceType) {
-  //     case AtendanceType.Unmarked:
-  //       student.AtendanceType = AtendanceType.Present;
-  //       break;
-  //     case AtendanceType.Present:
-  //       student.AtendanceType = AtendanceType.Absent;
-  //       break;
-  //     case AtendanceType.Absent:
-  //       student.AtendanceType = AtendanceType.Present;
-  //       break;
-  //   }
-  //   this.getAttendanceStatus();
-  // }
-  async submit() {
-    // this.isLoading = true;
-    // let markedStudents: StudentAttendnaceDetails[] = [];
-    // this.st.students.forEach((e) => {
-    //   markedStudents.push({
-    //     AttendanceDetailID: 0,
-    //     SemesterYearstudentID: e.SemesterYearstudentID,
-    //     AttendanceDate: this.dateValue,
-    //     Hour1: this.st.hour == 1 ? e.AtendanceType : e.Hour1,
-    //     Hour2: this.st.hour == 2 ? e.AtendanceType : e.Hour2,
-    //     Hour3: this.st.hour == 3 ? e.AtendanceType : e.Hour3,
-    //     Hour4: this.st.hour == 4 ? e.AtendanceType : e.Hour4,
-    //     Hour5: this.st.hour == 5 ? e.AtendanceType : e.Hour5,
-    //     Hour6: this.st.hour == 6 ? e.AtendanceType : e.Hour6,
-    //     Hour7: this.st.hour == 7 ? e.AtendanceType : e.Hour7,
-    //     Hour8: this.st.hour == 8 ? e.AtendanceType : e.Hour8,
-    //     Hour9: this.st.hour == 9 ? e.AtendanceType : e.Hour9,
-    //     H1StaffID: this.st.hour == 1 ? this.StaffID : '',
-    //     H1PaperID:
-    //       this.st.hour == 1 ? this.markAttendanceGroup.get('paper')?.value : '',
-    //     H2StaffID: this.st.hour == 2 ? this.StaffID : '',
-    //     H2PaperID:
-    //       this.st.hour == 2 ? this.markAttendanceGroup.get('paper')?.value : '',
-    //     H3StaffID: this.st.hour == 3 ? this.StaffID : '',
-    //     H3PaperID:
-    //       this.st.hour == 3 ? this.markAttendanceGroup.get('paper')?.value : '',
-    //     H4StaffID: this.st.hour == 4 ? this.StaffID : '',
-    //     H4PaperID:
-    //       this.st.hour == 4 ? this.markAttendanceGroup.get('paper')?.value : '',
-    //     H5StaffID: this.st.hour == 5 ? this.StaffID : '',
-    //     H5PaperID:
-    //       this.st.hour == 5 ? this.markAttendanceGroup.get('paper')?.value : '',
-    //     H6StaffID: this.st.hour == 6 ? this.StaffID : '',
-    //     H6PaperID:
-    //       this.st.hour == 6 ? this.markAttendanceGroup.get('paper')?.value : '',
-    //     H7StaffID: this.st.hour == 7 ? this.StaffID : '',
-    //     H7PaperID:
-    //       this.st.hour == 7 ? this.markAttendanceGroup.get('paper')?.value : '',
-    //     H8StaffID: this.st.hour == 8 ? this.StaffID : '',
-    //     H8PaperID:
-    //       this.st.hour == 8 ? this.markAttendanceGroup.get('paper')?.value : '',
-    //     H9StaffID: this.st.hour == 9 ? this.StaffID : '',
-    //     H9PaperID:
-    //       this.st.hour == 9 ? this.markAttendanceGroup.get('paper')?.value : '',
-    //   });
-    // });
-    // markedStudents;
-    // try {
-    //   let response = await this.Api.MarkAttendance(
-    //     markedStudents,
-    //     this.markAttendanceGroup.get('class')?.value.split(',')[0] as number,
-    //     this.markAttendanceGroup.get('hour')?.value,
-    //     this.GroupID,
-    //     '',
-    //     '',
-    //     this.markAttendanceGroup.get('paper')?.value,
-    //     this.markAttendanceGroup.get('batch')?.value,
-    //     'SP',
-    //     this.markAttendanceGroup.get('hour')?.value
-    //   );
-    //   if (response > 0) {
-    //     this._snackBar.showNotification(SnackBarType.SUCCESS, 'Marked attendance successfully saved.');
-    //   } else {
-    //     this._snackBar.showNotification(SnackBarType.ERROR, 'Error occured while saving attendance.');
-    //   }
-    // } catch {
-    //   this._snackBar.showNotification(SnackBarType.ERROR, 'Error saving the attendance.');
-    // }
-    // this.isLoading = false;
+  AttendanceChangeHandler(event: MatRadioChange, row: studentregisteration) {
+    console.log(event.value);
+    
+    row['isPresent'] = event.value == 1 ? 'Y' : 'N'
   }
 
+  MarkAttendance(){
+    console.log(this.dataSource.data);
+    
+    this.api.markAttendance(this.dataSource.data).subscribe(e=> {
+      console.log(e);
+      
+    })
+  }
 }

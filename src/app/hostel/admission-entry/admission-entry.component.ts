@@ -50,6 +50,7 @@ export class AdmissionEntryComponent implements OnInit {
     Occupation: ['', Validators.required],
     Address: ['', Validators.required],
     Select_block: [''],
+    isPresent:['N'],
 
   });
 
@@ -66,11 +67,11 @@ export class AdmissionEntryComponent implements OnInit {
 // })
 
 ngOnInit(): void {
-  this.Api.GetAddRoomByBlockName('').subscribe((datas: Room[])=>{ 
+  // this.Api.GetAddRoomByBlockName('').subscribe((datas: Room[])=>{ 
      //   this.datas1 = datas;
   //   console.log(this.datas1)
 
-  })
+  // })
   this.firstFormGroup.patchValue(this.state as any)
 
   console.log(this.router.getCurrentNavigation()?.extras.state);

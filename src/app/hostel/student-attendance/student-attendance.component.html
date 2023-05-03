@@ -1,29 +1,73 @@
+<!-- <ng-container matColumnDef="selected">
+  <th mat-header-cell *matHeaderCellDef class="text-center">
+    <mat-label> Mark all as </mat-label>
+    <mat-radio-group aria-label="Select an option" class="mx-3">
+      <mat-radio-button
+        class="min-width-radio-button radio-border-radius"
+        [ngClass]="item.class"
+        *ngFor="
+          let item of [
+            { code: 1, value: 'P' },
+            { code: 0, value: 'A' },
+            { code: 2, value: 'E' }
+          ]
+        "
+        [value]="item.code"
+        (change)="MarkAllChecked($event)"
+      >
+        {{ item.value }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </th>
+  <td mat-cell *matCellDef="let row" class="text-center">
+    <mat-radio-group
+      aria-label="Select an option"
+      class="d-flex justify-content-center"
+    >
+      <mat-radio-button
+        class="min-width-radio-button radio-border-radius"
+        [ngClass]="item.class"
+        *ngFor="let item of row.AttendanceType"
+        [value]="item.code"
+        [checked]="item.selected"
+        (change)="AttendanceChangeHandler($event, row)"
+      >
+        {{ item.value }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </td>
+</ng-container>
 
-<!-- <form>
-    
-    <div class="s">
 
-        <div class="mb-10"> 
-            <label class="form-label">Name</label>
-            <input type="text" class="form-control" formControlName="Name" aria-describedby="emailHelp">
-          </div>
-
-          <div class="mb-10"> 
-            <label class="form-label">Room no</label>
-            <input type="text" class="form-control" formControlName="Room_no" aria-describedby="emailHelp">
-          </div>
-
-          <div class="mb-10"> 
-            <label class="form-label">Attendance status</label>
-            <input type="text" class="form-control" formControlName="Attendance_status" aria-describedby="emailHelp">
-          </div>
-
-          <br>
-<button type="submit" class="btn btn-primary" >Update</button>
+MarkAllChecked(event: MatRadioChange) {
+  (this.dataSource.data as AttendanceStudents[]).map((AttendanceItems) =>
+    AttendanceItems['AttendanceType'].forEach((type) => {
+      if (type.code === event.value) {
+        type.selected = true;
+        AttendanceItems['AttendanceSelectedCode'] = event.value;
+      } else type.selected = false;
+    })
+  );
+}
 
 
-    </div>
-</form> -->
+AttendanceChangeHandler(event: MatRadioChange, row: AttendanceStudents) {
+  row['AttendanceType'].map((type) => {
+    if (type.code === event.value) {
+      type.selected = !type.selected;
+      row['AttendanceSelectedCode'] = event.value;
+    } else type.selected = false;
+  });
+} -->
+
+
+
+
+
+
+
+
+
 
 <section class="content">
   <div class="container-fluid px-3">
@@ -36,10 +80,10 @@
       <span class="greyMain-rubik-medium-18">Mark Attendance</span>
     </div>
     <form [formGroup]="markAttendanceGroup" class="formArr">
-      <div class="form-row mb-2">
+      <div class="d-flex  col-12">
         <mat-form-field
           appearance="outline"
-          class="col-md-6 col-lg-3 col-sm-6 pl-0"
+          class="col-6"
         >
           <mat-label class="">Date</mat-label>
           <input
@@ -52,151 +96,122 @@
           <mat-datepicker #dp></mat-datepicker>
         </mat-form-field>
 ​
-        <!-- <mat-form-field
-          appearance="outline"
-          class="mat-form-field col-md-6 col-lg-3 col-sm-6 pl-0"
-        >
-          <mat-label class="">Choose Paper</mat-label>
-          <mat-select name="Staff" id="staff" formControlName="paper">
-            <mat-option
-              *ngFor="let active of papers"
-              [value]="active.PaperNameID"
-            >
-              {{ active.PaperDescription }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field> -->
+<div class="flex-grow-1">
+  <!-- <label for="validationDefault04">Block Name</label>
+  <select class="form-select" formControlName="Block" required>
+    <option  value="Block_A">Block A</option>
+    <option value="Block_B">Block B</option>
+    <option value="Block_C">Block C</option>
+    <option  value="Block_D">Block D</option>
+  
+  </select> -->
+  <mat-form-field appearance="outline" class="w-100 ml-2">
+    <mat-label>Block Name</mat-label>
+    <mat-select formControlName="Block" name="food">
+      
+      <mat-option *ngFor="let block of blocks" [value]="block">
+        {{block}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div>
+  <button
+type="button"
+mat-flat-button
+color="primary"
+class="button-fill-blue d-flex align-items-center ml-2 mt-1"
+(click)="MarkAttendance()"
+>
+<mat-icon>add</mat-icon>
+<span class="white-rubik-normal-14"> Save </span>
+</button>
+</div>
 
-
-        <!-- <mat-form-field
-          appearance="outline"
-          class="mat-form-field col-md-6 col-lg-3 col-sm-6 pl-0"
-        >
-          <mat-label class="">Choose Class</mat-label>
-          <mat-select name="Staff" id="staff" formControlName="class">
-            <mat-option
-              *ngFor="let active of classes"
-              [value]="active.CourseSemesteryearID + ',' + active.MonGroupID"
-            >
-              {{ active.ClassName }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field
-          appearance="outline"
-          class="mat-form-field col-md-6 col-lg-3 col-sm-6 pl-0"
-          *ngIf="paperBatch.length !== 0"
-        >
-          <mat-label class="">Choose Batch</mat-label>
-          <mat-select name="Staff" id="staff" formControlName="batch">
-            <mat-option
-              *ngFor="let active of paperBatch"
-              [value]="active.PaperBatchID"
-            >
-              {{ active.PaperBatchName }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field
-          appearance="outline"
-          class="mat-form-field col-md-6 col-sm-6 col-lg-3 pl-0"
-          [ngClass]="
-            paperBatch.length !== 0 ? 'col-md-6 col-lg-3' : 'col-md-6 col-lg-3'
-          "
-        >
-          <mat-label class="">Choose Hour</mat-label>
-          <mat-select name="Staff" id="staff" formControlName="hour">
-            <mat-option *ngFor="let active of hours" [value]="active.PeriodID">
-              {{ active.Period }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field> -->
       </div>
 ​
-      <div class="table-responsive scrollable" *ngIf="true">
-        <table class="table">
-          <thead>
-            <tr class="table-header-bgcolor-table-header-textcolor">
-              <th>
-             
-                <button
-                  
-                  class="attendance-container"
-                  
+    
+
+   
+
+
+    <table class="table mt-3" mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="NO">
+        <th mat-header-cell *matHeaderCellDef>NO</th>
+        <td mat-cell *matCellDef="let row; let i = index" class="text-left">
+          {{ i + 1 }}
+        </td>
+
+    
+
+      </ng-container>
+      <ng-container matColumnDef="reg_no">
+       <th mat-header-cell *matHeaderCellDef mat-sort-header>
+         reg no
+       </th>
+       <td mat-cell *matCellDef="let row; let i = index">
+         {{ row.reg_no }}
+       </td>
+     </ng-container>
+
+ <ng-container matColumnDef="hosteler_name">
+   <th mat-header-cell *matHeaderCellDef mat-sort-header>
+     Hosteler Name 
+   </th>
+   <td mat-cell *matCellDef="let row; let i = index">
+     {{ row.hosteler_name }}
+   </td>
+ </ng-container>
+
+ <ng-container matColumnDef="isPresent">
+   <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center">isPresent</th>
+   <td mat-cell *matCellDef="let row; let i = index">
+     <!-- {{ row.isPresent }} -->
+
+     <mat-radio-group
+     aria-label="Select an option"
+     class="d-flex justify-content-center"
+   >
+     <mat-radio-button
+     checked="row.isPresent === 'Y'"
+       class="min-width-radio-button radio-border-radius"
+       value="1" 
+       (change)="AttendanceChangeHandler($event,row)"
+     >
+       Present
+     </mat-radio-button>
+     <mat-radio-button
+     checked="row.isPresent === 'N'"
+     class="min-width-radio-button radio-border-radius ml-2"
+     value="0"   
+     (change)="AttendanceChangeHandler($event,row)" 
+   >
+     Absent
+   </mat-radio-button>
+   </mat-radio-group>
+   </td>
+ </ng-container>
+ <tr
+            mat-header-row
+            *matHeaderRowDef="displayedColumns"
+            class="bg-grey-8-greyMain"
+          ></tr>
+          <tr class="mat-row" *matNoDataRow>
+            <td class="no-results" [attr.colspan]="displayedColumns.length">
+              <div
+                class="d-flex flex-column justify-content-center align-items-center"
+              >
+                <span style="color: var(--border-color); margin-top: 0.75rem"
+                  >No Record Found</span
                 >
-                  <span
-                    class="bodyFont-inter-medium-12"
-                   
-                    >{{ "AllAttendanceSelelcted" }}</span
-                  >
-                </button>
-              </th>
-              <th class="bodyFont-inter-semiBold-16">REG NO</th>
-              <th class="bodyFont-inter-semiBold-16">ROOM NO</th>
-              <th class="bodyFont-inter-semiBold-16">NAME</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of []; index as i">
-              <td>
-              
-                <button
-                  class="attendance-container"
-                 
-                >
-                  <span
-                    class="bodyFont-inter-medium-12"
-                   
-                    >{{
-                      "P"
-                    }}</span
-                  >
-                </button>
-              </td>
-              <td
-                class="bodyFont-inter-medium-14"
-                style="letter-spacing: 0.03em"
-              >
-                {{ "O" }}
-              </td>
-​
-              <td
-                class="bodyFont-inter-medium-14"
-                style="letter-spacing: 0.03em"
-              >
-                {{ "st.students[i].StudentName" }}
-              </td>
-              <td
-                class="bodyFont-inter-medium-14"
-                style="letter-spacing: 0.03em"
-              >
-                {{ "st.students[i].ClassDescription" }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!-- <div
-        class="d-flex row m-0 justify-content-between mt-4 align-items-center"
-        *ngIf="st.students.length > 0"
-      >
-        <span class="bodyFont-inter-semiBold-16"
-          >Total Students: {{ st.students.length }}</span
-        >
-        <div class="row m-0">
-         
-            <button
-              [disabled]="isLoading"
-              mat-flat-button
-              class="button-fill-blue"
-              (click)="submit()"
-            >
-              <span *appSpinOn="isLoading">Submit</span>
-            </button>
-          </div>
-        </div>
-      </div> -->
-    </form>
+              </div>
+            </td>
+          </tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+ 
+    </table>
+
+  </form>
   </div>
 </div>
 

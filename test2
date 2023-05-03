@@ -1,48 +1,203 @@
-<div class="dialogue-body">
-  <div class="row m-0 align-items-center justify-content-between mb-3">
-    <span class="bodyFont-inter-semiBold-16">
-      {{ this.data.val ? "Edit" : "Add" }} Room</span
-    >
-  </div>
-  <form [formGroup]="AddRoom">
-    <div class="form-row mb-1">
-      <mat-form-field appearance="outline" class="col-12 pl-0 mb-2">
-        <mat-label class=""> Room Name </mat-label>
-        <input matInput type="text" formControlName="Room_name" />
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="col-6 pl-0 mb-2">
-        <mat-label class="">Block name</mat-label>
-        <input matInput type="text" formControlName="Block_name" />
-      </mat-form-field>
 
-      <mat-form-field appearance="outline" class="col-6 pl-0 mb-2">
-        <mat-label class="">Floor</mat-label>
-        <input matInput type="number" formControlName="Floor" />
-      </mat-form-field>
+<!-- <form>
+    
+    <div class="s">
 
-      <mat-form-field appearance="outline" class="col-6 pl-0 mb-2">
-        <mat-label class="">Total Space</mat-label>
-        <input matInput type="number" formControlName="Total_space" />
-      </mat-form-field>
+        <div class="mb-10"> 
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="Name" aria-describedby="emailHelp">
+          </div>
 
-      <mat-form-field appearance="outline" class="col-6 pl-0 mb-2">
-        <mat-label class="">Available Space</mat-label>
-        <input matInput type="number" formControlName="Available_space" />
-      </mat-form-field>
+          <div class="mb-10"> 
+            <label class="form-label">Room no</label>
+            <input type="text" class="form-control" formControlName="Room_no" aria-describedby="emailHelp">
+          </div>
 
-      <mat-form-field appearance="outline" class="col-6 pl-0 mb-2">
-        <mat-label class="">photo</mat-label>
-        <input matInput type="file" formControlName="photo" />
-      </mat-form-field>
+          <div class="mb-10"> 
+            <label class="form-label">Attendance status</label>
+            <input type="text" class="form-control" formControlName="Attendance_status" aria-describedby="emailHelp">
+          </div>
+
+          <br>
+<button type="submit" class="btn btn-primary" >Update</button>
+
 
     </div>
-  </form>
-  <div class="d-flex row m-0 justify-content-end mt-3">
-    <button mat-flat-button class="cancel-button button mr-2" mat-dialog-close>
-      Cancel
-    </button>
-    <button mat-flat-button class="submit-button" (click)="onSubmit()">
-      {{ this.data.val ? "Update" : "Submit" }}
-    </button>
+</form> -->
+
+<section class="content">
+  <div class="container-fluid px-3">
+<div class="mainbody">
+  <span class="grey-inter-bold-24 schedule-title"
+    >Coursewise Attendance Entry</span
+  >
+  <div class="main-table">
+    <div class="mb-3">
+      <span class="greyMain-rubik-medium-18">Mark Attendance</span>
+    </div>
+    <form [formGroup]="markAttendanceGroup" class="formArr">
+      <div class="form-row mb-2">
+        <mat-form-field
+          appearance="outline"
+          class="col-md-6 col-lg-3 col-sm-6 pl-0"
+        >
+          <mat-label class="">Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="dp"
+            formControlName="Date"
+          />
+          <mat-datepicker-toggle matSuffix [for]="dp" class="datepicker-icon">
+          </mat-datepicker-toggle>
+          <mat-datepicker #dp></mat-datepicker>
+        </mat-form-field>
+​
+        <!-- <mat-form-field
+          appearance="outline"
+          class="mat-form-field col-md-6 col-lg-3 col-sm-6 pl-0"
+        >
+          <mat-label class="">Choose Paper</mat-label>
+          <mat-select name="Staff" id="staff" formControlName="paper">
+            <mat-option
+              *ngFor="let active of papers"
+              [value]="active.PaperNameID"
+            >
+              {{ active.PaperDescription }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+
+
+        <!-- <mat-form-field
+          appearance="outline"
+          class="mat-form-field col-md-6 col-lg-3 col-sm-6 pl-0"
+        >
+          <mat-label class="">Choose Class</mat-label>
+          <mat-select name="Staff" id="staff" formControlName="class">
+            <mat-option
+              *ngFor="let active of classes"
+              [value]="active.CourseSemesteryearID + ',' + active.MonGroupID"
+            >
+              {{ active.ClassName }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field
+          appearance="outline"
+          class="mat-form-field col-md-6 col-lg-3 col-sm-6 pl-0"
+          *ngIf="paperBatch.length !== 0"
+        >
+          <mat-label class="">Choose Batch</mat-label>
+          <mat-select name="Staff" id="staff" formControlName="batch">
+            <mat-option
+              *ngFor="let active of paperBatch"
+              [value]="active.PaperBatchID"
+            >
+              {{ active.PaperBatchName }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field
+          appearance="outline"
+          class="mat-form-field col-md-6 col-sm-6 col-lg-3 pl-0"
+          [ngClass]="
+            paperBatch.length !== 0 ? 'col-md-6 col-lg-3' : 'col-md-6 col-lg-3'
+          "
+        >
+          <mat-label class="">Choose Hour</mat-label>
+          <mat-select name="Staff" id="staff" formControlName="hour">
+            <mat-option *ngFor="let active of hours" [value]="active.PeriodID">
+              {{ active.Period }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+      </div>
+​
+      <div class="table-responsive scrollable" *ngIf="true">
+        <table class="table">
+          <thead>
+            <tr class="table-header-bgcolor-table-header-textcolor">
+              <th>
+             
+                <button
+                  
+                  class="attendance-container"
+                  
+                >
+                  <span
+                    class="bodyFont-inter-medium-12"
+                   
+                    >{{ "AllAttendanceSelelcted" }}</span
+                  >
+                </button>
+              </th>
+              <th class="bodyFont-inter-semiBold-16">REG NO</th>
+              <th class="bodyFont-inter-semiBold-16">ROOM NO</th>
+              <th class="bodyFont-inter-semiBold-16">NAME</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of []; index as i">
+              <td>
+              
+                <button
+                  class="attendance-container"
+                 
+                >
+                  <span
+                    class="bodyFont-inter-medium-12"
+                   
+                    >{{
+                      "P"
+                    }}</span
+                  >
+                </button>
+              </td>
+              <td
+                class="bodyFont-inter-medium-14"
+                style="letter-spacing: 0.03em"
+              >
+                {{ "O" }}
+              </td>
+​
+              <td
+                class="bodyFont-inter-medium-14"
+                style="letter-spacing: 0.03em"
+              >
+                {{ "st.students[i].StudentName" }}
+              </td>
+              <td
+                class="bodyFont-inter-medium-14"
+                style="letter-spacing: 0.03em"
+              >
+                {{ "st.students[i].ClassDescription" }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- <div
+        class="d-flex row m-0 justify-content-between mt-4 align-items-center"
+        *ngIf="st.students.length > 0"
+      >
+        <span class="bodyFont-inter-semiBold-16"
+          >Total Students: {{ st.students.length }}</span
+        >
+        <div class="row m-0">
+         
+            <button
+              [disabled]="isLoading"
+              mat-flat-button
+              class="button-fill-blue"
+              (click)="submit()"
+            >
+              <span *appSpinOn="isLoading">Submit</span>
+            </button>
+          </div>
+        </div>
+      </div> -->
+    </form>
   </div>
 </div>
+
+</div></section>

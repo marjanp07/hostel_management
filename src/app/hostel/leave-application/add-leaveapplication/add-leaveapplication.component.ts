@@ -65,6 +65,8 @@ export class AddLeaveapplicationComponent implements OnInit {
    });
   }
   else {
+    console.log('sss');
+    
    this.apiService.postleave(formVal)
    .subscribe((policy: any)=>{
      this.dialogRef.close()

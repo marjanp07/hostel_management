@@ -193,7 +193,7 @@ export class HostelService {
 
 
   getleave() {
-    return this.httpClient.get<any>(this.baseApiUrl + '/api/Leaves');
+    return this.httpClient.get<any>(this.baseApiUrl + 'api/Leaves');
   }
 
 
@@ -201,7 +201,7 @@ export class HostelService {
 
 
   getleave1(id: number) {
-    return this.httpClient.get<any>(this.baseApiUrl + '/api/Assets/' + id);
+    return this.httpClient.get<any>(this.baseApiUrl + '/api/Leaves/' + id);
   }
 
 
@@ -211,7 +211,7 @@ export class HostelService {
   leaveupdate(id: number, data: leave) {
     console.log(id)
     console.log(data)
-    return this.httpClient.put<any>(this.baseApiUrl + `/api/Leaves/${id}`, data);
+    return this.httpClient.put<any>(this.baseApiUrl + `api/Leaves/${id}`, data);
 
   }
 
@@ -299,7 +299,7 @@ export class HostelService {
 
 
 
-    return this.httpClient.post<messFee>(this.baseApiUrl + 'api/outPasses', product);
+    return this.httpClient.post<messFee>(this.baseApiUrl + 'api/MessFees', product);
 
   }
 
@@ -308,11 +308,11 @@ export class HostelService {
 getmessfee(){
   console.log(this.baseApiUrl);
   
-  return this.httpClient.get<messFee[]>(this.baseApiUrl+'api/outPasses');
+  return this.httpClient.get<messFee[]>(this.baseApiUrl+'api/MessFees');
   }
 
 readmessfee(id:number){
-  return this.httpClient.get<any>(this.baseApiUrl+'/api/outPasses/'+id);
+  return this.httpClient.get<any>(this.baseApiUrl+'api/MessFees/'+id);
   }
 
 
@@ -320,10 +320,19 @@ readmessfee(id:number){
 updatemessfee(id:number,data:messFee){
   console.log(id)
   console.log(data)
-   return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
+   return this.httpClient.put<any>(this.baseApiUrl+`api/MessFees/${id}`,data);
    
  }
 
+
+ confirmMessFeeDelete(id:number){
+  console.log(id)
+  return this.httpClient.delete<any>(this.baseApiUrl+'/api/MessFees',{
+    params:{
+      id
+    }
+  });
+  }
 
 
 
@@ -405,18 +414,18 @@ postfeeReduct(product: feeReduction):Observable<feeReduction>{
 
 
   
-return this.httpClient.post<feeReduction>(this.baseApiUrl+'api/outPasses',product);
+return this.httpClient.post<feeReduction>(this.baseApiUrl+'api/MessReductions',product);
 
 }
 
 getfeeReduct(){
   console.log(this.baseApiUrl);
   
-  return this.httpClient.get<feeReduction[]>(this.baseApiUrl+'api/outPasses');
+  return this.httpClient.get<feeReduction[]>(this.baseApiUrl+'api/MessReductions');
   }
 
 feeReduct(id:number){
-  return this.httpClient.get<any>(this.baseApiUrl+'/api/outPasses/'+id);
+  return this.httpClient.get<any>(this.baseApiUrl+'/api/MessReductions/'+id);
   }
 
 
@@ -424,10 +433,18 @@ feeReduct(id:number){
 updatefeeReduct(id:number,data:feeReduction){
   console.log(id)
   console.log(data)
-   return this.httpClient.put<any>(this.baseApiUrl+`/api/outPasses/${id}`,data);
+   return this.httpClient.put<any>(this.baseApiUrl+`/api/MessReductions/${id}`,data);
    
  }
 
+ confirmMessFeeReductionDelete(id:number){
+  console.log(id)
+  return this.httpClient.delete<any>(this.baseApiUrl+'/api/MessReductions',{
+    params:{
+      id
+    }
+  });
+  }
 
 ////// Add Room Delete
 
@@ -508,9 +525,33 @@ readadmissionentry() {
 }
 
 
-GetAddRoomByBlockName(Block_name:string) {
-  return this.httpClient.get<any>(this.baseApiUrl + '/api/AddRooms/' + Block_name);
+GetAdmissionentryByBlockName(Block_name:string) {
+  return this.httpClient.get<any>(this.baseApiUrl + 'api/Admissionentries?Block_name='+ Block_name );
 }
+
+
+
+
+
+/////////// Attendance
+
+getAttendance(){
+  console.log(this.baseApiUrl);
+
+  return this.httpClient.get<studentregisteration[]>(this.baseApiUrl + 'api/Admissionentries');
+}
+
+
+markAttendance(studentList: studentregisteration[]){
+  console.log(this.baseApiUrl);
+
+  return this.httpClient.post<number>(this.baseApiUrl + 'api/Admissionentries',studentList);
+}
+
+
+
+
+
 
 
 

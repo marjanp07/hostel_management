@@ -79,7 +79,7 @@ deleteDocType(item?: messFee) {
     data: {
       title: 'Delete Cognitive Level',
       description: 'Are you sure you want to dele  te this Cognitive Level?',
-      type: 'Delete-roomVacate',
+      type: 'Delete-MessFee',
       id: item?.id,
     },
   });

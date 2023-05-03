@@ -180,7 +180,21 @@ export interface studentregisteration{
   Occupation:string 
   Address:string 
   Select_block:string
+  isPresent:string
 
 }
+
+// student Attendance
+
+export interface studentattendance{
+
+date:Date
+reg_no:number
+student_name:string
+isPresent:string
+
+  
+}
+
 
 

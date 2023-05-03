@@ -87,6 +87,34 @@ export class CommonDeleteDialogueComponent implements OnInit {
     
             })
 
+            break;
+
+
+            /////// delete mess fee
+
+            case 'Delete-MessFee':
+              
+              
+            this.api.confirmMessFeeDelete(id).subscribe(data=>{
+              this.dialogRef.close()
+    
+            })
+
+            break;
+
+              /////// delete mess fee Reduction
+
+              case 'Delete-MessFeeReduction':
+              
+              
+              this.api.confirmMessFeeReductionDelete(id).subscribe(data=>{
+                this.dialogRef.close()
+      
+              })
+  
+              break;
+
+
       }
     }
  catch (error) {
