@@ -550,6 +550,12 @@ markAttendance(studentList: studentregisteration[]){
 
 
 
+/////////////////GetRoomsByBlockName
+
+GetRoomsByBlockName(Block_name:string) {
+  return this.httpClient.get<Room[]>(this.baseApiUrl + 'api/AddRooms?Block_name='+ Block_name );
+}
+
 
 
 
