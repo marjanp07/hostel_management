@@ -13,7 +13,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   templateUrl: './add-room.component.html',
   styleUrls: ['./add-room.component.scss']
 })
-export class AddRoomComponent implements OnInit {
+export class AddRoomComponent implements OnInit {                                  
   // data : any ;
   // image: any;
   // data1s: Room[]=[];
@@ -27,7 +27,7 @@ export class AddRoomComponent implements OnInit {
      private route: ActivatedRoute
 
  ) { }
-
+                  
   registrationForm=this.fb.group({
     id: [0],
     Room_number:[0,[Validators.required]],
@@ -62,7 +62,7 @@ ngOnInit(): void {
     this.registrationForm.patchValue(this.data as any)
   
   }
-  
+                        
 }
 onsub()
 {

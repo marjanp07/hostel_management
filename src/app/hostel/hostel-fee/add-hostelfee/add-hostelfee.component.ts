@@ -48,7 +48,13 @@ export class AddHostelfeeComponent implements OnInit {
    //   console.log("add");
    // else if (id > 0)
    //   console.log("edit");
+
+   
+
+
  }
+
+
  onsub()
  {
    let formVal = this.registrationForm.value as hostelFee
