@@ -190,8 +190,9 @@ export interface studentregisteration{
   Guardian_name:string 
   Guardian_contact_no:number 
   Occupation:string 
-  Address:string 
-  Select_block:string
+  Address:string
+  Room_number:number 
+  // Select_block:string
   isPresent:string
 
 }
