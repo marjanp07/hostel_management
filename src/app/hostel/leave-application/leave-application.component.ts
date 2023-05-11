@@ -19,6 +19,7 @@ export class LeaveApplicationComponent {
   @ViewChild(MatSort, { static: true }) sort: MatSort = new MatSort();
 displayedColumns: string[] = [
   'NO',
+  'reg_no',
   'hosteler_name',
   'Application_date',
   'Leave_from',

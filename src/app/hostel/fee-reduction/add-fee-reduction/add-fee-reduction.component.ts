@@ -26,6 +26,7 @@ export class AddFeeReductionComponent implements OnInit {
 
  registrationForm=this.fb.group({
 
+  id:[0],
   hosteler_name:['',[Validators.required]],
   reg_no:[0,[Validators.required]],
   Mess_charge:[0,[Validators.required]],
@@ -39,13 +40,30 @@ export class AddFeeReductionComponent implements OnInit {
 
  ngOnInit(): void {
    const id = this.route.snapshot.params['id'];
+this.apiService.getmessfee().subscribe(a=>{
+  if(a.length>0){
+
+    this.registrationForm.get('Mess_charge')?.patchValue(a[0].mess_charge)
+  }
+  })
+
 
    if (this.data) {
      console.log(this.data);
      
      this.registrationForm.patchValue(this.data)
+    //  this.registrationForm.patchValue()
    
    }
+
+   this.registrationForm.get('reg_no')?.valueChanges.subscribe(a=>{
+    this.apiService.Getname(a!).subscribe(a=>{
+      if(a.length>0){
+    
+        this.registrationForm.get('hosteler_name')?.patchValue(a[0].hosteler_name)
+      }
+      })
+   })
    // if (id == 0)
    //   console.log("add");
    // else if (id > 0)

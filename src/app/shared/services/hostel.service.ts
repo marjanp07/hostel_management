@@ -526,10 +526,16 @@ readadmissionentry() {
 
 
 GetAdmissionentryByBlockName(Block_name:string) {
-  return this.httpClient.get<any>(this.baseApiUrl + 'api/Admissionentries?Block_name='+ Block_name );
+  return this.httpClient.get<studentregisteration[]>(this.baseApiUrl + 'api/Admissionentries?Block_name='+ Block_name );
 }
 
+Getname(reg_no:number) {
+  return this.httpClient.get<studentregisteration[]>(this.baseApiUrl + 'api/Admissionentries?reg_no='+ reg_no );
+}
 
+Getoutpassname(reg_no:number){
+  return this.httpClient.get<studentregisteration[]>(this.baseApiUrl + 'api/Admissionentries?reg_no='+ reg_no );
+}
 
 
 

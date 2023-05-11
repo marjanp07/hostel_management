@@ -44,7 +44,6 @@ import { AddTtlBillComponent } from './totall-bill-generate/add-ttl-bill/add-ttl
 import { AddFeeReductionComponent } from './fee-reduction/add-fee-reduction/add-fee-reduction.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 
-
 export const MY_FORMATS = {
   parse: {
     dateInput: 'LL',

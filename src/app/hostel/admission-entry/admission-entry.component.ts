@@ -50,7 +50,7 @@ export class AdmissionEntryComponent implements OnInit {
     Occupation: ['', Validators.required],
     Address: ['', Validators.required],
     Select_block: [''],
-    isPresent:['N'],
+    isPresent:['Y'],
 
   });
 

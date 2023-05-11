@@ -25,9 +25,9 @@ export class AddMessfeeComponent implements OnInit {
 
 
  registrationForm=this.fb.group({
-
-  reg_no:[0,[Validators.required]],
-  hosteler_name:['',[Validators.required]],
+  id:[0],
+  // reg_no:[0,[Validators.required]],
+  // hosteler_name:['',[Validators.required]],
   Period:[0,[Validators.required]],
   mess_charge:[0,[Validators.required]],
 })

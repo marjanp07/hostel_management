@@ -4,6 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { outPass } from 'src/app/shared/interfaces/hostel.interface';
 import { HostelService } from 'src/app/shared/services/hostel.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-out-pass',
@@ -17,7 +18,8 @@ private dialogRef: MatDialogRef<AddOutPassComponent>,
  private fb: FormBuilder, 
  private router: Router,
   private apiService: HostelService,
-   private route: ActivatedRoute
+   private route: ActivatedRoute,
+   private datePipe: DatePipe
 
 ) { }
 
@@ -29,7 +31,7 @@ registrationForm=this.fb.group({
   reg_no:[0,[Validators.required]],
   hosteler_name:['',[Validators.required]],
   c_number:[0,[Validators.required]],
-  date_of_outpass:['',[Validators.required]],
+  date_of_outpass:['',[Validators.required,Validators.pattern(/^\d{4}\-\d{2}\-\d{2}$/)]],
   time_of_departure:['',[Validators.required]],
   return_time:['',[Validators.required]],
   reason_outpass:['',[Validators.required]],
@@ -45,11 +47,26 @@ ngOnInit(): void {
    this.registrationForm.patchValue(this.data)
  
  }
+
+ this.registrationForm.get('reg_no')?.valueChanges.subscribe(a=>{
+  this.apiService.Getoutpassname(a!).subscribe(a=>{
+    if(a.length>0){
+  
+      this.registrationForm.get('hosteler_name')?.patchValue(a[0].hosteler_name)
+      this.registrationForm.get('c_number')?.patchValue(a[0].c_number)
+    }
+    })
+ })
+
+
  // if (id == 0)
  //   console.log("add");
  // else if (id > 0)
  //   console.log("edit");
 }
+
+todayDate=this.datePipe.transform(new Date(), 'yyyy-MM-dd');
+
 onsub()
 {
  let formVal = this.registrationForm.value as outPass

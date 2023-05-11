@@ -8,12 +8,16 @@
       <input type="number" class="form-control" formControlName="Asset_No" aria-describedby="emailHelp">
     </div> -->
     <div class="mb-10">
-      <label class="form-label">Asset name</label>
+      <label class="form-label"> Asset Name</label>
       <input type="text" class="form-control" formControlName="Asset_name">
+      <label  *ngIf="f['Asset_name'].errors && f['Asset_name'].errors['required'] && submitted">Enter Asset name</label>
+
     </div>
     
     <div class="mb-10">
         <label class="form-label">Asset type </label>
+        <label  *ngIf="f['Asset_type'].errors && f['Asset_type'].errors['required'] && submitted">choose Asset type</label>
+
         <!-- <input type="date" class="form-control" formControlName="Asset_type"> -->
         <select class="form-select" formControlName="Asset_type" required>
           <option  value="Furniture">Furniture</option>
@@ -25,12 +29,17 @@
     
       <div class="mb-10">
         <label class="form-label">Asset quantity</label>
+
         <input type="number" class="form-control" formControlName="Asset_quantity">
+        <label  *ngIf="f['Asset_quantity'].errors && f['Asset_quantity'].errors['required'] && submitted">Enter Asset quantity</label>
+
       </div>
 
     
     <div class="mb-10"> 
         <label class="form-label">Description</label>
+        <label  *ngIf="f['Description'].errors && f['Description'].errors['required'] && submitted">Enter Description</label>
+ 
         <input type="text" class="form-control" formControlName="Description" aria-describedby="emailHelp">
       </div>
     

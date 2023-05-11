@@ -83,6 +83,7 @@ export interface vacate{
 
   export interface leave{
     id:number
+    reg_no:number
     hosteler_name:string
     Application_date:string
     Leave_from:string
@@ -106,8 +107,8 @@ export interface vacate{
 
   export interface messFee{
     id:number
-    reg_no:number
-    hosteler_name:string
+    // reg_no:number
+    // hosteler_name:string
     Period:number
     mess_charge:number
    
@@ -189,6 +190,7 @@ export interface studentregisteration{
 export interface studentattendance{
 
 date:Date
+Block_name:string
 reg_no:number
 student_name:string
 isPresent:string

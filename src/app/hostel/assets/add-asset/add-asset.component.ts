@@ -11,7 +11,7 @@ import { HostelService } from 'src/app/shared/services/hostel.service';
   styleUrls: ['./add-asset.component.scss']
 })
 export class AddAssetComponent implements OnInit {
-
+  submitted=false;
 
 constructor(@Inject(MAT_DIALOG_DATA) public data: asset,
 private dialogRef: MatDialogRef<AddAssetComponent>,
@@ -27,12 +27,18 @@ private dialogRef: MatDialogRef<AddAssetComponent>,
 
 registrationForm=this.fb.group({
   id: 0,
-  Asset_name:['',[Validators.required]],
+  Asset_name:['',[Validators.required,Validators.pattern(/^[A-Z]*$/)]],
   Asset_type:['',[Validators.required]],
   Asset_quantity:[0,[Validators.required]],
   Description:['',[Validators.required]],
 
 })
+
+get f()
+{
+  return this.registrationForm.controls;
+}
+
 
 ngOnInit(): void {
  const id = this.route.snapshot.params['id'];

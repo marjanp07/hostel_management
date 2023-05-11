@@ -1,3 +1,4 @@
+import { SelectionModel } from '@angular/cdk/collections';
 import { DatePipe } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
@@ -55,7 +56,7 @@ export class StudentAttendanceComponent implements OnInit {
     // batch: ['', Validators.required],
     // hour: ['', Validators.required],
   });
- 
+  checked:boolean = true;
   constructor(
     private fb: UntypedFormBuilder,
     private datePipe: DatePipe,
@@ -73,12 +74,11 @@ export class StudentAttendanceComponent implements OnInit {
       ) ?? ''
     );
   }
-
+SelectionStudents = new SelectionModel<Number>(true ,[])
   ngOnInit(): void {
 
     this.markAttendanceGroup.get('Block')?.valueChanges.subscribe(e=>{
       this.Api.GetAdmissionentryByBlockName(this.markAttendanceGroup.get("Block")?.value).subscribe(e=>{
-        console.log(e);
         this.dataSource.data=e
         
        })
@@ -88,6 +88,17 @@ export class StudentAttendanceComponent implements OnInit {
    
   }
 
+  selectAll(){
+    console.log("ccc",this.checked);
+    
+    this.dataSource.data.map(e=>{
+      e.isPresent = this.checked ?  "Y" : "N"
+      console.log(e);
+      
+      return e
+
+    })
+  }
   // GetAttendance() {
   //   this.Api.getAttendance().subscribe((datas: any[])=>{
   //     // this.datas1 = datas;
@@ -97,9 +108,14 @@ export class StudentAttendanceComponent implements OnInit {
   // });
   // }
 
+
+  selectAllStudent() {
+    this.dataSource.data.forEach((obj) =>
+     obj['isPresent'] = this.checked ? 'Y' : 'N'
+    );
+  }
+
   AttendanceChangeHandler(event: MatRadioChange, row: studentregisteration) {
-    console.log(event.value);
-    
     row['isPresent'] = event.value == 1 ? 'Y' : 'N'
   }
 
