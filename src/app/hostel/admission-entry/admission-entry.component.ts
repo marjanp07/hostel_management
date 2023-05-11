@@ -94,7 +94,7 @@ export class AdmissionEntryComponent implements OnInit {
     Address: ['', Validators.required],
     Room_number: [0, Validators.required],
     Select_block: [''],
-    isPresent:['N'],
+    isPresent:['Y'],
 
   });
 

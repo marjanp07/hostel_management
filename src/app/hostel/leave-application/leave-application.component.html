@@ -39,6 +39,15 @@
        
 
          </ng-container>
+         <ng-container matColumnDef="reg_no">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            reg no
+          </th>
+          <td mat-cell *matCellDef="let row; let i = index">
+            {{ row.reg_no }}
+          </td>
+        </ng-container>
+
          <ng-container matColumnDef="hosteler_name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>
             hosteler name

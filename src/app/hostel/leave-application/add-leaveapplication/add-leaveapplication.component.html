@@ -5,24 +5,35 @@
   <div mat-dialog-content>
       <div class="s">
   
+        <div class="mb-10">
+    <label class="form-label">reg no </label>
+    <input type="text" class="form-control" formControlName="reg_no" aria-describedby="emailHelp">
+  </div>
+       
   <div class="mb-10">
     <label class="form-label">Hosteler Name </label>
     <input type="text" class="form-control" formControlName="hosteler_name" aria-describedby="emailHelp">
   </div>
   <div class="mb-10">
     <label class="form-label">Application date </label>
-    <input type="date" class="form-control" formControlName="Application_date">
+    <!-- <input type="date" class="form-control" formControlName="Application_date"> -->
+    <input class="form-control m-input pl-6" type="date" [min]="todayDate"formControlName="Application_date">
+
   </div>
   
   <div class="mb-10">
       <label class="form-label">Leave from </label>
-      <input type="date" class="form-control" formControlName="Leave_from">
+      <!-- <input type="date" class="form-control" formControlName="Leave_from"> -->
+      <input class="form-control m-input pl-6" type="date" [min]="todayDate"formControlName="Leave_from">
+
     </div>
   
   
   <div class="mb-10"> 
       <label class="form-label">Leave till</label>
-      <input type="date" class="form-control" formControlName="Leave_till" aria-describedby="emailHelp">
+      <!-- <input type="date" class="form-control" formControlName="Leave_till" aria-describedby="emailHelp"> -->
+      <input class="form-control m-input pl-6" type="date" [min]="todayDate"formControlName="Leave_till">
+
     </div>
 
     <div class="mb-10"> 

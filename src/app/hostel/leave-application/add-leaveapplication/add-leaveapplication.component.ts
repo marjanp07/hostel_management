@@ -4,6 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { leave } from 'src/app/shared/interfaces/hostel.interface';
 import { HostelService } from 'src/app/shared/services/hostel.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-leaveapplication',
@@ -17,7 +18,8 @@ export class AddLeaveapplicationComponent implements OnInit {
    private fb: FormBuilder, 
    private router: Router,
     private apiService: HostelService,
-     private route: ActivatedRoute
+     private route: ActivatedRoute,
+     private datePipe: DatePipe,
 
  ) { }
 
@@ -27,6 +29,7 @@ export class AddLeaveapplicationComponent implements OnInit {
  registrationForm=this.fb.group({
 
   id: [0],
+  reg_no:[0,[Validators.required]],
   hosteler_name:['',[Validators.required]],
   Application_date:['',[Validators.required]],
   Leave_from:['',[Validators.required]],
@@ -51,6 +54,8 @@ export class AddLeaveapplicationComponent implements OnInit {
    // else if (id > 0)
    //   console.log("edit");
  }
+
+ todayDate=this.datePipe.transform(new Date(), 'yyyy-MM-dd');
  onsub()
  {
    let formVal = this.registrationForm.value as leave

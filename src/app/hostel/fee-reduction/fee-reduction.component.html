@@ -28,6 +28,20 @@
          </div>
        </div>
      </div>
+     <mat-form-field
+     appearance="outline"
+     class="col-3"
+   >
+     <mat-label class="">Date</mat-label>
+     <input
+       matInput
+       [matDatepicker]="dp"
+       
+     />
+     <mat-datepicker-toggle matSuffix [for]="dp" class="datepicker-icon">
+     </mat-datepicker-toggle>
+     <mat-datepicker #dp></mat-datepicker>
+   </mat-form-field>
      <div class="table-responsive">
        <table class="table mt-3" mat-table [dataSource]="dataSource" matSort>
          <ng-container matColumnDef="NO">
@@ -64,7 +78,7 @@
       </td>
     </ng-container>
     <ng-container matColumnDef="Number_of_days_continues_absent">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Number of days continues absent</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Number of days  absent</th>
       <td mat-cell *matCellDef="let row; let i = index">
         {{ row.Number_of_days_continues_absent }}
       </td>

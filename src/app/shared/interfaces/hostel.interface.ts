@@ -62,8 +62,19 @@ export interface vacate{
   Asset_name:string
   Asset_type:string
   Asset_quantity:number
-  Description:string
+  Minimum_required_qty:number
 }
+
+// Block
+
+export interface Block{
+  id:number
+  Block_name:string
+  Floor:string
+  Number_of_Rooms:number
+  Minimum_required_qty:number
+}
+
 
 
   //Out pass
@@ -83,6 +94,7 @@ export interface vacate{
 
   export interface leave{
     id:number
+    reg_no:number
     hosteler_name:string
     Application_date:string
     Leave_from:string
@@ -106,8 +118,8 @@ export interface vacate{
 
   export interface messFee{
     id:number
-    reg_no:number
-    hosteler_name:string
+    // reg_no:number
+    // hosteler_name:string
     Period:number
     mess_charge:number
    
@@ -190,6 +202,7 @@ export interface studentregisteration{
 export interface studentattendance{
 
 date:Date
+Block_name:string
 reg_no:number
 student_name:string
 isPresent:string

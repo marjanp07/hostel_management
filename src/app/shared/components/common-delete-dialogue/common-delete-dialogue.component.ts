@@ -114,6 +114,19 @@ export class CommonDeleteDialogueComponent implements OnInit {
   
               break;
 
+              //////// delete block
+
+              
+              case 'Delete-block':
+              
+              
+              this.api.confirmblockDelete(id).subscribe(data=>{
+                this.dialogRef.close()
+      
+              })
+  
+              break;
+
 
       }
     }

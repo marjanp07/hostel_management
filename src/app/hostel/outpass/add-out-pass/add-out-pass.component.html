@@ -19,8 +19,11 @@
 
 <div class="mb-10"> 
     <label class="form-label">Date of Outpass</label>
-    <input type="date" class="form-control" formControlName="date_of_outpass" aria-describedby="emailHelp">
+    <!-- <input type="date" class="form-control"  formControlName="date_of_outpass" aria-describedby="emailHelp"> -->
+    <input class="form-control m-input pl-6" type="date" [min]="todayDate"formControlName="date_of_outpass">
   </div>
+
+  
 
   <div class="mb-10"> 
     <label class="form-label">Time of departure</label>

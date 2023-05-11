@@ -1,0 +1,145 @@
+
+
+
+<section class="content">
+    <div class="container-fluid px-3">
+    
+     <div class="main-table">
+       <div class="d-flex justify-content-between align-items-center mb-2">
+         <span class="text-h5"> Block </span>
+       </div>
+       <div class="d-flex justify-content-between">
+         <mat-form-field appearance="outline" class="flex-grow-1 pl-0 ml-1">
+           <mat-icon matPrefix style="color: rgb(52, 71, 103)">search</mat-icon>
+           <mat-label class="">Search</mat-label>
+           <input matInput (keyup)="applyFilter($event)" #input />
+         </mat-form-field>
+   
+         <div class="d-flex justify-content-end align-items-center">
+           <div>
+             <button
+               type="button"
+               mat-flat-button
+                color="primary"
+               class="button-fill-blue d-flex align-items-center ml-2 mb-3"
+               (click)="openDialog()"
+             >
+               <mat-icon>add</mat-icon>
+               <span class="white-rubik-normal-14"> Add Blocks </span>
+             </button>
+           </div>
+         </div>
+       </div>
+       <div class="table-responsive">
+         <table class="table mt-3" mat-table [dataSource]="dataSource" matSort>
+           <ng-container matColumnDef="NO">
+             <th mat-header-cell *matHeaderCellDef>NO</th>
+             <td mat-cell *matCellDef="let row; let i = index" class="text-left">
+               {{ i + 1 }}
+             </td>
+  
+         
+  
+           </ng-container>
+           <ng-container matColumnDef="Block_name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Block name
+            </th>
+            <td mat-cell *matCellDef="let row; let i = index">
+              {{ row.Block_name }}
+            </td>
+          </ng-container>
+  
+      <ng-container matColumnDef="Floor">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Floor
+        </th>
+        <td mat-cell *matCellDef="let row; let i = index">
+          {{ row.Floor }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Number_of_Rooms">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Number_of_Rooms 
+        </th>
+        <td mat-cell *matCellDef="let row; let i = index">
+          {{ row.Number_of_Rooms }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Asset_type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Asset type</th>
+        <td mat-cell *matCellDef="let row; let i = index">
+          {{ row.Asset_type }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Asset_name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Asset name</th>
+        <td mat-cell *matCellDef="let row; let i = index">
+          {{ row.Asset_name }}
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="Minimum_required_qty">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Minimum required qty</th>
+        <td mat-cell *matCellDef="let row; let i = index">
+          {{ row.Minimum_required_qty }}
+        </td>
+      </ng-container>
+     
+           <ng-container matColumnDef="ACTIONS">
+             <th mat-header-cell *matHeaderCellDef>ACTIONS</th>
+             <td mat-cell *matCellDef="let item; let i = index">
+               <button
+                 [matMenuTriggerFor]="menu"
+                 class="auto-button bg-greylighter-100-greyMain m-auto"
+               >
+               <mat-icon>more_horiz</mat-icon>
+               </button>
+               <mat-menu #menu="matMenu">
+                 <button
+                   style="color: var(--greyMain)"
+                   (click)="openDialog(item)"
+                   mat-menu-item
+                  
+                 >
+                   <mat-icon>edit</mat-icon> <span>Edit</span>
+                 </button>
+                 <button
+                   mat-menu-item
+                   style="color: var(--red)"
+                  
+                   (click)="deleteDocType(item)"
+                 >
+                   <mat-icon color="warn">delete</mat-icon> <span>Delete</span>
+                 </button>
+               </mat-menu>
+             </td>
+           </ng-container>
+           <tr
+             mat-header-row
+             *matHeaderRowDef="displayedColumns"
+             class="bg-grey-8-greyMain"
+           ></tr>
+           <tr class="mat-row" *matNoDataRow>
+             <td class="no-results" [attr.colspan]="displayedColumns.length">
+               <div
+                 class="d-flex flex-column justify-content-center align-items-center"
+               >
+                 <span style="color: var(--border-color); margin-top: 0.75rem"
+                   >No Record Found</span
+                 >
+               </div>
+             </td>
+           </tr>
+           <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+         </table>
+       </div>
+       
+     </div>
+    </div>
+  </section>
+  

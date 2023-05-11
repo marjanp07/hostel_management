@@ -18,12 +18,15 @@ export class MessFeeComponent{
   @ViewChild(MatSort, { static: true }) sort: MatSort = new MatSort();
 displayedColumns: string[] = [
   'NO',
-  'reg_no',
-  'hosteler_name',
+  // 'reg_no',
+  // 'hosteler_name',
   'Period',
   'mess_charge',
   'ACTIONS'
 ];
+
+
+
 datas1:  messFee[]=[];
 constructor(private Api: HostelService,public dialog: MatDialog) { }
 

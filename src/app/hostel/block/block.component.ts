@@ -2,34 +2,31 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
-import { CommonDeleteDialogueComponent } from 'src/app/shared/components/common-delete-dialogue/common-delete-dialogue.component';
-import { leave } from 'src/app/shared/interfaces/hostel.interface';
+import { Block } from 'src/app/shared/interfaces/hostel.interface';
 import { HostelService } from 'src/app/shared/services/hostel.service';
-import { AddLeaveapplicationComponent } from './add-leaveapplication/add-leaveapplication.component';
+import { AddBlockComponent } from './add-block/add-block.component';
+import { CommonDeleteDialogueComponent } from 'src/app/shared/components/common-delete-dialogue/common-delete-dialogue.component';
 
 @Component({
-  selector: 'app-leave-application',
-  templateUrl: './leave-application.component.html',
-  styleUrls: ['./leave-application.component.scss']
+  selector: 'app-block',
+  templateUrl: './block.component.html',
+  styleUrls: ['./block.component.scss']
 })
-export class LeaveApplicationComponent {
+export class BlockComponent  {
 
-  dataSource = new MatTableDataSource<leave>([]);
+  dataSource = new MatTableDataSource<Block>([]);
   @ViewChild(MatSort, { static: true }) sort: MatSort = new MatSort();
 displayedColumns: string[] = [
   'NO',
-  'reg_no',
-  'hosteler_name',
-  'Application_date',
-  'Leave_from',
-  'Leave_till',
-  'Reason',
-  'Visiting_person',
-  'Guardian_details',
+  'Block_name',
+  'Floor',
+  'Number_of_Rooms',
+  'Asset_type',
+  'Asset_name',
+  'Minimum_required_qty',
   'ACTIONS'
 ];
-datas1:  leave[]=[];
+datas1:  Block[]=[];
 constructor(private Api: HostelService,public dialog: MatDialog) { }
 
 ngOnInit() {
@@ -37,7 +34,7 @@ ngOnInit() {
 }
 
 GetRoomVacate() {
-  this.Api.getleave().subscribe((datas: any[])=>{
+  this.Api.getblock().subscribe((datas: any[])=>{
     this.datas1 = datas;
     this.dataSource.data=datas
     console.log(this.datas1)
@@ -50,7 +47,7 @@ init() {
 }
 
 
-addDocType(item?: leave) {
+addDocType(item?: Block) {
   // const dialogRef = this.dialog.open(AddCognitiveLevelComponent, {
   //   data: {
   //     val: item,
@@ -65,9 +62,9 @@ applyFilter(event: Event) {
   const filterValue = (event.target as HTMLInputElement).value;
   this.dataSource.filter = filterValue.trim().toLowerCase();
 }
-openDialog(vacate?:leave) {
-  const dialogRef = this.dialog.open(AddLeaveapplicationComponent, {
-    data:vacate
+openDialog(asset?:Block) {
+  const dialogRef = this.dialog.open(AddBlockComponent, {
+    data:asset
   });
 
   dialogRef.afterClosed().subscribe(result => {
@@ -76,7 +73,7 @@ openDialog(vacate?:leave) {
   });
 }
 
-deleteDocType(item?: leave) {
+deleteDocType(item?: Block) {
   console.log(item);
   
   const dialogRef = this.dialog.open(CommonDeleteDialogueComponent, {
@@ -84,7 +81,7 @@ deleteDocType(item?: leave) {
     data: {
       title: 'Delete Cognitive Level',
       description: 'Are you sure you want to dele  te this Cognitive Level?',
-      type: 'Delete-leave',
+      type: 'Delete-block',
       id: item?.id,
     },
   });

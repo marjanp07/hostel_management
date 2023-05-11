@@ -18,6 +18,8 @@ import { AddAssetComponent } from './assets/add-asset/add-asset.component';
 import { AddOutPassComponent } from './outpass/add-out-pass/add-out-pass.component';
 import { AddLeaveapplicationComponent } from './leave-application/add-leaveapplication/add-leaveapplication.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
+import { BlockComponent } from './block/block.component';
+import { AddBlockComponent } from './block/add-block/add-block.component';
 // import { RoomAllotComponent } from './room-allot/room-allot.component';
 
 
@@ -56,6 +58,8 @@ const routes: Routes = [
   { path:'room_allot',component:AllotRoomComponent},
   { path:'studentdetailsss',component:StudentDetailsComponent},
   { path:'studentdetails',component:AdmissionEntryComponent},
+  { path:'block',component:BlockComponent},
+  { path:'block/add_block/0',component:AddBlockComponent},
 
 
   // { path:'room_allot',component:RoomAllotComponent},
