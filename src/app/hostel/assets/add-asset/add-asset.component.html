@@ -21,7 +21,7 @@
         <!-- <input type="date" class="form-control" formControlName="Asset_type"> -->
         <select class="form-select" formControlName="Asset_type" required>
           <option  value="Furniture">Furniture</option>
-          <option value="Kitchen facilities">Kitchen facilities</option>
+          <!-- <option value="Kitchen facilities">Kitchen facilities</option> -->
           <option value="Shared facilities">Shared facilities</option>
           <option value="Electronics">Electronics</option>
         </select>
@@ -37,12 +37,12 @@
 
     
     <div class="mb-10"> 
-        <label class="form-label">Description</label>
-        <label  *ngIf="f['Description'].errors && f['Description'].errors['required'] && submitted">Enter Description</label>
+        <label class="form-label">Minimum required qty</label>
+        <label  *ngIf="f['Minimum_required_qty'].errors && f['Minimum_required_qty'].errors['required'] && submitted">Enter quantity</label>
  
-        <input type="text" class="form-control" formControlName="Description" aria-describedby="emailHelp">
-      </div>
-    
+        <input type="number" class="form-control" formControlName="Minimum_required_qty" >
+      
+    </div>
     <br>
     <div class="mat-dialog-actions" align="end">
       <button type="submit" class="btn btn-primary" >Submit</button>

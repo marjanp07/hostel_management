@@ -43,6 +43,8 @@ import {MatCardModule} from '@angular/material/card';
 import { AddTtlBillComponent } from './totall-bill-generate/add-ttl-bill/add-ttl-bill.component';
 import { AddFeeReductionComponent } from './fee-reduction/add-fee-reduction/add-fee-reduction.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
+import { BlockComponent } from './block/block.component';
+import { AddBlockComponent } from './block/add-block/add-block.component';
 
 export const MY_FORMATS = {
   parse: {
@@ -81,6 +83,8 @@ export const MY_FORMATS = {
     AddTtlBillComponent,
     AddFeeReductionComponent,
     StudentDetailsComponent,
+    BlockComponent,
+    AddBlockComponent,
     
     // RoomAllotComponent
   ],

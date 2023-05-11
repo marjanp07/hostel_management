@@ -28,6 +28,7 @@ export function getBaseUrl() {
     SidebarComponent,
     HeaderComponent,
     FunctionCallerPipe,
+   
   ],
   imports: [
     CommonModule,

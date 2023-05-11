@@ -40,6 +40,19 @@ export const StudentRoute: RouteInfo[] = [
       //   SubMenus: [],
       // },
       {
+        path: 'hostel/block',
+        title: 'Block',
+        iconType: 'material-icons-two-tone',
+        icon: 'application',
+        class: '',
+        groupTitle: false,
+        badge: '',
+        taget: true,
+        badgeClass: '',
+        SubMenus: [],
+      },
+      
+      {
         path: 'hostel/assets',
         title: 'Assets',
         iconType: 'material-icons-two-tone',

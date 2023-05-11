@@ -62,8 +62,19 @@ export interface vacate{
   Asset_name:string
   Asset_type:string
   Asset_quantity:number
-  Description:string
+  Minimum_required_qty:number
 }
+
+// Block
+
+export interface Block{
+  id:number
+  Block_name:string
+  Floor:string
+  Number_of_Rooms:number
+  Minimum_required_qty:number
+}
+
 
 
   //Out pass

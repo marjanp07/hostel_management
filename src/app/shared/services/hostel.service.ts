@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Room, asset, feeReduction, hostelFee, leave, messFee, outPass, studentregisteration, totelBill, vacate } from '../interfaces/hostel.interface';
+import { Block, Room, asset, feeReduction, hostelFee, leave, messFee, outPass, studentregisteration, totelBill, vacate } from '../interfaces/hostel.interface';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 import { serialize } from 'object-to-formdata';
@@ -169,12 +169,37 @@ export class HostelService {
 
   }
     //  return this.httpClient.put<any>(this.baseApiUrl+`/api/Assets/${id}`,data);
+
+
      
-   
+   /////////////////// Blocks
+
+blockupdate(id: number, data: Block) {
+    console.log(id)
+    console.log(data)
+    return this.httpClient.put<any>(this.baseApiUrl + `/api/Blocks/${id}`, data);
+
+  }
+
+
+  postblockdata(product: Block): Observable<Block> {
+
+    console.log(product);
 
 
 
+    return this.httpClient.post<Block>(this.baseApiUrl + 'api/Blocks', product);
 
+  }
+
+
+  getblock() {
+    return this.httpClient.get<any>(this.baseApiUrl + '/api/Blocks');
+  }
+
+
+
+///// Leave
 
 
   postleave(product: leave): Observable<leave> {
@@ -451,6 +476,19 @@ updatefeeReduct(id:number,data:feeReduction){
 confirmAddRoomDelete(id:number){
   console.log(id)
   return this.httpClient.delete<any>(this.baseApiUrl+'/api/AddRooms',{
+    params:{
+      id
+    }
+  });
+  }
+
+
+///// block delete
+
+
+confirmblockDelete(id:number){
+  console.log(id)
+  return this.httpClient.delete<any>(this.baseApiUrl+'/api/Blocks',{
     params:{
       id
     }
