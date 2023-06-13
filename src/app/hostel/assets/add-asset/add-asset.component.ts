@@ -24,13 +24,13 @@ private dialogRef: MatDialogRef<AddAssetComponent>,
 
 
 
-
 registrationForm=this.fb.group({
   id: 0,
+  Asset_Tag_No:[0,[Validators.required]],
   Asset_name:['',[Validators.required,Validators.pattern(/^[A-Z]*$/)]],
   Asset_type:['',[Validators.required]],
   Asset_quantity:[0,[Validators.required]],
-  Minimum_required_qty:[0,[Validators.required]],
+  Descriptions:['',[Validators.required]],
 
 })
 
@@ -56,26 +56,31 @@ ngOnInit(): void {
 }
 onsub()
 {
- let formVal = this.registrationForm.value as asset
+if(this.registrationForm.valid){
+  let formVal = this.registrationForm.value as asset
 
-if(this.data){
- this.apiService.assetupdate(this.data.id,formVal).subscribe((policy: any)=>{
-   this.dialogRef.close()
-     
-    
- // this.router.navigate(['/hostel/outpass'])
-    
- });
+  if(this.data){
+   this.apiService.assetupdate(this.data.id,formVal).subscribe((policy: any)=>{
+     this.dialogRef.close()
+       
+      
+   // this.router.navigate(['/hostel/outpass'])
+      
+   });
+  }
+  else {
+   this.apiService.postassetdata(formVal)
+   .subscribe((policy: any)=>{
+     this.dialogRef.close()
+       
+      
+   // this.router.navigate(['/hostel/outpass'])
+      
+   });
+  }
 }
 else {
- this.apiService.postassetdata(formVal)
- .subscribe((policy: any)=>{
-   this.dialogRef.close()
-     
-    
- // this.router.navigate(['/hostel/outpass'])
-    
- });
+  this.submitted = true;
 }
 }
 }
