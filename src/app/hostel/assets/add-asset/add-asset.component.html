@@ -7,10 +7,18 @@
       <label class="form-label">Asset No </label>
       <input type="number" class="form-control" formControlName="Asset_No" aria-describedby="emailHelp">
     </div> -->
+
+    <div class="mb-10">
+      <label class="form-label"> Asset Tag No</label>
+      <input type="text" class="form-control" formControlName="Asset_Tag_No">
+      <label  *ngIf="f['Asset_Tag_No'].errors && f['Asset_Tag_No'].errors['required'] && submitted">Enter Asset no</label>
+
+    </div>
+
     <div class="mb-10">
       <label class="form-label"> Asset Name</label>
       <input type="text" class="form-control" formControlName="Asset_name">
-      <label  *ngIf="f['Asset_name'].errors && f['Asset_name'].errors['required'] && submitted">Enter Asset name</label>
+      <mat-error  *ngIf="registrationForm.get('Asset_name')!.hasError('required') && submitted">Enter Asset name</mat-error>
 
     </div>
     
@@ -31,16 +39,16 @@
         <label class="form-label">Asset quantity</label>
 
         <input type="number" class="form-control" formControlName="Asset_quantity">
-        <label  *ngIf="f['Asset_quantity'].errors && f['Asset_quantity'].errors['required'] && submitted">Enter Asset quantity</label>
+        <label  *ngIf="registrationForm.get('Asset_quantity')!.hasError('required')">Enter Asset quantity</label>
 
       </div>
 
     
     <div class="mb-10"> 
-        <label class="form-label">Minimum required qty</label>
-        <label  *ngIf="f['Minimum_required_qty'].errors && f['Minimum_required_qty'].errors['required'] && submitted">Enter quantity</label>
+        <label class="form-label">Description</label>
+        <label  *ngIf="f['Descriptions'].errors && f['Descriptions'].errors['required'] && submitted">Enter Description</label>
  
-        <input type="number" class="form-control" formControlName="Minimum_required_qty" >
+        <input type="text" class="form-control" formControlName="Descriptions" >
       
     </div>
     <br>

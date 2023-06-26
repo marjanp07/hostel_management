@@ -22,9 +22,9 @@ export class AssetsComponent {
 displayedColumns: string[] = [
   'NO',
   'Asset_name',
-  'Asset_type',
+  // 'Asset_type',
   'Asset_quantity',
-  'Description',
+  'Descriptions',
   'ACTIONS'
 ];
 datas1:  asset[]=[];

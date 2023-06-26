@@ -49,14 +49,14 @@
           </td>
         </ng-container>
 
-    <ng-container matColumnDef="Asset_type">
+    <!-- <ng-container matColumnDef="Asset_type">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>
         asset type 
       </th>
       <td mat-cell *matCellDef="let row; let i = index">
         {{ row.Asset_type }}
       </td>
-    </ng-container>
+    </ng-container> -->
 
     <ng-container matColumnDef="Asset_quantity">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>
@@ -68,10 +68,10 @@
     </ng-container>
 
     
-    <ng-container matColumnDef="Description">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Minimum required qty</th>
+    <ng-container matColumnDef="Descriptions">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
       <td mat-cell *matCellDef="let row; let i = index">
-        {{ row.Minimum_required_qty }}
+        {{ row.Descriptions}}
       </td>
     </ng-container>
    

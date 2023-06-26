@@ -58,11 +58,12 @@ export interface vacate{
 
   export interface asset{
   id:number
+  Asset_Tag_No:number
   // Asset_No:number
   Asset_name:string
   Asset_type:string
   Asset_quantity:number
-  Minimum_required_qty:number
+  Descriptions:string
 }
 
 // Block
